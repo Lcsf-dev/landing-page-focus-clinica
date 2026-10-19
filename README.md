@@ -4,7 +4,7 @@ Landing page institucional para apresentar o Focus Clínica, suas funcionalidade
 
 ## Estado atual
 
-Projeto iniciado em **19/10/2026**. Estrutura técnica preparada; planejamento em elaboração. A implementação visual depende do protótipo no Figma revisado e aprovado. A API ainda será definida.
+Projeto iniciado em **19/10/2026**. Estrutura técnica preparada e planejamento documentado para revisão. A implementação visual depende do protótipo no Figma revisado e aprovado. A API ainda será definida; essa frente e os testes estão reservados ao colega indicado pela equipe.
 
 O HTML atual é somente um ponto de entrada de desenvolvimento. Não representa a landing page concluída.
 
@@ -44,7 +44,20 @@ Use um servidor HTTP durante o desenvolvimento: abrir `index.html` diretamente c
 
 ## Documentação
 
-A documentação será adicionada na branch de planejamento. Nenhuma entrega deve ser marcada como aprovada, testada ou publicada antes da respectiva verificação.
+| Documento | Conteúdo |
+| --- | --- |
+| [Requisitos](docs/requisitos.md) | Escopo e critérios de entrega |
+| [Planejamento](docs/planejamento.md) | Ordem das entregas, dependências e decisões |
+| [Design](docs/design.md) | Briefing para wireframes e protótipo no Figma |
+| [Equipe](docs/equipe.md) | Responsabilidades e participação real |
+| [Tarefas](docs/tarefas.md) | Quadro inicial e critérios de conclusão |
+| [Fluxo Git](docs/fluxo-git.md) | Branches, commits, revisão e integração |
+| [API](docs/api.md) | Decisões e contrato a preencher pelo responsável |
+| [Testes](docs/testes.md) | Cenários manuais, resultados e evidências |
+| [Alterações](docs/alteracoes.md) | Registro datado das entregas |
+| [Publicação](docs/publicacao.md) | Checklist para publicar e verificar o site |
+
+Nenhuma entrega deve ser marcada como aprovada, testada ou publicada antes da respectiva verificação.
 
 ## Versionamento
 
@@ -57,3 +70,7 @@ A documentação será adicionada na branch de planejamento. Nenhuma entrega dev
 ## Publicação
 
 Ainda não realizada. A plataforma e o endereço serão registrados após a entrega ser revisada.
+
+## Referências
+
+- Sistema de referência informado: <https://focus-clinica.netlify.app/>. Não confundir esse endereço com uma publicação desta landing page.
