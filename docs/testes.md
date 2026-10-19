@@ -61,6 +61,11 @@ Nenhum problema funcional corrigido registrado nesta etapa. Quando ocorrer:
 
 Executado em 19/10/2026 durante a preparação local:
 
+- Ambiente: Windows, PowerShell, Python 3.13.13 e Node.js 24.16.0.
+- Base verificada: commit `de49835`, branch `testes/cenarios-manuais`.
+- Execução HTTP: 19/10/2026 às 17:48:50, fuso de São Paulo (UTC-03:00).
+- Verificação técnica não atribuída ao colega de API/testes.
+
 | Verificação | Resultado | Limite |
 | --- | --- | --- |
 | `git diff --check` | Aprovado | Verifica problemas de whitespace no diff |
@@ -68,5 +73,10 @@ Executado em 19/10/2026 durante a preparação local:
 | Existência de 16 caminhos de estrutura/documentação | Aprovado | Não verifica funcionalidades |
 | Resolução de 10 links locais Markdown no README | Aprovado | Não verifica disponibilidade de URLs externas |
 | HTML inicial com `lang="pt-BR"` e um `main` | Aprovado | Não é auditoria completa de acessibilidade ou HTML |
+| Servir `/` por HTTP local | Aprovado: HTTP 200, `text/html`, 569 bytes | Confere somente o HTML inicial |
+| Servir `/css/estilos.css` por HTTP local | Aprovado: HTTP 200, `text/css`, 77 bytes | Arquivo ainda sem estilos de implementação |
+| Servir `/js/principal.js` por HTTP local | Aprovado: HTTP 200, `text/javascript`, 84 bytes | Arquivo ainda sem interações |
+
+Servidor HTTP temporário encerrado após a verificação. Nenhuma dependência ou suíte de testes foi instalada.
 
 Não foram executados testes de navegador, responsividade, integração com API ou publicação. O validador YAML via Python não estava disponível; os modelos de Issues receberam apenas conferência manual de estrutura.
