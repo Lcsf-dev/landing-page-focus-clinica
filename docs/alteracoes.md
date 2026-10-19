@@ -10,5 +10,6 @@ Datas reais no fuso de São Paulo. Este registro resume marcos e complementa os 
 | 19/10/2026 | Registro da reserva de API e testes para o colega interessado | Identificação pendente |
 | 19/10/2026 | Cadastro de nove Issues e quatro rótulos de status no GitHub | Concluído; tarefas funcionais ainda não iniciadas |
 | 19/10/2026 | Conferência de estrutura, links locais, HTML inicial e sintaxe JavaScript | Verificações da estrutura aprovadas; testes funcionais pendentes |
+| 19/10/2026 | Verificação HTTP local de HTML, CSS e JavaScript, com registro de ambiente, horário e commit em testes.md | Três respostas HTTP 200; servidor temporário encerrado |
 
 Figma aprovado, API integrada, testes funcionais e publicação ainda não ocorreram.
