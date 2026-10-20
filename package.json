@@ -1,0 +1,13 @@
+{
+  "name": "landing-page-focus-clinica",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Landing page institucional do Focus Clínica com API de funcionalidades.",
+  "engines": { "node": ">=22" },
+  "scripts": {
+    "dev": "node scripts/servidor-local.mjs",
+    "build": "node scripts/preparar-publicacao.mjs",
+    "test": "node --test testes/api.test.mjs"
+  }
+}

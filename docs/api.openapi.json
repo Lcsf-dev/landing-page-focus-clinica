@@ -1,0 +1,63 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "API de funcionalidades — Focus Clínica",
+    "version": "1.0.0",
+    "description": "Catálogo público de apresentação. Não consulta dados internos do sistema clínico."
+  },
+  "servers": [{ "url": "http://127.0.0.1:5500", "description": "Desenvolvimento local: npm run dev" }],
+  "security": [],
+  "paths": {
+    "/api/funcionalidades": {
+      "get": {
+        "operationId": "listarFuncionalidades",
+        "summary": "Listar funcionalidades do Focus Clínica",
+        "responses": {
+          "200": {
+            "description": "Catálogo de funcionalidades",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "required": ["versao", "funcionalidades"],
+                  "properties": {
+                    "versao": { "type": "string", "example": "1.0" },
+                    "funcionalidades": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "required": ["id", "titulo", "descricao"],
+                        "properties": {
+                          "id": { "type": "string", "example": "calendario" },
+                          "titulo": { "type": "string", "example": "Calendário" },
+                          "descricao": { "type": "string", "example": "Uma visão da agenda para acompanhar a organização dos atendimentos." }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "head": {
+        "operationId": "conferirCabecalhos",
+        "summary": "Conferir cabeçalhos sem receber o corpo",
+        "responses": { "200": { "description": "Cabeçalhos do catálogo, sem corpo" } }
+      },
+      "post": {
+        "operationId": "verificarMetodoNaoPermitido",
+        "summary": "Teste de contrato: confirmar rejeição de POST",
+        "description": "Operação incluída somente para testar a rejeição. A API é apenas de leitura.",
+        "responses": {
+          "405": {
+            "description": "Método não permitido",
+            "headers": { "Allow": { "schema": { "type": "string", "example": "GET, HEAD" } } },
+            "content": { "application/json": { "schema": { "type": "object", "properties": { "erro": { "type": "string" } } } } }
+          }
+        }
+      }
+    }
+  }
+}
