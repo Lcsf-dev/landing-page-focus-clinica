@@ -4,7 +4,7 @@
 
 <https://github.com/Lcsf-dev/landing-page-focus-clinica>
 
-Visibilidade inicial: privado. O proprietário é `Lcsf-dev`. Não há colaboradores confirmados até o aceite dos convites.
+Visibilidade inicial: privado. O proprietário é `Lcsf-dev`. `thaamiresffranca`, `genzo-dev` e `DumbRyder` têm acesso de escrita confirmado em 19/10/2026.
 
 ## Branches por tarefa
 
@@ -19,6 +19,23 @@ Visibilidade inicial: privado. O proprietário é `Lcsf-dev`. Não há colaborad
 - `correcao/<problema>`: correção delimitada após uma entrega.
 
 Uma branch não representa uma pessoa. Branches futuras só devem receber alterações quando a tarefa começar. Branches reservadas sem commits próprios não contam como entrega.
+
+## Estado inicial e dependências dos Pull Requests
+
+- Commit inicial na `main`: `0fd0670`.
+- PR #10: `documentacao/planejamento` → `main`, documentação em rascunho.
+- PR #11: `testes/cenarios-manuais` → `documentacao/planejamento`, registro de verificações iniciais em rascunho; depende do planejamento.
+- `design/prototipo-figma` e `integracao/api`: branches reservadas, sem implementação específica.
+
+Revisar o PR #10 antes de integrar o registro de testes. Após a integração do planejamento, conferir/ajustar a base do PR #11 para `main`. Antes de começar uma branch reservada, incorporar a `main` revisada; não descartar trabalho de colegas nem usar push forçado para sincronizar.
+
+Não criar uma branch permanente por pessoa nem uma camada `develop` nesta etapa. O fluxo simples é suficiente: **Issue → branch da tarefa → commits → PR → revisão → main**. Criar as branches de HTML/CSS e interações quando as respectivas tarefas começarem, após o design aprovado.
+
+## Commits e revisão por entrega
+
+Usar mensagem descritiva: `docs:` para documentação, `feat:` para funcionalidade, `style:` para apresentação e `fix:` para correção. Cada commit deve reunir uma mudança compreensível, sem quantidade mínima artificial.
+
+No PR, vincular a Issue, informar os arquivos/trechos alterados, como verificar e o resultado. O autor faz a conferência básica; outro integrante revisa. As correções devem mencionar o problema e receber reteste. Não repetir toda a bateria manual após uma alteração somente documental.
 
 ## Passo a passo por tarefa
 
