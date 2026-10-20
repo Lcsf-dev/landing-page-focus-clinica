@@ -3,14 +3,82 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Projeto da landing page institucional do Focus Clínica.">
-    <title>Focus Clínica — Projeto em desenvolvimento</title>
+    <meta name="description" content="Conheça o Focus Clínica: calendário, agendamentos, notificações e especialidades para uma rotina clínica mais organizada.">
+    <meta name="theme-color" content="#123f40">
+    <title>Focus Clínica — Mais foco no cuidado</title>
+    <link rel="icon" href="img/simbolo-focus.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="css/estilos.css">
+    <script type="module" src="js/principal.js"></script>
   </head>
   <body>
-    <!-- Estrutura inicial: implementar as seções após a aprovação do Figma. -->
-    <main>
-      <h1>Focus Clínica</h1>
-      <p>Landing page em desenvolvimento. Etapa atual: planejamento e protótipo.</p>
+    <a class="pular-conteudo" href="#conteudo">Pular para o conteúdo</a>
+    <header class="cabecalho">
+      <div class="container cabecalho__interno">
+        <a class="marca" href="#inicio" aria-label="Focus Clínica, início"><img src="img/simbolo-focus.svg" alt="" width="40" height="40"><span>Focus<span class="marca__detalhe">Clínica</span></span></a>
+        <button class="botao-menu" type="button" aria-controls="navegacao" aria-expanded="false" aria-label="Abrir menu" hidden><svg class="icone" aria-hidden="true"><use href="img/icones.svg#menu"></use></svg></button>
+        <nav class="navegacao" id="navegacao" aria-label="Navegação principal">
+          <a href="#sobre">Sobre</a><a href="#funcionalidades">Funcionalidades</a><a href="#beneficios">Benefícios</a><a href="#demonstracao">Demonstração</a>
+          <a class="botao botao--pequeno" href="https://focus-clinica.netlify.app/" target="_blank" rel="noopener noreferrer">Acessar sistema <svg class="icone" aria-hidden="true"><use href="img/icones.svg#seta"></use></svg></a>
+        </nav>
+      </div>
+    </header>
+    <main id="conteudo">
+      <section class="hero" id="inicio" aria-labelledby="titulo-principal">
+        <div class="container hero__grade">
+          <div class="hero__texto">
+            <p class="etiqueta"><span class="ponto"></span> Gestão clínica com mais clareza</p>
+            <h1 id="titulo-principal">Mais organização.<br>Mais foco <span>no cuidado.</span></h1>
+            <p class="hero__descricao">Conheça o Focus Clínica: um sistema para organizar agendas, acompanhar agendamentos e acessar as informações da rotina clínica.</p>
+            <div class="acoes"><a class="botao" href="#funcionalidades">Conhecer funcionalidades <svg class="icone" aria-hidden="true"><use href="img/icones.svg#seta"></use></svg></a><a class="link-destaque" href="#demonstracao"><svg class="icone" aria-hidden="true"><use href="img/icones.svg#janela"></use></svg> Ver o sistema</a></div>
+            <p class="hero__publico">Para clínicas, gestores e profissionais da saúde.</p>
+          </div>
+          <div class="hero__visual">
+            <div class="janela janela--hero"><div class="janela__barra" aria-hidden="true"><span class="janela__pontos"><i></i><i></i><i></i></span><span>focus-clinica.netlify.app</span><svg class="icone"><use href="img/icones.svg#janela"></use></svg></div><img class="hero__captura" src="img/apresentacao-focus-clinica.jpg" alt="Tela pública de apresentação do Focus Clínica com o botão de acesso do cliente." width="2560" height="1270" fetchpriority="high"></div>
+            <div class="nota-interface"><span class="nota-interface__icone"><svg class="icone" aria-hidden="true"><use href="img/icones.svg#check"></use></svg></span><span><strong>Conheça antes de acessar</strong><small>Captura real da apresentação do sistema</small></span></div>
+            <span class="ornamento ornamento--um" aria-hidden="true">+</span><span class="ornamento ornamento--dois" aria-hidden="true">+</span>
+          </div>
+        </div>
+        <div class="container faixa-recursos" aria-label="Principais funcionalidades">
+          <span><svg class="icone" aria-hidden="true"><use href="img/icones.svg#calendario"></use></svg> Calendário</span><span><svg class="icone" aria-hidden="true"><use href="img/icones.svg#relogio"></use></svg> Agendamentos</span><span><svg class="icone" aria-hidden="true"><use href="img/icones.svg#sino"></use></svg> Notificações</span><span><svg class="icone" aria-hidden="true"><use href="img/icones.svg#camadas"></use></svg> Especialidades</span>
+        </div>
+      </section>
+      <section class="sobre secao" id="sobre" aria-labelledby="titulo-sobre">
+        <div class="container sobre__grade"><div data-revelar><p class="sobretitulo">01 / Sobre o Focus</p><h2 id="titulo-sobre">A rotina da clínica<br>vista com <em>mais clareza.</em></h2></div><div class="sobre__conteudo" data-revelar><p>Organizar uma clínica passa por acompanhar agendas, consultas e informações do atendimento. O Focus Clínica reúne funcionalidades voltadas a esse dia a dia em um sistema de gestão clínica.</p><p>Esta página apresenta o sistema para que sua equipe conheça suas possibilidades e encontre o caminho de acesso à plataforma.</p><a class="link-destaque link-destaque--claro" href="#funcionalidades">Explore os recursos <svg class="icone" aria-hidden="true"><use href="img/icones.svg#seta"></use></svg></a></div></div>
+      </section>
+      <section class="secao funcionalidades" id="funcionalidades" aria-labelledby="titulo-funcionalidades">
+        <div class="container">
+          <div class="cabecalho-secao" data-revelar><div><p class="sobretitulo">02 / Funcionalidades</p><h2 id="titulo-funcionalidades">Cada parte da rotina,<br>em seu lugar.</h2></div><p>Conheça os recursos que fazem parte da proposta do Focus Clínica.</p></div>
+          <div class="estado-api" id="estado-funcionalidades" role="status" aria-live="polite" data-somente-js><span class="indicador-carregamento" aria-hidden="true"></span><span id="mensagem-funcionalidades">Carregando funcionalidades…</span><button class="botao botao--contorno botao--pequeno" id="tentar-novamente" type="button" hidden>Tentar novamente</button></div>
+          <div class="grade-funcionalidades" id="lista-funcionalidades" aria-busy="false"></div>
+          <noscript><div class="grade-funcionalidades">
+            <article class="cartao-recurso"><span class="numero-recurso">01</span><h3>Calendário</h3><p>Uma visão da agenda para acompanhar a organização dos atendimentos.</p></article>
+            <article class="cartao-recurso"><span class="numero-recurso">02</span><h3>Agendamentos</h3><p>Informações das consultas para apoiar o acompanhamento da rotina.</p></article>
+            <article class="cartao-recurso"><span class="numero-recurso">03</span><h3>Notificações</h3><p>Avisos relacionados à rotina do sistema, reunidos para consulta.</p></article>
+            <article class="cartao-recurso"><span class="numero-recurso">04</span><h3>Especialidades</h3><p>Organização das especialidades que fazem parte do atendimento da clínica.</p></article>
+          </div><p class="observacao">Ative o JavaScript para carregar as informações atualizadas do sistema.</p></noscript>
+        </div>
+      </section>
+      <section class="secao beneficios" id="beneficios" aria-labelledby="titulo-beneficios">
+        <div class="container beneficios__grade">
+          <div class="beneficios__introducao" data-revelar><p class="sobretitulo">03 / Benefícios</p><h2 id="titulo-beneficios">Uma gestão organizada<br>abre espaço para<br><span>o que importa.</span></h2><p>Praticidade para quem acompanha a clínica. Clareza para quem precisa encontrar informações.</p><a class="link-destaque" href="#acessar">Conhecer a plataforma <svg class="icone" aria-hidden="true"><use href="img/icones.svg#seta"></use></svg></a></div>
+          <ol class="lista-beneficios"><li data-revelar><span class="lista-beneficios__numero">01</span><div><h3>Organização da rotina</h3><p>Uma referência para acompanhar agendas e informações dos agendamentos.</p></div></li><li data-revelar><span class="lista-beneficios__numero">02</span><div><h3>Praticidade no dia a dia</h3><p>Recursos de gestão clínica apresentados em uma interface de acesso direto.</p></div></li><li data-revelar><span class="lista-beneficios__numero">03</span><div><h3>Informações mais acessíveis</h3><p>Calendário, notificações e especialidades como apoio ao acompanhamento dos atendimentos.</p></div></li></ol>
+        </div>
+      </section>
+      <section class="secao demonstracao" id="demonstracao" aria-labelledby="titulo-demonstracao">
+        <div class="container">
+          <div class="cabecalho-secao" data-revelar><div><p class="sobretitulo">04 / Por dentro do Focus</p><h2 id="titulo-demonstracao">Veja o sistema<br>de perto.</h2></div><p>Capturas reais das telas públicas do Focus Clínica. Selecione uma tela para explorar.</p></div>
+          <div class="abas" role="tablist" aria-label="Telas do sistema" hidden><button id="aba-apresentacao" class="aba" role="tab" aria-selected="true" aria-controls="painel-apresentacao" tabindex="0" type="button">Apresentação</button><button id="aba-acesso" class="aba" role="tab" aria-selected="false" aria-controls="painel-acesso" tabindex="-1" type="button">Acesso do cliente</button></div>
+          <div class="painel-demonstracao" id="painel-apresentacao" role="tabpanel" aria-labelledby="aba-apresentacao" tabindex="0"><figure class="janela janela--demonstracao"><div class="janela__barra" aria-hidden="true"><span class="janela__pontos"><i></i><i></i><i></i></span><span>Focus Clínica / apresentação</span><span></span></div><a class="captura-ampliavel" href="img/apresentacao-focus-clinica.jpg" target="_blank" rel="noopener noreferrer" data-ampliar><img src="img/apresentacao-focus-clinica.jpg" alt="Apresentação pública do Focus Clínica, com título do sistema, descrição e acesso do cliente." width="2560" height="1270" loading="lazy"><span class="selo-ampliar"><svg class="icone" aria-hidden="true"><use href="img/icones.svg#ampliar"></use></svg> Ampliar captura</span></a><figcaption>Apresentação do sistema e caminho de acesso à plataforma.</figcaption></figure></div>
+          <div class="painel-demonstracao" id="painel-acesso" role="tabpanel" aria-labelledby="aba-acesso" tabindex="0"><figure class="janela janela--demonstracao"><div class="janela__barra" aria-hidden="true"><span class="janela__pontos"><i></i><i></i><i></i></span><span>Focus Clínica / acesso do cliente</span><span></span></div><a class="captura-ampliavel" href="img/acesso-focus-clinica.jpg" target="_blank" rel="noopener noreferrer" data-ampliar><img src="img/acesso-focus-clinica.jpg" alt="Tela pública de acesso do Focus Clínica, com campos de e-mail e senha e botão Entrar." width="2560" height="1270" loading="lazy"><span class="selo-ampliar"><svg class="icone" aria-hidden="true"><use href="img/icones.svg#ampliar"></use></svg> Ampliar captura</span></a><figcaption>Tela de acesso do cliente no sistema de referência.</figcaption></figure></div>
+          <p class="observacao">Imagens obtidas do sistema de referência. O acesso à plataforma abre em uma nova aba.</p>
+        </div>
+      </section>
+      <section class="chamada secao" id="acessar" aria-labelledby="titulo-chamada"><div class="container chamada__interno" data-revelar><div><p class="sobretitulo">Seu próximo passo</p><h2 id="titulo-chamada">Conheça uma nova forma<br>de organizar sua rotina.</h2><p>Explore o Focus Clínica e descubra os recursos da plataforma.</p></div><a class="botao botao--claro" href="https://focus-clinica.netlify.app/" target="_blank" rel="noopener noreferrer">Acessar Focus Clínica <svg class="icone" aria-hidden="true"><use href="img/icones.svg#seta"></use></svg></a></div></section>
     </main>
+    <footer class="rodape">
+      <div class="container rodape__principal"><div><a class="marca" href="#inicio" aria-label="Focus Clínica, voltar ao início"><img src="img/simbolo-focus.svg" alt="" width="40" height="40"><span>Focus<span class="marca__detalhe">Clínica</span></span></a><p>Organização para a gestão.<br>Mais foco no cuidado.</p></div><nav aria-label="Navegação do rodapé"><a href="#sobre">Sobre o sistema</a><a href="#funcionalidades">Funcionalidades</a><a href="#demonstracao">Demonstração</a><a href="https://focus-clinica.netlify.app/" target="_blank" rel="noopener noreferrer">Acessar sistema ↗</a></nav></div>
+      <div class="container rodape__base"><p>Focus Clínica · Projeto front-end de apresentação institucional.</p><a href="https://github.com/Lcsf-dev/landing-page-focus-clinica" target="_blank" rel="noopener noreferrer">Repositório do projeto ↗</a></div>
+    </footer>
+    <dialog class="dialogo-captura" id="dialogo-captura" aria-labelledby="titulo-captura"><div class="dialogo-captura__cabecalho"><h2 id="titulo-captura">Interface do Focus Clínica</h2><button class="botao-icone" id="fechar-captura" type="button" aria-label="Fechar captura" autofocus><svg class="icone" aria-hidden="true"><use href="img/icones.svg#fechar"></use></svg></button></div><img id="imagem-ampliada" alt="" width="2560" height="1270"></dialog>
   </body>
 </html>
