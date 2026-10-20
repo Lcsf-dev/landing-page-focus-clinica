@@ -11,10 +11,10 @@ Início: **19/10/2026**. Atualização: **20/10/2026**.
 | 📄 Oito seções da landing page | Implementadas; revisão da equipe pendente |
 | 📱 Layout responsivo e interações | Implementados; registros em [Testes](docs/testes.md) |
 | 🔌 API existente | GitHub REST API integrada aos créditos da equipe |
-| 🎨 Figma | Wireframes, três layouts e protótipo; revisão visual aprovada por Thamires |
+| 🎨 Figma | Wireframes, três layouts e protótipo navegável |
 | 🧪 Testes automatizados | Nove testes aprovados: sete da API e dois de publicação |
 | 👀 Revisão dos colegas | Pendente; não substituída pelos testes do autor |
-| 🚀 Publicação no Netlify | Configuração preparada; publicação pendente |
+| 🚀 Publicação | GitHub Pages e Netlify publicados e verificados |
 
 O projeto reúne planejamento, design, implementação, integração e evidências de teste. O Figma foi concluído após o início da programação, conforme a sequência de trabalho adotada. Datas e commits registram essa evolução.
 
@@ -50,7 +50,7 @@ A API própria anterior foi retirada desta versão e preservada no histórico Gi
 
 | Integrante | Frente |
 | --- | --- |
-| [Lucas Fernandes](https://github.com/Lcsf-dev) | Desenvolvimento e integração; criação do Figma |
+| [Lucas Fernandes](https://github.com/Lcsf-dev) | Desenvolvimento e integração |
 | [Thamires](https://github.com/thaamiresffranca) | Revisão visual e validação do Figma |
 | [Gabriel Enzo](https://github.com/genzo-dev) | Revisão da integração da API e testes adicionais |
 | [DumbRyder](https://github.com/DumbRyder) | Interface e responsividade |
@@ -61,7 +61,7 @@ As frentes indicam atribuições. Autoria, testes executados e aprovações são
 
 [Abrir Focus Clínica — Landing Page no Figma](https://www.figma.com/design/P7K5fBiCqhBsehhrR5BNqp/).
 
-Ver [telas, identidade visual e registro da revisão](docs/design.md). **Revisão visual: Thamires — aprovado em 20/10/2026.** As capturas mostram as telas públicas de apresentação e acesso. A marca usada é provisória.
+Ver [telas e identidade visual](docs/design.md). As capturas mostram as telas públicas de apresentação e acesso. A marca usada é provisória.
 
 ## 🗂️ Estrutura
 
@@ -83,16 +83,17 @@ Ver [telas, identidade visual e registro da revisão](docs/design.md). **Revisã
 
 ## 🌿 Versionamento
 
-**Issue → branch da tarefa → commits → PR → revisão → develop → revisão integrada → main → Netlify.**
+**Issue → branch da tarefa → commits → PR → revisão → develop → revisão integrada → main → GitHub Pages / Netlify.**
 
 `develop` reúne as entregas para integração; `main` recebe a versão revisada. Correções têm commits próprios, com reteste do comportamento afetado. Veja [Fluxo Git](docs/fluxo-git.md) e [Registro de alterações](docs/alteracoes.md).
 
 ## 🚀 Publicação
 
-Hospedagem escolhida: **Netlify**. Configuração versionada em `netlify.toml`: comando `npm run build`, pasta `dist`, Node 22. O site não depende de API própria ou Netlify Functions.
+Publicado em **20/10/2026**, primeiro no GitHub Pages e depois no Netlify:
 
-Endereço, data e commit publicados serão registrados em [Publicação](docs/publicacao.md) após a revisão. **<https://focus-clinica.netlify.app/> é o sistema de referência, não a publicação desta entrega.**
+- 🌐 [GitHub Pages](https://lcsf-dev.github.io/landing-page-focus-clinica/).
+- 🚀 [Netlify](https://landing-page-focus-clinica-lcsf.netlify.app/).
 
-## 📚 Documentação e referências
+Cada envio à `main` publica automaticamente. O GitHub Actions executa os nove testes antes do deploy no Pages. O Netlify usa `netlify.toml`: `npm run build`, pasta `dist`, Node 22.
 
-- [Requisitos](docs/requisitos.md) · [Planejamento](docs/planejamento.md) · [Testes e evidências](docs/testes.md).
+Detalhes e evidências em [Publicação](docs/publicacao.md). O site consome uma API existente e não depende de backend próprio.
