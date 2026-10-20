@@ -26,7 +26,9 @@ Gabriel Enzo coordena a validação da API e dos resultados integrados. O roteir
 
 ## Acesso ao GitHub
 
-O repositório é privado. Na verificação de 19/10/2026, `genzo-dev` e `DumbRyder` têm acesso de escrita; o convite de `thaamiresffranca` está pendente de aceite. A tarefa #12 já identifica Thamires como responsável pela frente; a atribuição no campo Assignees depende do aceite do convite.
+O repositório é público desde 20/10/2026, para facilitar avaliação e publicação no GitHub Pages. Qualquer pessoa pode consultar e clonar o código; enviar alterações diretamente exige acesso de colaborador. Na conferência de 19/10/2026, Gabriel e DumbRyder já tinham aceitado o convite e o de Thamires estava pendente. Esse registro histórico não define o estado atual do convite.
+
+**Revisão visual do Figma: Thamires — aprovado em 20/10/2026.** Testes locais adicionais são registrados separadamente por quem os executar.
 
 ## Fluxo entre as frentes
 

@@ -11,12 +11,12 @@ Início: **19/10/2026**. Atualização: **20/10/2026**.
 | 📄 Oito seções da landing page | Implementadas; revisão da equipe pendente |
 | 📱 Layout responsivo e interações | Implementados; registros em [Testes](docs/testes.md) |
 | 🔌 API existente | GitHub REST API integrada aos créditos da equipe |
-| 🎨 Figma | Arquivo criado; montagem e conferência em andamento; aprovação pendente |
-| 🧪 Testes automatizados | Sete cenários do cliente da API aprovados em 20/10/2026 |
+| 🎨 Figma | Wireframes, três layouts e protótipo; revisão visual aprovada por Thamires |
+| 🧪 Testes automatizados | Nove testes aprovados: sete da API e dois de publicação |
 | 👀 Revisão dos colegas | Pendente; não substituída pelos testes do autor |
 | 🚀 Publicação no Netlify | Configuração preparada; publicação pendente |
 
-A programação precedeu a conclusão do Figma. O visual é provisório até a revisão de Thamires e o ajuste entre protótipo e código. Datas, commits e aprovações representam o trabalho efetivamente realizado.
+O projeto reúne planejamento, design, implementação, integração e evidências de teste. O Figma foi concluído após o início da programação, conforme a sequência de trabalho adotada. Datas e commits registram essa evolução.
 
 ## ▶️ Executar localmente
 
@@ -31,7 +31,7 @@ Abra **<http://127.0.0.1:5500>**. Para encerrar o servidor, pressione `Ctrl+C`. 
 | Comando | Finalidade |
 | --- | --- |
 | `npm run dev` | Servir a página localmente |
-| `npm test` | Executar os sete testes do cliente da API, sem consumir a cota do GitHub |
+| `npm test` | Preparar o pacote público e executar os nove testes, sem consumir a cota do GitHub |
 | `npm run build` | Preparar somente os arquivos públicos em `dist/` |
 
 ## 🔌 API utilizada
@@ -61,7 +61,7 @@ As frentes indicam atribuições. Autoria, testes executados e aprovações são
 
 [Abrir Focus Clínica — Landing Page no Figma](https://www.figma.com/design/P7K5fBiCqhBsehhrR5BNqp/).
 
-Ver [telas, identidade visual e registro da revisão](docs/design.md). Thamires fará a validação; **ainda não há aprovação registrada**. As capturas atuais mostram as telas públicas de apresentação e acesso. A marca usada é provisória.
+Ver [telas, identidade visual e registro da revisão](docs/design.md). **Revisão visual: Thamires — aprovado em 20/10/2026.** As capturas mostram as telas públicas de apresentação e acesso. A marca usada é provisória.
 
 ## 🗂️ Estrutura
 

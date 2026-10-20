@@ -1,67 +1,51 @@
-# Briefing de design e Figma
+# Design e protótipo — Focus Clínica
 
-**Status:** briefing preparado. Não há protótipo Figma criado ou aprovado.
+**Revisão visual: Thamires (`thaamiresffranca`) — aprovado em 20/10/2026.**
 
-Em 19/10/2026, ainda não havia arquivo do protótipo no Figma. Começar pelos wireframes e validar o conteúdo antes do refinamento visual; registrar o link e a aprovação quando existirem.
+Design: Lucas Fernandes (`Lcsf-dev`). A aprovação visual é distinta dos testes locais adicionais da equipe.
 
-**Criação do protótipo:** Lucas (`Lcsf-dev`). **Revisão visual:** `thaamiresffranca`. A atribuição da revisão não significa que o protótipo já tenha sido revisado ou aprovado.
+## Arquivo e apresentação
 
-## Referências fornecidas
+- [Arquivo editável no Figma Design](https://www.figma.com/design/P7K5fBiCqhBsehhrR5BNqp/).
+- [Protótipo — computador](https://www.figma.com/proto/P7K5fBiCqhBsehhrR5BNqp/?node-id=2-12730&starting-point-node-id=2%3A12730&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1).
 
-- Sistema: <https://focus-clinica.netlify.app/>.
-- Identidade indicada: verde, azul-petróleo e branco.
-- Estilo: minimalista, elegante, profissional, com tipografia moderna e legível.
-
-Tons exatos, logotipo e tipografia devem ser obtidos da identidade do produto ou aprovados pela equipe. Este documento não substitui o arquivo Figma.
-
-## Conteúdo inicial para revisão
-
-| Seção | Proposta de conteúdo |
+| Página | Conteúdo |
 | --- | --- |
-| Cabeçalho | Marca, links Sobre / Funcionalidades / Benefícios / Demonstração e botão Acessar sistema |
-| Hero | Título: Organização para a rotina da sua clínica. Texto: Conheça o Focus Clínica e suas funcionalidades de calendário, agendamentos, notificações e especialidades. Ações: Conhecer funcionalidades / Acessar sistema |
-| Sobre | Apresentação do sistema e de sua finalidade, usando somente informações confirmadas |
-| Funcionalidades | Quatro blocos: Calendário, Agendamentos, Notificações e Especialidades |
-| Benefícios | Organização da rotina, praticidade e facilidade de acesso às informações |
-| Demonstração | Capturas reais com legendas que expliquem a interface |
-| Chamada para ação | Convite para conhecer ou acessar o sistema |
-| Rodapé | Identificação do projeto, navegação relevante e créditos reais |
+| 01 — Wireframes | Estrutura das oito seções em computador 1440 px, tablet 768 px e celular 390 px |
+| 02 — Layouts e protótipo | Três layouts com Auto Layout, textos editáveis, capturas reais e fluxos de apresentação |
+| 03 — Estilos e revisão | Paleta, tipografia, componentes reutilizáveis, estados e registro visual |
 
-Todo texto acima é proposta para o protótipo, não conteúdo já aprovado.
+## Telas e navegação
 
-## Wireframes a construir no Figma
+Cada layout contempla cabeçalho, hero, sobre, funcionalidades, benefícios, demonstração, chamada para ação e rodapé. Existem estados separados para acesso do cliente e captura ampliada.
 
-- Computador: cabeçalho horizontal; hero com texto e captura; seções com hierarquia clara; rodapé.
-- Tablet: reorganização de colunas e navegação conforme o espaço disponível.
-- Celular: coluna única; menu recolhível; imagens ajustadas à largura; botões acessíveis por toque.
-- Navegação do protótipo ligando menu e chamadas para ação aos respectivos destinos.
+Foram configurados três fluxos com rolagem vertical. No computador, o menu navega para as quatro seções; o botão de acesso abre o sistema de referência. A demonstração tem conexão para a tela de acesso e ampliação da captura, com fechamento da sobreposição.
 
-## Componentes e estados
+O protótipo apresenta o visual e os fluxos principais. A execução de fetch, a navegação completa por teclado e a responsividade efetiva são verificadas na implementação HTML/CSS/JavaScript, não deduzidas das telas do Figma.
 
-- Botão principal, secundário e link: padrão, hover e foco visível.
-- Menu móvel: fechado, aberto e navegação por teclado.
-- Bloco de funcionalidade e apresentação de captura real.
-- Área de dados da API: carregamento, sucesso, vazio e erro; posição após definição da finalidade.
-- Movimento discreto com alternativa para preferência por movimento reduzido.
+## Identidade e recursos
 
-## Critérios para aprovação
-
-- [ ] Todas as oito seções representadas.
-- [ ] Computador, tablet e celular contemplados.
-- [ ] Tipografia, cores, espaçamentos e componentes identificados.
-- [ ] Capturas reais e marca disponíveis ou pendências explicitadas.
-- [ ] Navegação do protótipo verificável.
-- [ ] Link compartilhado com acesso para a equipe.
-- [ ] Revisão e aprovação registradas com responsável e data.
-
-## Registro de aprovação
-
-| Campo | Estado |
+| Recurso | Definição |
 | --- | --- |
-| Link do Figma | Pendente |
-| Versão revisada | Pendente |
-| Responsável pelo design | Lucas (`Lcsf-dev`) |
-| Responsável pela revisão visual | `thaamiresffranca` |
-| Revisado por | Pendente |
-| Data da aprovação | Pendente |
-| Observações | Implementação visual aguardando aprovação |
+| Petróleo | `#123F40`, `#102F32` |
+| Verde | `#16765C` |
+| Menta | `#B9F2D5` |
+| Branco / fundo claro | `#FFFFFF`, `#F8FBF9` |
+| Tipografia do protótipo | Inter; implementação usa a pilha de fontes do sistema |
+| Organização | Auto Layout, camadas em português, cartões e botões reutilizáveis |
+| Capturas reais | Apresentação pública e acesso do Focus Clínica; origem registrada em img/README.md |
+| Marca | Composição provisória criada para a apresentação; não apresentada como marca oficial fornecida pelo produto |
+
+Os créditos contemplam os quatro perfis públicos da equipe, com estados de carregamento, sucesso e falha no material de estilos. Não foram criadas imagens fictícias de agendas, pacientes ou telas internas.
+
+## Registro da revisão
+
+| Campo | Registro |
+| --- | --- |
+| Versão | Layouts e protótipo de 20/10/2026 |
+| Responsável pelo design | Lucas Fernandes |
+| Revisora visual | Thamires (`thaamiresffranca`) |
+| Estado | Aprovado |
+| Data | 20/10/2026 |
+
+A programação precedeu a conclusão do Figma. Ajustes futuros no conteúdo, marca ou layout devem ser registrados e conferidos sem alterar retroativamente esta versão.
