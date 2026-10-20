@@ -1,0 +1,34 @@
+name: Problema encontrado
+description: Registrar uma falha observada durante os testes.
+title: "[Problema] "
+body:
+  - type: textarea
+    id: ambiente
+    attributes:
+      label: Ambiente e versão
+      description: Branch, commit, navegador, dispositivo e viewport.
+    validations:
+      required: true
+  - type: textarea
+    id: passos
+    attributes:
+      label: Passos para reproduzir
+    validations:
+      required: true
+  - type: textarea
+    id: esperado
+    attributes:
+      label: Resultado esperado
+    validations:
+      required: true
+  - type: textarea
+    id: observado
+    attributes:
+      label: Resultado observado e evidências
+    validations:
+      required: true
+  - type: input
+    id: cenario
+    attributes:
+      label: Cenário do plano de testes
+      placeholder: Por exemplo, CT11
