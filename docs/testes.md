@@ -10,7 +10,7 @@ Realizadas por Lucas (`Lcsf-dev`) com auxílio do Codex, sem atribuir execução
 
 | Verificação | Resultado | Evidência e limite |
 | --- | --- | --- |
-| `npm test` | 7 testes aprovados: sucesso, nome nulo, HTTP 404/403/429/500, resposta ausente/inválida, endereço inesperado, rede e timeout | `testes/api.test.mjs`; respostas simuladas, sem consumir a cota pública |
+| Cliente da API no `npm test` | 7 testes aprovados: sucesso, nome nulo, HTTP 404/403/429/500, resposta ausente/inválida, endereço inesperado, rede e timeout | `testes/api.test.mjs`; respostas simuladas, sem consumir a cota pública |
 | `npm run build` | Arquivos públicos preparados em dist | Documentação e testes não são publicados; não é um deploy |
 | Pacote estático — `testes/publicacao.test.mjs` | Dois testes aprovados: recursos/âncoras/referências acessíveis resolvem também no subdiretório do Pages; pacote exclui documentos de trabalho e credenciais locais | Executados pelo npm test após preparação automática do build |
 | API real no Chrome, Windows | Quatro perfis e avatares carregaram; estado sucesso e aria-busy false; sem erros/avisos no console capturado | [Computador](evidencias/api-github-computador.jpg) |
@@ -20,7 +20,15 @@ Realizadas por Lucas (`Lcsf-dev`) com auxílio do Codex, sem atribuir execução
 
 Os nove testes do experimento de API própria foram substituídos pelos sete casos da API escolhida. Não somar testes antigos como se validassem o GitHub.
 
-Validações adicionais do grupo: comparação com Figma, zoom 200%, navegação completa por teclado, preferência por movimento reduzido e falha/recuperação visual da API externa. As verificações da URL publicada ficam registradas após o deploy. O roteiro do Insomnia está em insomnia.md; não há execução manual registrada como realizada.
+Validações adicionais do grupo: comparação com Figma, zoom 200%, navegação completa por teclado, preferência por movimento reduzido e falha/recuperação visual da API externa. O roteiro do Insomnia está em insomnia.md; não há execução manual registrada como realizada.
+
+## Verificação das publicações em 20/10/2026
+
+Versão inicial publicada: `a5569fe`. Responsável pela conferência: Lucas (`Lcsf-dev`), com auxílio do Codex. Primeiro GitHub Pages, depois Netlify. Ambos responderam HTTP 200. Os nove testes passaram localmente e no GitHub Actions em Ubuntu / Node 22.
+
+Nas duas origens, foram conferidos CSS, capturas, aba Acesso do cliente, ampliação e fechamento com Escape, quatro perfis e avatares da API com estado sucesso e console sem erros/avisos capturados. Em 390 px, o menu abriu, navegou para Sobre e fechou; conteúdo e área útil com 375 px, sem overflow. Cabeçalhos configurados do Netlify presentes na resposta HTTP.
+
+Links, execução e evidências em [Publicação](publicacao.md). Essas verificações técnicas não alteram a coluna de testes dos colegas, que serão registrados após a execução efetiva.
 
 ## Execução por outro integrante
 

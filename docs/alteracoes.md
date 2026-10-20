@@ -27,5 +27,9 @@ Datas reais no fuso de São Paulo. Este registro resume marcos e complementa os 
 | 20/10/2026 | README atualizado com emojis e instruções; nove testes atuais aprovados | Sete casos de API e dois de publicação |
 | 20/10/2026 | Repositório alterado para público com autorização expressa | Consulta e avaliação públicas; GitHub Pages autorizado |
 | 20/10/2026 | Envio das branches e abertura dos PRs #14, #15 e #16 | Histórico organizado por entregas reais |
+| 20/10/2026 | Integração das entregas em develop e main, PRs #16 e #17; fechamento do PR #11 substituído | Histórico preservado |
+| 20/10/2026 | Workflow de testes e publicação automática, PRs #18 e #19 | Nove testes aprovados localmente e no GitHub Actions / Node 22 |
+| 20/10/2026 | Publicação primeiro no GitHub Pages e depois no Netlify, versão inicial a5569fe | HTTP 200; imagens, demonstração, menu móvel e quatro perfis da API verificados |
+| 20/10/2026 | README com links publicados e simplificação das referências e atribuições conforme solicitado | Evidências e detalhes preservados na documentação específica |
 
 Dados da publicação e verificações do endereço final ficam em publicacao.md. Testes adicionais dos integrantes são registrados após sua execução.
