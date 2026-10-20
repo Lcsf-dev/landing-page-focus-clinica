@@ -4,12 +4,12 @@
 
 | Integrante | Identificação | Responsabilidade | Situação |
 | --- | --- | --- | --- |
-| Lucas Fernandes | `Lcsf-dev` | Condução técnica, estrutura e integração das entregas | Iniciado |
-| Colega | `thaamiresffranca` | Frente a confirmar | Convite aceito; acesso de escrita confirmado |
+| Lucas Fernandes | `Lcsf-dev` | Criação do Figma, condução técnica, estrutura e integração das entregas | Confirmado; protótipo ainda não criado |
+| Colega | `thaamiresffranca` | Revisão visual do protótipo Figma | Confirmado; revisão pendente |
 | Colega | `genzo-dev` | API e coordenação dos testes | Confirmado pelo solicitante |
 | Colega | `DumbRyder` | Frente a confirmar | Convite aceito; acesso de escrita confirmado |
 
-O PDF propõe as frentes Figma/design, HTML/CSS, JavaScript e API/testes. A distribuição final deve cobrir todas elas, respeitando as contribuições reais. `genzo-dev` foi confirmado em API/testes. Os papéis dos outros dois colegas ainda precisam ser combinados.
+O PDF propõe as frentes Figma/design, HTML/CSS, JavaScript e API/testes. A distribuição final deve cobrir todas elas, respeitando as contribuições reais. Lucas criará o Figma e `thaamiresffranca` fará a revisão visual. `genzo-dev` está confirmado em API/testes. O papel de `DumbRyder` ainda precisa ser combinado.
 
 ## Para quem ficará com API e testes
 
@@ -30,9 +30,9 @@ O repositório é privado. Em 19/10/2026, a consulta ao GitHub confirmou `thaami
 
 ## Proposta de distribuição para confirmar
 
-- Lucas: condução técnica, HTML/CSS e integração das entregas.
-- Um colega: Figma/design e conferência visual.
-- Um colega: JavaScript e navegação/interações, com auxílio conforme necessário.
+- Lucas: criação do Figma, condução técnica, HTML/CSS e integração das entregas.
+- `thaamiresffranca`: revisão visual do Figma, confirmada; aprovação ainda pendente.
+- JavaScript e navegação/interações: distribuição a combinar; responsabilidade de `DumbRyder` ainda não confirmada.
 - `genzo-dev`: API e coordenação do registro dos testes, confirmado.
 
 Todos verificam suas próprias entregas antes de pedir revisão. O responsável pelos testes coordena os cenários integrados e registra resultados; isso não elimina a revisão dos demais.

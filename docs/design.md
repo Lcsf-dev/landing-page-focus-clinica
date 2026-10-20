@@ -4,6 +4,8 @@
 
 Em 19/10/2026, o solicitante confirmou que ainda não tem arquivo no Figma e pediu auxílio para criar o protótipo. Começar pelos wireframes e validar o conteúdo antes do refinamento visual; registrar o link e a aprovação quando existirem.
 
+**Criação do protótipo:** Lucas (`Lcsf-dev`). **Revisão visual:** `thaamiresffranca`, conforme divisão confirmada pelo solicitante. A atribuição da revisão não significa que o protótipo já tenha sido revisado ou aprovado.
+
 ## Referências fornecidas
 
 - Sistema: <https://focus-clinica.netlify.app/>.
@@ -58,7 +60,8 @@ Todo texto acima é proposta para o protótipo, não conteúdo já aprovado.
 | --- | --- |
 | Link do Figma | Pendente |
 | Versão revisada | Pendente |
-| Responsável pelo design | A definir |
+| Responsável pelo design | Lucas (`Lcsf-dev`) |
+| Responsável pela revisão visual | `thaamiresffranca` |
 | Revisado por | Pendente |
 | Data da aprovação | Pendente |
 | Observações | Implementação visual aguardando aprovação |
