@@ -30,6 +30,18 @@ Nas duas origens, foram conferidos CSS, capturas, aba Acesso do cliente, amplia�
 
 Links, execução e evidências em [Publicação](publicacao.md). Essas verificações técnicas não alteram a coluna de testes dos colegas, que serão registrados após a execução efetiva.
 
+## Reteste da identidade visual — 20/10/2026
+
+Alteração técnica: `e4c47bb`. Conferência técnica registrada. Logo original da referência e fonte Inter local aplicados.
+
+- Nove testes aprovados; o caso do pacote público passou a conferir também os recursos apontados pelo CSS e a presença da licença da fonte.
+- Fonte local respondeu HTTP 200 com tipo `font/woff2`; estilo calculado da página utiliza Inter.
+- Chrome em 390 e 1440 px: conteúdo/área útil de 375/375 e 1425/1425 px, respectivamente, sem overflow horizontal.
+- Logos do cabeçalho e rodapé carregados. Menu móvel abriu, navegou para Sobre e fechou com `aria-expanded` atualizado.
+- Evidências: [computador](evidencias/identidade-computador.png) e [celular](evidencias/identidade-celular.png).
+
+Essas verificações não representam execução dos testes adicionais atribuídos aos colegas.
+
 ## Execução por outro integrante
 
 Quem testa pode ser diferente de quem programou. Clonar/atualizar a branch, executar pelo README, seguir o cenário e registrar o comportamento observado. Informar navegador, dispositivo ou viewport e commit avaliado.
