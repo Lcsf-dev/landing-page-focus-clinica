@@ -1,6 +1,6 @@
 # Integração com API
 
-**Status:** escolha da API pendente. Responsável confirmado: `genzo-dev`, para API e testes. Nenhuma API foi criada ou integrada.
+**Status:** definição do contrato em planejamento. Frentes: Desenvolvimento e integração (`Lcsf-dev`) e API e testes (`genzo-dev`).
 
 ## O que o material pede
 
@@ -14,7 +14,7 @@ Preferência inicial para avaliação: consumir API existente, com documentaçã
 
 ## Proposta após análise do escopo em 19/10/2026
 
-**Proposta para avaliar com o colega responsável:** uma pequena API própria de leitura para fornecer o catálogo público de funcionalidades da landing page. Não foi implementada, escolhida definitivamente nem aprovada como substituta de eventual exigência de API externa.
+**Proposta para avaliação entre as frentes:** uma pequena API própria de leitura para fornecer o catálogo público de funcionalidades da landing page. A implementação depende da definição do contrato e da confirmação da adequação à atividade.
 
 A preferência inicial por uma API pronta dependia de encontrar dados pertinentes ao projeto. As fontes fornecidas não documentam um endpoint disponível do Focus Clínica. Usar consulta de CEP, clima ou conteúdo aleatório acrescentaria um comportamento que não está previsto na página.
 
@@ -42,13 +42,14 @@ O servidor Python do README serve arquivos estáticos e não executa uma Netlify
 
 ### Decisão final pendente
 
-O colega de API/testes e a equipe devem confirmar a adequação da API ao enunciado, usando o Netlify como plataforma definida. Se houver requisito adicional de consumir API externa, ou endpoint apropriado já disponível no Focus Clínica, reavaliar a proposta antes de implementar. As fontes atuais exigem integração, sem restringir explicitamente a origem da API.
+As frentes de Desenvolvimento e integração e de API e testes devem confirmar a adequação da API ao enunciado, usando o Netlify como plataforma definida. Se houver requisito adicional de consumir API externa, ou endpoint apropriado já disponível no Focus Clínica, reavaliar a proposta antes de implementar. As fontes atuais exigem integração, sem restringir explicitamente a origem da API.
 
 ## Contrato a preencher pelo responsável
 
 | Campo | Valor |
 | --- | --- |
-| Responsável / GitHub | `genzo-dev` |
+| Desenvolvimento e integração | Lucas (`Lcsf-dev`) |
+| API e testes | Gabriel Enzo (`genzo-dev`) |
 | Nome da API | Pendente |
 | Documentação oficial | Pendente |
 | Finalidade e seção da página | Pendente |

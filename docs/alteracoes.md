@@ -15,5 +15,7 @@ Datas reais no fuso de São Paulo. Este registro resume marcos e complementa os 
 | 19/10/2026 | Confirmação de genzo-dev como responsável por API/testes e da ausência de protótipo Figma | Responsabilidade confirmada; prototipação pendente |
 | 19/10/2026 | Escolha do Netlify para hospedagem da landing page | Plataforma confirmada; publicação pendente |
 | 19/10/2026 | Definição de Lucas como autor do Figma e thaamiresffranca como revisora visual | Criação, revisão e aprovação ainda pendentes |
+| 19/10/2026 | Organização da equipe por frentes de trabalho e distribuição das verificações de interface, responsividade e API | Responsabilidades e roteiros registrados em equipe.md e testes.md |
+| 19/10/2026 | Criação das tarefas de Revisão visual e de Validação de layout; conferência das atribuições | Convite de Thamires pendente de aceite; demais atribuições confirmadas |
 
 Figma aprovado, API integrada, testes funcionais e publicação ainda não ocorreram.

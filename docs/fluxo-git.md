@@ -4,7 +4,7 @@
 
 <https://github.com/Lcsf-dev/landing-page-focus-clinica>
 
-Visibilidade inicial: privado. O proprietário é `Lcsf-dev`. `thaamiresffranca`, `genzo-dev` e `DumbRyder` têm acesso de escrita confirmado em 19/10/2026.
+Visibilidade inicial: privado. O proprietário é `Lcsf-dev`. Gabriel Enzo e DumbRyder têm acesso de escrita; o convite de Thamires aguarda aceite na consulta mais recente de 19/10/2026.
 
 ## Branches por tarefa
 
@@ -14,7 +14,7 @@ Visibilidade inicial: privado. O proprietário é `Lcsf-dev`. `thaamiresffranca`
 - `funcionalidade/cabecalho-hero`: exemplo de tarefa futura.
 - `funcionalidade/secoes-responsivas`: exemplo de tarefa futura.
 - `funcionalidade/menu-mobile`: exemplo de tarefa futura.
-- `integracao/api`: frente reservada ao colega responsável.
+- `integracao/api`: implementação acompanhada pelas frentes Desenvolvimento e integração e API e testes.
 - `testes/cenarios-manuais`: execução e registro dos testes.
 - `correcao/<problema>`: correção delimitada após uma entrega.
 

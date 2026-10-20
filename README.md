@@ -4,9 +4,20 @@ Landing page institucional para apresentar o Focus Clínica, suas funcionalidade
 
 ## Estado atual
 
-Projeto iniciado em **19/10/2026**. Estrutura técnica preparada e planejamento documentado para revisão. A implementação visual depende do protótipo no Figma revisado e aprovado. A API ainda será definida; essa frente e os testes estão reservados ao colega indicado pela equipe.
+Projeto iniciado em **19/10/2026**. Estrutura técnica preparada e planejamento documentado para revisão. A implementação visual depende do protótipo no Figma revisado e aprovado. A definição da API é acompanhada pelas frentes de Desenvolvimento e integração e de API e testes.
 
 O HTML atual é somente um ponto de entrada de desenvolvimento. Não representa a landing page concluída.
+
+## Equipe
+
+| Integrante | Frente |
+| --- | --- |
+| Lucas Fernandes — `Lcsf-dev` | Desenvolvimento e integração |
+| Thamires — `thaamiresffranca` | Revisão visual |
+| Gabriel Enzo — `genzo-dev` | API e testes |
+| `DumbRyder` | Interface e responsividade |
+
+Ver [entregas das frentes](docs/equipe.md) e [divisão dos testes](docs/testes.md).
 
 ## Tecnologias
 
