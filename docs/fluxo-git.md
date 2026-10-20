@@ -49,3 +49,7 @@ Os PRs #10 e #11 já têm base `develop`. A versão atual local não equivale à
 Colaboradores que aceitaram o convite podem enviar branches, commits e PRs. O aceite do convite do GitHub é separado do acesso ao Figma. Testar e revisar são contribuições válidas, mas não alteram a autoria do código.
 
 Não integrar alterações em nome de uma revisão de terceiros que ainda não ocorreu. Vários commits na mesma data são normais; o que demonstra o desenvolvimento é o conteúdo das entregas e seus registros reais.
+
+## Publicação inicial
+
+A integração e publicação de 20/10/2026 ocorreram após a validação técnica; os testes locais adicionais do grupo ficaram para depois. A revisão visual do Figma foi aprovada por Thamires. Isso não representa execução antecipada dos testes dos demais integrantes.

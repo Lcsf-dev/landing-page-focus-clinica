@@ -8,7 +8,7 @@
 - Oito seções, estilos responsivos, menu, abas e ampliação implementados.
 - API REST do GitHub escolhida e integrada aos créditos, substituindo a API própria experimental.
 - Capturas das telas públicas de apresentação e acesso obtidas; sem acesso a telas internas.
-- Figma criado com três páginas e versões para computador, tablet e celular; conferência e aprovação visual pendentes.
+- Figma criado com três páginas e versões para computador, tablet e celular; revisão visual aprovada por Thamires em 20/10/2026.
 - develop criada para integração das tarefas; revisões pendentes.
 - Frentes definidas: Lucas em Desenvolvimento e integração; Thamires em Revisão visual; Gabriel Enzo em API e testes; DumbRyder em Interface e responsividade.
 - Gabriel Enzo e DumbRyder têm acesso de escrita. O convite de Thamires aguarda aceite; sua frente de Revisão visual já está registrada.
@@ -46,13 +46,13 @@ A tabela representa a sequência recomendada pelo material. A programação prec
 ## Pendências atuais
 
 - Prazos e sequência das revisões de cada frente definida em equipe.md.
-- Conferência final do Figma, acesso da revisora e aprovação; link no README.
+- Comparações e ajustes futuros de design conforme os testes do grupo; Figma aprovado e link no README.
 - Confirmar a marca oficial e se serão fornecidas capturas internas, sem dados pessoais.
 - Revisão da integração do GitHub e testes adicionais por Gabriel.
 - Canal de comunicação e prazos acordados.
 - Endereço e data da publicação Netlify; build e configuração já preparados.
 
-O arquivo Figma foi criado em 20/10/2026. O registro das telas e da revisão está em design.md. Nenhum aceite de Thamires foi registrado.
+O arquivo Figma foi criado e teve a revisão visual aprovada em 20/10/2026. Telas, recursos e aprovação estão em design.md. A publicação inicial ocorreu após a validação técnica, com testes locais adicionais do grupo posteriormente.
 
 ## Prioridades após a estrutura inicial
 
