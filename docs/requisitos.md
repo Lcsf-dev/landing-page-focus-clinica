@@ -30,7 +30,7 @@ Apresentar profissionalmente o Focus Clínica, um sistema de gestão clínica, d
 - RD01: identidade visual do Focus Clínica, com verde, azul-petróleo e branco.
 - RD02: tipografia moderna e legível; apresentação minimalista, elegante e profissional.
 - RD03: wireframes de todas as seções e protótipo navegável no Figma.
-- RD04: considerar computador, tablet e celular; revisão e aprovação antes da implementação visual.
+- RD04: considerar computador, tablet e celular. O solicitante autorizou programar antes de finalizar o Figma; o alinhamento e a aprovação do protótipo continuam necessários antes de concluir a entrega.
 - RQ01: HTML semântico, CSS organizado e classes reutilizáveis.
 - RQ02: Flexbox/Grid e media queries conforme necessário, sem rolagem horizontal indevida.
 - RQ03: legibilidade, acessibilidade e desempenho; interações por mouse, toque e teclado quando aplicável.
@@ -45,7 +45,7 @@ Apresentar profissionalmente o Focus Clínica, um sistema de gestão clínica, d
 - RA04: nunca publicar credenciais privadas no navegador ou repositório.
 - RA05: manter registro dos cenários testados e problemas corrigidos.
 
-API pronta ou própria: ainda não decidido. O material pede integração, sem exigir explicitamente a construção de uma API. Um JSON local de desenvolvimento não será apresentado como comprovação de uma API externa.
+API existente escolhida em 20/10/2026: GitHub REST API, com perfis públicos da equipe no rodapé. Contrato e documentação oficial em api.md. A API própria foi retirada desta versão; as funcionalidades da Focus são conteúdo estático. O material não informa uma API clínica obrigatória.
 
 ## Processo e entrega
 

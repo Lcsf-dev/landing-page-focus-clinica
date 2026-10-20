@@ -2,6 +2,12 @@
 
 **Status:** não publicada. Este documento é um checklist para a etapa futura.
 
+## Configuração preparada
+
+`netlify.toml`: comando `npm run build`, pasta `dist`, Node 22. Não há backend próprio. A CSP permite consultas à API do GitHub e seus avatares. O build local passou; isso não comprova publicação nem aplicação dos cabeçalhos no Netlify.
+
+Após a revisão, conectar o repositório ao Netlify usando `main` como produção. `develop` é a base de integração. Registrar URL, data, commit e testes somente após publicação efetiva.
+
 ## Dados da entrega
 
 | Campo | Valor |

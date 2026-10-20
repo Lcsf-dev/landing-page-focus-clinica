@@ -1,11 +1,15 @@
 # Planejamento
 
-## Situação em 19/10/2026
+## Situação em 20/10/2026
 
 - Estrutura inicial criada e versionada.
 - Repositório GitHub privado criado na conta `Lcsf-dev`.
 - Documentação preparada para revisão.
-- Figma, aprovação visual, escolha de API e capturas reais pendentes.
+- Oito seções, estilos responsivos, menu, abas e ampliação implementados.
+- API REST do GitHub escolhida e integrada aos créditos, substituindo a API própria experimental.
+- Capturas das telas públicas de apresentação e acesso obtidas; sem acesso a telas internas.
+- Figma criado com três páginas e versões para computador, tablet e celular; conferência e aprovação visual pendentes.
+- develop criada para integração, conforme solicitação da equipe; revisões pendentes.
 - Frentes definidas: Lucas em Desenvolvimento e integração; Thamires em Revisão visual; Gabriel Enzo em API e testes; DumbRyder em Interface e responsividade.
 - Gabriel Enzo e DumbRyder têm acesso de escrita. O convite de Thamires aguarda aceite; sua frente de Revisão visual já está registrada.
 
@@ -20,7 +24,7 @@
 | 5 | Revisão e correções | Funcionalidades disponíveis | Testes executados e problemas vinculados |
 | 6 | Publicação e verificação final | Revisão concluída | URL, data real e testes do site publicado |
 
-O estudo da API e a preparação dos testes podem ocorrer enquanto o protótipo é produzido. Após a aprovação visual, HTML/CSS e preparação de interações podem avançar em paralelo.
+A tabela representa a sequência recomendada pelo material. O solicitante autorizou antecipar a programação e concluir o Figma depois. Registrar a ordem real e ajustar o código ao visual revisado, sem inventar aprovação anterior. Thamires validará o protótipo.
 
 ## Decisões registradas
 
@@ -32,24 +36,31 @@ O estudo da API e a preparação dos testes podem ocorrer enquanto o protótipo 
 | 19/10/2026 | Manter a implementação visual pendente do Figma | Ordem expressa na documentação do Notion |
 | 19/10/2026 | Hospedar a landing page no Netlify | Escolha expressa do solicitante; publicação ainda não realizada |
 
-## Decisões em aberto
+## Decisões posteriores confirmadas em 20/10/2026
+
+- Adotar develop antes da main, com branches por tarefa e PRs.
+- Executar a implementação com auxílio do Codex; colegas revisam e registram seus próprios testes.
+- Substituir a API própria pela API existente do GitHub, documentada em api.md.
+- Concluir o Figma e preparar o material para revisão posterior da Thamires.
+
+## Pendências atuais
 
 - Prazos e sequência das revisões de cada frente definida em equipe.md.
-- Link do Figma, versões para dispositivos e aprovação.
-- Logotipo, fontes, tons exatos e capturas reais do produto.
-- API, finalidade, endpoints e formato dos dados.
+- Conferência final do Figma, acesso da revisora e aprovação; link no README.
+- Confirmar a marca oficial e se serão fornecidas capturas internas, sem dados pessoais.
+- Revisão da integração do GitHub e testes adicionais por Gabriel.
 - Canal de comunicação e prazos acordados.
-- Endereço, configuração e data de publicação no Netlify.
+- Endereço e data da publicação Netlify; build e configuração já preparados.
 
-O solicitante confirmou que ainda não existe protótipo no Figma e pediu auxílio para construí-lo. O briefing em design.md é a base para essa próxima entrega; não há aprovação visual registrada.
+O arquivo Figma foi criado em 20/10/2026. O registro das telas e da revisão está em design.md. Nenhum aceite de Thamires foi registrado.
 
 ## Prioridades após a estrutura inicial
 
 1. Acompanhar as entregas das quatro frentes e combinar os prazos de revisão.
 2. Revisar o planejamento no PR #10 e o registro inicial no PR #11; integrar somente depois da aprovação.
-3. Criar/revisar o Figma, obter os recursos visuais e registrar aprovação.
-4. Definir a API e seu contrato entre Desenvolvimento e integração e API e testes; proposta em api.md.
-5. Iniciar as tarefas de implementação por branches, com verificações pequenas por PR.
+3. Concluir e revisar o Figma, conferir os recursos visuais e registrar aprovação.
+4. Gabriel revisa o contrato da API escolhida e registra seus testes adicionais.
+5. Enviar as branches implementadas, revisar os PRs e integrar pela develop.
 6. Executar testes integrados e conferir novamente o endereço publicado.
 
 Os modelos de Issues e Pull Requests estão na branch de planejamento; sua disponibilização na branch padrão depende da integração do PR #10.
