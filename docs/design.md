@@ -2,6 +2,8 @@
 
 **Status:** briefing preparado. Não há protótipo Figma criado ou aprovado.
 
+Em 19/10/2026, o solicitante confirmou que ainda não tem arquivo no Figma e pediu auxílio para criar o protótipo. Começar pelos wireframes e validar o conteúdo antes do refinamento visual; registrar o link e a aprovação quando existirem.
+
 ## Referências fornecidas
 
 - Sistema: <https://focus-clinica.netlify.app/>.

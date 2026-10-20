@@ -5,11 +5,11 @@
 | Integrante | Identificação | Responsabilidade | Situação |
 | --- | --- | --- | --- |
 | Lucas Fernandes | `Lcsf-dev` | Condução técnica, estrutura e integração das entregas | Iniciado |
-| Colega responsável por API e testes | Nome e GitHub pendentes | Escolha/estudo da API, integração combinada e registro dos testes | Frente reservada conforme conversa |
-| Colega 3 | Nome e GitHub pendentes | A definir com a equipe | Pendente |
-| Colega 4 | Nome e GitHub pendentes | A definir com a equipe | Pendente |
+| Colega | `thaamiresffranca` | Frente a confirmar | Convite aceito; acesso de escrita confirmado |
+| Colega | `genzo-dev` | API e coordenação dos testes | Confirmado pelo solicitante |
+| Colega | `DumbRyder` | Frente a confirmar | Convite aceito; acesso de escrita confirmado |
 
-O PDF propõe as frentes Figma/design, HTML/CSS, JavaScript e API/testes. A distribuição final deve cobrir todas elas, respeitando as contribuições reais. Não foram atribuídas entregas concluídas a colegas não identificados.
+O PDF propõe as frentes Figma/design, HTML/CSS, JavaScript e API/testes. A distribuição final deve cobrir todas elas, respeitando as contribuições reais. `genzo-dev` foi confirmado em API/testes. Os papéis dos outros dois colegas ainda precisam ser combinados.
 
 ## Para quem ficará com API e testes
 
@@ -26,7 +26,16 @@ O PDF propõe as frentes Figma/design, HTML/CSS, JavaScript e API/testes. A dist
 
 ## Acesso ao GitHub
 
-O repositório é privado. Os colegas só terão acesso após serem convidados e aceitarem o convite. Usuários ainda não informados; convites pendentes. O solicitante confirmou que enviará os usuários depois, quando os colegas responderem.
+O repositório é privado. Em 19/10/2026, a consulta ao GitHub confirmou `thaamiresffranca`, `genzo-dev` e `DumbRyder` como colaboradores com permissão `write`. Não havia convites pendentes nessa consulta.
+
+## Proposta de distribuição para confirmar
+
+- Lucas: condução técnica, HTML/CSS e integração das entregas.
+- Um colega: Figma/design e conferência visual.
+- Um colega: JavaScript e navegação/interações, com auxílio conforme necessário.
+- `genzo-dev`: API e coordenação do registro dos testes, confirmado.
+
+Todos verificam suas próprias entregas antes de pedir revisão. O responsável pelos testes coordena os cenários integrados e registra resultados; isso não elimina a revisão dos demais.
 
 ## Responsabilidades de todos
 
