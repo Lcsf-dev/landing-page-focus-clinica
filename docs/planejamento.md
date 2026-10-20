@@ -30,6 +30,7 @@ O estudo da API e a preparação dos testes podem ocorrer enquanto o protótipo 
 | 19/10/2026 | Repositório inicialmente privado | Convites serão enviados após identificação dos colegas |
 | 19/10/2026 | Reservar API e testes ao colega interessado | Nome e usuário GitHub aguardados |
 | 19/10/2026 | Manter a implementação visual pendente do Figma | Ordem expressa na documentação do Notion |
+| 19/10/2026 | Hospedar a landing page no Netlify | Escolha expressa do solicitante; publicação ainda não realizada |
 
 ## Decisões em aberto
 
@@ -38,7 +39,7 @@ O estudo da API e a preparação dos testes podem ocorrer enquanto o protótipo 
 - Logotipo, fontes, tons exatos e capturas reais do produto.
 - API, finalidade, endpoints e formato dos dados.
 - Canal de comunicação e prazos acordados.
-- Plataforma e data de publicação.
+- Endereço, configuração e data de publicação no Netlify.
 
 O solicitante confirmou que ainda não existe protótipo no Figma e pediu auxílio para construí-lo. O briefing em design.md é a base para essa próxima entrega; não há aprovação visual registrada.
 

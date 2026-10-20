@@ -32,9 +32,9 @@ O serviço seria apenas um catálogo público de apresentação. Não depende de
 - Uso na interface: montar os blocos da seção Funcionalidades a partir da resposta.
 - Casos a tratar: carregamento, sucesso, lista vazia, falha HTTP/rede e resposta inesperada.
 
-### Possível hospedagem
+### Plataforma escolhida
 
-Se a equipe escolher Netlify, uma Netlify Function pode responder ao endpoint e ser versionada/publicada junto ao site. Isso é uma opção de implementação, não uma hospedagem já configurada.
+O solicitante escolheu **Netlify** em 19/10/2026. Para a API própria proposta, uma Netlify Function pode responder ao endpoint e ser versionada/publicada junto ao site. A plataforma está definida; a API e a configuração de publicação ainda não foram implementadas.
 
 Documentação oficial consultada: <https://docs.netlify.com/build/functions/overview/> e <https://docs.netlify.com/build/functions/get-started/>.
 
@@ -42,7 +42,7 @@ O servidor Python do README serve arquivos estáticos e não executa uma Netlify
 
 ### Decisão final pendente
 
-O colega de API/testes e a equipe devem confirmar a adequação ao enunciado e escolher a hospedagem. Se houver requisito adicional de consumir API externa, ou endpoint apropriado já disponível no Focus Clínica, reavaliar a proposta antes de implementar. As fontes atuais exigem integração, sem restringir explicitamente a origem da API.
+O colega de API/testes e a equipe devem confirmar a adequação da API ao enunciado, usando o Netlify como plataforma definida. Se houver requisito adicional de consumir API externa, ou endpoint apropriado já disponível no Focus Clínica, reavaliar a proposta antes de implementar. As fontes atuais exigem integração, sem restringir explicitamente a origem da API.
 
 ## Contrato a preencher pelo responsável
 
