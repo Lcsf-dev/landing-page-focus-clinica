@@ -6,7 +6,7 @@
 - Repositório GitHub privado criado na conta `Lcsf-dev`.
 - Documentação preparada para revisão.
 - Oito seções, estilos responsivos, menu, abas e ampliação implementados.
-- API REST do GitHub escolhida e integrada aos créditos, substituindo a API própria experimental.
+- API REST do GitHub escolhida e integrada aos créditos da equipe.
 - Capturas das telas públicas de apresentação e acesso obtidas; sem acesso a telas internas.
 - Figma criado com três páginas e versões para computador, tablet e celular; revisão visual aprovada por Thamires em 20/10/2026.
 - develop criada para integração, conforme solicitação da equipe; revisões pendentes.
@@ -40,7 +40,7 @@ A tabela representa a sequência recomendada pelo material. O solicitante autori
 
 - Adotar develop antes da main, com branches por tarefa e PRs.
 - Executar a implementação com auxílio do Codex; colegas revisam e registram seus próprios testes.
-- Substituir a API própria pela API existente do GitHub, documentada em api.md.
+- Consumir a API existente do GitHub, documentada em api.md.
 - Concluir o Figma e preparar o material para revisão posterior da Thamires.
 
 ## Pendências atuais

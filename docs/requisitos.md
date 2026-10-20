@@ -45,7 +45,7 @@ Apresentar profissionalmente o Focus Clínica, um sistema de gestão clínica, d
 - RA04: nunca publicar credenciais privadas no navegador ou repositório.
 - RA05: manter registro dos cenários testados e problemas corrigidos.
 
-API existente escolhida em 20/10/2026: GitHub REST API, com perfis públicos da equipe no rodapé. Contrato e documentação oficial em api.md. A API própria foi retirada desta versão; as funcionalidades da Focus são conteúdo estático. O material não informa uma API clínica obrigatória.
+API existente escolhida em 20/10/2026: GitHub REST API, com perfis públicos da equipe no rodapé. Contrato e documentação oficial em api.md. As funcionalidades da Focus são conteúdo estático. O material não informa uma API clínica obrigatória.
 
 ## Processo e entrega
 
