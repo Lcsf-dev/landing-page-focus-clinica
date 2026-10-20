@@ -1,6 +1,6 @@
 # Fluxo de Git e GitHub
 
-Repositório: <https://github.com/Lcsf-dev/landing-page-focus-clinica> (privado).
+Repositório: <https://github.com/Lcsf-dev/landing-page-focus-clinica> (público desde 20/10/2026).
 
 ## Fluxo adotado
 

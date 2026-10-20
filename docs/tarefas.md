@@ -1,29 +1,28 @@
-# Quadro inicial de tarefas
+# Quadro de tarefas
 
-Fluxo: **A fazer → Em andamento → Em revisão → Concluído**.
+Atualização: 20/10/2026. Fluxo: **A fazer → Em andamento → Em revisão → Concluído**. Usar Issues do GitHub como quadro operacional. Prazos ainda não acordados; status Em revisão não significa aprovação.
 
-Usar Issues do GitHub como ferramenta inicial. Este quadro resume o planejamento. Prazos dependem do acordo da equipe. Os rótulos `status: a fazer`, `status: em andamento`, `status: em revisao` e `status: concluido` representam o fluxo no GitHub.
+| Tarefa / Issue | Frente | Estado | Evidência e critério restante |
+| --- | --- | --- | --- |
+| T01 — iniciar repositório | Lucas | Concluído | Estrutura inicial publicada no GitHub |
+| [T02 / #1](https://github.com/Lcsf-dev/landing-page-focus-clinica/issues/1) — planejamento | Lucas / equipe | Em revisão | PR #10 e atualização no PR #16; equipe revisa decisões |
+| [T03 / #2](https://github.com/Lcsf-dev/landing-page-focus-clinica/issues/2) — Figma | Lucas cria; Thamires valida | Concluído | Wireframes, layouts e protótipo; revisão visual aprovada em 20/10/2026 |
+| [T04 / #3](https://github.com/Lcsf-dev/landing-page-focus-clinica/issues/3) — API e contrato | Lucas / Gabriel | Em revisão | GitHub REST API escolhida; api.md e PR #16; Gabriel revisa |
+| [T05 / #4](https://github.com/Lcsf-dev/landing-page-focus-clinica/issues/4) — cabeçalho e hero | Interface / desenvolvimento | Em revisão | PR #14; comparar ao Figma aprovado |
+| [T06 / #5](https://github.com/Lcsf-dev/landing-page-focus-clinica/issues/5) — seções responsivas | Interface / desenvolvimento | Em revisão | PR #14; DumbRyder valida layout e registra resultados |
+| [T07 / #6](https://github.com/Lcsf-dev/landing-page-focus-clinica/issues/6) — interações | Lucas / revisão visual | Em revisão | PR #15; revisão independente das interações |
+| [T08 / #7](https://github.com/Lcsf-dev/landing-page-focus-clinica/issues/7) — integração | Lucas / Gabriel | Em revisão | PR #16; sete testes e consulta real aprovados; revisão de Gabriel pendente |
+| [T09 / #8](https://github.com/Lcsf-dev/landing-page-focus-clinica/issues/8) — testes adicionais | Gabriel Enzo | A fazer | Revisar integração, CT09–CT14 e consolidar resultados reais |
+| [T10 / #9](https://github.com/Lcsf-dev/landing-page-focus-clinica/issues/9) — Netlify | Lucas / equipe | A fazer | Build pronto; publicar versão revisada e verificar URL final |
+| [T11 / #12](https://github.com/Lcsf-dev/landing-page-focus-clinica/issues/12) — revisão visual | Thamires | Em andamento | Figma aprovado; testes de interface CT01–CT03, CT08 e CT15 serão registrados após execução |
+| [T12 / #13](https://github.com/Lcsf-dev/landing-page-focus-clinica/issues/13) — layout | DumbRyder | A fazer | CT04–CT07 com ambiente e evidências |
 
-| ID | Tarefa | Responsável | Prazo | Status | Critério de conclusão |
-| --- | --- | --- | --- | --- | --- |
-| T01 | Iniciar repositório e estrutura | Lucas | Sem prazo acordado | Concluído | Estrutura inicial enviada à main |
-| [T02 / #1](https://github.com/Lcsf-dev/landing-page-focus-clinica/issues/1) | Revisar planejamento e escopo | Lucas / equipe | A combinar | Em revisão | Requisitos, responsáveis e decisões revisados |
-| [T03 / #2](https://github.com/Lcsf-dev/landing-page-focus-clinica/issues/2) | Criar e aprovar Figma | Lucas cria; `thaamiresffranca` revisa | A combinar | A fazer | Link e aprovação registrados em design.md |
-| [T04 / #3](https://github.com/Lcsf-dev/landing-page-focus-clinica/issues/3) | Definir API e contrato | Desenvolvimento e integração / API e testes | A combinar | A fazer | API, finalidade, endpoint e resposta documentados |
-| [T05 / #4](https://github.com/Lcsf-dev/landing-page-focus-clinica/issues/4) | Cabeçalho e hero | Interface e responsividade / Desenvolvimento e integração | A combinar | A fazer | Figma aprovado, navegação e imagens corretas |
-| [T06 / #5](https://github.com/Lcsf-dev/landing-page-focus-clinica/issues/5) | Seções e responsividade | Interface e responsividade / Desenvolvimento e integração | A combinar | A fazer | Oito seções, sem quebra nos dispositivos testados |
-| [T07 / #6](https://github.com/Lcsf-dev/landing-page-focus-clinica/issues/6) | Menu e interações | Lucas; revisão de Thamires | A combinar | A fazer | Mouse, toque e teclado verificados |
-| [T08 / #7](https://github.com/Lcsf-dev/landing-page-focus-clinica/issues/7) | Integração da API e estados | Desenvolvimento e integração / API e testes | A combinar | A fazer | Sucesso, carregamento, vazio e falha tratados |
-| [T09 / #8](https://github.com/Lcsf-dev/landing-page-focus-clinica/issues/8) | Validação da API e consolidação dos testes | Gabriel Enzo (`genzo-dev`) | A combinar | A fazer | CT09–CT14 e resultados integrados com evidências |
-| [T10 / #9](https://github.com/Lcsf-dev/landing-page-focus-clinica/issues/9) | Publicar e testar endereço final | Lucas; validação da equipe | A combinar | A fazer | URL, data e verificação final registradas |
-| [T11 / #12](https://github.com/Lcsf-dev/landing-page-focus-clinica/issues/12) | Revisão visual do Figma e testes de interface | Thamires (`thaamiresffranca`) | A combinar | A fazer | Revisão do protótipo e CT01–CT03, CT08 e CT15 registrados |
-| [T12 / #13](https://github.com/Lcsf-dev/landing-page-focus-clinica/issues/13) | Validação de layout e responsividade | `DumbRyder` | A combinar | A fazer | CT04–CT07 registrados com ambiente e resultados |
+## Pull Requests para develop
 
-## Reservas de branches
+- [#10 — Planejamento](https://github.com/Lcsf-dev/landing-page-focus-clinica/pull/10).
+- [#11 — Verificações iniciais](https://github.com/Lcsf-dev/landing-page-focus-clinica/pull/11); cobre a estrutura inicial, não a API final.
+- [#14 — Estrutura e estilos](https://github.com/Lcsf-dev/landing-page-focus-clinica/pull/14); depende do planejamento.
+- [#15 — Menu e demonstração](https://github.com/Lcsf-dev/landing-page-focus-clinica/pull/15); depende da estrutura.
+- [#16 — API existente e entrega documentada](https://github.com/Lcsf-dev/landing-page-focus-clinica/pull/16); depende das etapas anteriores e contém o estado final.
 
-- `documentacao/planejamento`: documentação inicial em revisão.
-- `design/prototipo-figma`: reservada para links, decisões e evidências do protótipo.
-- `integracao/api`: desenvolvimento e validação da integração.
-- `testes/cenarios-manuais`: reservada ao responsável pelos testes; testes funcionais ainda não executados.
-
-As branches reservadas partem da documentação atual e podem apontar para o mesmo commit. Isso não representa trabalho realizado por outro integrante. Antes de começar, sincronizar com a main após a aprovação do planejamento. Criar branches adicionais conforme cada tarefa de implementação começar.
+Não integrar o experimento antigo da API própria como solução final. Branches reservadas ou sem commits próprios não contam como entregas. Datas e autoria devem corresponder ao trabalho real; cada colega registra sua revisão ou teste quando o executar.
