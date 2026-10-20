@@ -1,59 +1,100 @@
-# Landing Page — Focus Clínica
+# 🩺 Focus Clínica — Landing Page
 
-Landing page institucional para apresentar o Focus Clínica, suas funcionalidades e benefícios a clínicas, gestores e profissionais da saúde.
+Landing page institucional para apresentar o **Focus Clínica**, suas funcionalidades e benefícios a clínicas, gestores e profissionais da saúde.
 
-## Estado atual
+## 📍 Situação do projeto
 
-Projeto iniciado em **19/10/2026**. Estrutura técnica preparada; planejamento em elaboração. A implementação visual depende do protótipo no Figma revisado e aprovado. A API ainda será definida.
+Início: **19/10/2026**. Atualização: **20/10/2026**.
 
-O HTML atual é somente um ponto de entrada de desenvolvimento. Não representa a landing page concluída.
+| Entrega | Situação |
+| --- | --- |
+| 📄 Oito seções da landing page | Implementadas; revisão da equipe pendente |
+| 📱 Layout responsivo e interações | Implementados; registros em [Testes](docs/testes.md) |
+| 🔌 API existente | GitHub REST API integrada aos créditos da equipe |
+| 🎨 Figma | Wireframes, três layouts e protótipo; revisão visual aprovada por Thamires |
+| 🧪 Testes automatizados | Nove testes aprovados: sete da API e dois de publicação |
+| 👀 Revisão dos colegas | Pendente; não substituída pelos testes do autor |
+| 🚀 Publicação no Netlify | Configuração preparada; publicação pendente |
 
-## Tecnologias
+O projeto reúne planejamento, design, implementação, integração e evidências de teste. O Figma foi concluído após o início da programação, conforme a sequência de trabalho adotada. Datas e commits registram essa evolução.
 
-- HTML semântico.
-- CSS com Flexbox/Grid e media queries, na etapa de implementação.
-- JavaScript para menu móvel, interações e consumo de API com `fetch()`.
-- Git e GitHub para versionamento e revisão.
-- Figma para wireframes e protótipo navegável.
+## ▶️ Executar localmente
 
-## Executar localmente
-
-Pré-requisito: Python 3 instalado. Na pasta do projeto, execute:
+Pré-requisito: **Node.js 22 ou superior**, com npm. O projeto não possui dependências externas a instalar.
 
 ```powershell
-python -m http.server 5500 --bind 127.0.0.1
+npm run dev
 ```
 
-Acesse <http://127.0.0.1:5500>. Para encerrar, pressione `Ctrl+C` no terminal.
+Abra **<http://127.0.0.1:5500>**. Para encerrar o servidor, pressione `Ctrl+C`. Abra pelo servidor HTTP, não diretamente como arquivo.
 
-Use um servidor HTTP durante o desenvolvimento: abrir `index.html` diretamente como arquivo pode impedir requisições com `fetch()`.
+| Comando | Finalidade |
+| --- | --- |
+| `npm run dev` | Servir a página localmente |
+| `npm test` | Preparar o pacote público e executar os nove testes, sem consumir a cota do GitHub |
+| `npm run build` | Preparar somente os arquivos públicos em `dist/` |
 
-## Estrutura
+## 🔌 API utilizada
+
+Consumimos a **API REST do GitHub**, com `fetch()` em `GET https://api.github.com/users/{username}`. A página atualiza nome público, avatar e link dos quatro integrantes no rodapé. Não utiliza token nem dados clínicos.
+
+Os créditos básicos e as funcionalidades da Focus permanecem disponíveis se a API falhar. O cliente trata carregamento, falhas parciais, perfil ausente, resposta inválida e tempo limite. A tentativa manual repete somente perfis pendentes.
+
+- 📚 [Documentação oficial do GitHub](https://docs.github.com/en/rest/users/users#get-a-user).
+- 📝 [Contrato, finalidade e limites usados no projeto](docs/api.md).
+- 🧪 [Roteiro para o Insomnia](docs/insomnia.md) e [recorte OpenAPI para importar](docs/api.openapi.json).
+
+A API própria anterior foi retirada desta versão e preservada no histórico Git.
+
+## 👥 Equipe e frentes
+
+| Integrante | Frente |
+| --- | --- |
+| [Lucas Fernandes](https://github.com/Lcsf-dev) | Desenvolvimento e integração; criação do Figma |
+| [Thamires](https://github.com/thaamiresffranca) | Revisão visual e validação do Figma |
+| [Gabriel Enzo](https://github.com/genzo-dev) | Revisão da integração da API e testes adicionais |
+| [DumbRyder](https://github.com/DumbRyder) | Interface e responsividade |
+
+As frentes indicam atribuições. Autoria, testes executados e aprovações são registrados conforme a participação real. Veja [Equipe](docs/equipe.md), [Tarefas](docs/tarefas.md) e [divisão dos testes](docs/testes.md).
+
+## 🎨 Design
+
+[Abrir Focus Clínica — Landing Page no Figma](https://www.figma.com/design/P7K5fBiCqhBsehhrR5BNqp/).
+
+Ver [telas, identidade visual e registro da revisão](docs/design.md). **Revisão visual: Thamires — aprovado em 20/10/2026.** As capturas mostram as telas públicas de apresentação e acesso. A marca usada é provisória.
+
+## 🗂️ Estrutura
 
 ```text
 .
 ├── .github/             # Modelos de tarefas, problemas e Pull Requests
-├── css/                 # Estilos da landing page
-├── docs/                # Planejamento e evidências do projeto
-├── img/                 # Identidade visual e capturas reais do sistema
-├── js/                  # Interações e integração com API
-├── pages/               # Reservada conforme a estrutura solicitada
-├── index.html           # Ponto de entrada
+├── css/                 # Estilos e responsividade
+├── docs/                # Requisitos, decisões, testes e evidências
+├── img/                 # Capturas reais e recursos visuais
+├── js/                  # Menu, demonstração e cliente da API externa
+├── pages/               # Reservada conforme o enunciado; entrega de página única
+├── scripts/             # Servidor estático local e preparação de publicação
+├── testes/              # Testes necessários do cliente da API
+├── index.html
+├── netlify.toml
+├── package.json
 └── README.md
 ```
 
-## Documentação
+## 🌿 Versionamento
 
-A documentação será adicionada na branch de planejamento. Nenhuma entrega deve ser marcada como aprovada, testada ou publicada antes da respectiva verificação.
+**Issue → branch da tarefa → commits → PR → revisão → develop → revisão integrada → main → Netlify.**
 
-## Versionamento
+`develop` reúne as entregas para integração; `main` recebe a versão revisada. Correções têm commits próprios, com reteste do comportamento afetado. Veja [Fluxo Git](docs/fluxo-git.md) e [Registro de alterações](docs/alteracoes.md).
 
-- `main`: base revisada do projeto.
-- Uma branch por tarefa, com commits pequenos e descritivos.
-- Pull Request com contexto, forma de verificar e evidências.
-- Integração após revisão e aprovação, conforme o material da atividade.
-- Datas e autoria correspondem ao trabalho realizado. O início do projeto não representa sua conclusão.
+## 🚀 Publicação
 
-## Publicação
+Hospedagem escolhida: **Netlify**. Configuração versionada em `netlify.toml`: comando `npm run build`, pasta `dist`, Node 22. O site não depende de API própria ou Netlify Functions.
 
-Ainda não realizada. A plataforma e o endereço serão registrados após a entrega ser revisada.
+Endereço, data e commit publicados serão registrados em [Publicação](docs/publicacao.md) após a revisão. **<https://focus-clinica.netlify.app/> é o sistema de referência, não a publicação desta entrega.**
+
+## 📚 Documentação e referências
+
+- [Requisitos](docs/requisitos.md) · [Planejamento](docs/planejamento.md) · [Testes e evidências](docs/testes.md).
+- Guia de Responsabilidades — Projeto Front-End, PDF fornecido pela equipe.
+- [Notion do projeto](https://app.notion.com/p/DOCUMENTA-O-DO-PROJETO-FRONT-END-3feeed34bfcc8000b011c7579a7b824e), conferido pelo texto e pelas três capturas fornecidos no chat.

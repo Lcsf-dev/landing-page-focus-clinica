@@ -1,0 +1,46 @@
+name: Tarefa
+description: Planejar uma entrega com responsável e critério de conclusão.
+title: "[Tarefa] "
+body:
+  - type: textarea
+    id: objetivo
+    attributes:
+      label: Objetivo e escopo
+      description: Descreva o resultado e os requisitos relacionados.
+    validations:
+      required: true
+  - type: input
+    id: responsavel
+    attributes:
+      label: Responsável
+      placeholder: Nome e usuário GitHub, ou A definir
+    validations:
+      required: true
+  - type: input
+    id: prazo
+    attributes:
+      label: Prazo acordado
+      placeholder: Data combinada, ou A combinar
+  - type: dropdown
+    id: situacao
+    attributes:
+      label: Status
+      options:
+        - A fazer
+        - Em andamento
+        - Em revisão
+        - Concluído
+    validations:
+      required: true
+  - type: textarea
+    id: dependencias
+    attributes:
+      label: Dependências
+      description: Aprovações, arquivos ou decisões necessários antes da entrega.
+  - type: textarea
+    id: criterio
+    attributes:
+      label: Critério de conclusão
+      description: Como verificar objetivamente que a tarefa está pronta.
+    validations:
+      required: true
