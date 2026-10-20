@@ -18,7 +18,7 @@ Realizadas por Lucas (`Lcsf-dev`) com auxílio do Codex, sem atribuir execução
 | `node --check js/principal.js` e `git diff --check` | Aprovados | Sintaxe e whitespace, sem auditar toda a interface |
 | Interface antes da substituição da API | Menu móvel abriu/fechou ao navegar; abas funcionaram por clique/teclado; Escape fechou diálogo e devolveu foco; layouts em 360, 390, 768 e 1440 px sem overflow | [Prévia desktop](evidencias/previa-computador.jpg) e [celular](evidencias/previa-celular.jpg). Não comprovam a API atual nem aderência ao Figma aprovado |
 
-Os nove testes do experimento de API própria foram substituídos pelos sete casos da API escolhida. Não somar testes antigos como se validassem o GitHub.
+O total atual é de nove testes: sete casos do cliente da API REST do GitHub e dois do pacote de publicação.
 
 Validações adicionais do grupo: comparação com Figma, zoom 200%, navegação completa por teclado, preferência por movimento reduzido e falha/recuperação visual da API externa. O roteiro do Insomnia está em insomnia.md; não há execução manual registrada como realizada.
 
