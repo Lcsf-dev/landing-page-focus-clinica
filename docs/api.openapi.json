@@ -1,0 +1,31 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "Focus Clínica — consumo da API REST do GitHub",
+    "version": "1.0.0",
+    "description": "Recorte do endpoint externo usado pela landing page para importação no Insomnia. Não é uma API criada pela equipe nem substitui a documentação oficial do GitHub."
+  },
+  "externalDocs": { "description": "Documentação oficial: Get a user", "url": "https://docs.github.com/en/rest/users/users#get-a-user" },
+  "servers": [{ "url": "https://api.github.com" }],
+  "paths": {
+    "/users/{usuario}": {
+      "get": {
+        "operationId": "consultarPerfilPublico",
+        "summary": "Consultar perfil público de um integrante",
+        "parameters": [{ "name": "usuario", "in": "path", "required": true, "description": "Exemplos da equipe: Lcsf-dev, thaamiresffranca, genzo-dev e DumbRyder.", "schema": { "type": "string", "default": "Lcsf-dev" } }],
+        "responses": {
+          "200": {
+            "description": "Perfil público. A resposta completa possui outros campos que não são usados pela página.",
+            "content": { "application/json": { "schema": { "type": "object", "required": ["login", "name", "html_url", "avatar_url"], "properties": {
+              "login": { "type": "string" }, "name": { "type": "string", "nullable": true }, "html_url": { "type": "string", "format": "uri" }, "avatar_url": { "type": "string", "format": "uri" }
+            } } } }
+          },
+          "403": { "description": "Acesso recusado ou limite de requisições; conferir a resposta e os cabeçalhos." },
+          "404": { "description": "Perfil não encontrado." },
+          "429": { "description": "Limite de requisições atingido." }
+        },
+        "security": []
+      }
+    }
+  }
+}
