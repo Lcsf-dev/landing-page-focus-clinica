@@ -69,7 +69,7 @@ Nenhuma entrega deve ser marcada como aprovada, testada ou publicada antes da re
 
 ## Publicação
 
-Ainda não realizada. A plataforma e o endereço serão registrados após a entrega ser revisada.
+Plataforma escolhida: **Netlify**, confirmada em 19/10/2026. Publicação ainda não realizada; endereço e data serão registrados após a entrega ser revisada.
 
 ## Referências
 

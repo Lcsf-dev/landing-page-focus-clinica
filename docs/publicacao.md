@@ -6,7 +6,7 @@
 
 | Campo | Valor |
 | --- | --- |
-| Plataforma | A definir: Netlify, Vercel, GitHub Pages ou outra aceita |
+| Plataforma | Netlify em 19/10/2026 |
 | Endereço da landing page | Pendente |
 | Data de publicação | Pendente |
 | Commit publicado | Pendente |
