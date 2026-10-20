@@ -8,6 +8,7 @@
   "scripts": {
     "dev": "node scripts/servidor-local.mjs",
     "build": "node scripts/preparar-publicacao.mjs",
-    "test": "node --test testes/api.test.mjs"
+    "pretest": "node scripts/preparar-publicacao.mjs",
+    "test": "node --test testes/api.test.mjs testes/publicacao.test.mjs"
   }
 }
