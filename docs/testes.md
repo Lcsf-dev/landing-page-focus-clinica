@@ -2,7 +2,24 @@
 
 **Responsável pela coordenação dos testes:** `genzo-dev`.
 
-**Situação inicial:** testes funcionais e de publicação ainda não executados. A estrutura inicial não implementa as funcionalidades abaixo. Não confundir planejamento de teste com teste aprovado.
+**Situação em 20/10/2026:** sete testes automatizados da API externa aprovados e verificações técnicas locais registradas abaixo. Revisão dos colegas e testes da publicação pendentes. Não confundir planejamento, teste do autor e aprovação de terceiros.
+
+## Execuções técnicas em 20/10/2026
+
+Verificações registradas sem atribuir execução aos colegas. Cliente da API avaliado no commit `13081b8`; os commits documentais seguintes não alteram esse cliente.
+
+| Verificação | Resultado | Evidência e limite |
+| --- | --- | --- |
+| `npm test` | 7 testes aprovados: sucesso, nome nulo, HTTP 404/403/429/500, resposta ausente/inválida, endereço inesperado, rede e timeout | `testes/api.test.mjs`; respostas simuladas, sem consumir a cota pública |
+| `npm run build` | Arquivos públicos preparados em dist | Documentação e testes não são publicados; não é um deploy |
+| API real no Chrome, Windows | Quatro perfis e avatares carregaram; estado sucesso e aria-busy false; sem erros/avisos no console capturado | [Computador](evidencias/api-github-computador.jpg) |
+| Créditos em 390 e 1440 px | Sem overflow: conteúdo/área útil 375/375 e 1425/1425 px; quatro perfis preservados | [Celular](evidencias/api-github-celular.jpg); área útil exclui a barra de rolagem |
+| `node --check js/principal.js` e `git diff --check` | Aprovados | Sintaxe e whitespace, sem auditar toda a interface |
+| Interface antes da substituição da API | Menu móvel abriu/fechou ao navegar; abas funcionaram por clique/teclado; Escape fechou diálogo e devolveu foco; layouts em 360, 390, 768 e 1440 px sem overflow | [Prévia desktop](evidencias/previa-computador.jpg) e [celular](evidencias/previa-celular.jpg). Não comprovam a API atual nem aderência ao Figma aprovado |
+
+Os nove testes do experimento de API própria foram substituídos pelos sete casos da API escolhida. Não somar testes antigos como se validassem o GitHub.
+
+Ainda necessários: comparação com Figma aprovado, zoom 200%, navegação completa por teclado, preferência por movimento reduzido e falha/recuperação visual da API externa, além da URL publicada. O roteiro do Insomnia está em insomnia.md; não há execução manual registrada como realizada.
 
 ## Execução por outro integrante
 
@@ -10,7 +27,7 @@ Quem testa pode ser diferente de quem programou. Clonar/atualizar a branch, exec
 
 ## Divisão e momento dos testes
 
-O plano atribui API/testes a um integrante e revisão/teste final a todos. O plano abaixo distribui essa responsabilidade sem criar uma suíte automatizada adicional.
+O plano atribui API/testes a um integrante e revisão/teste final a todos. O plano distribui as validações adicionais; a suíte existente cobre somente os cenários necessários do cliente da API.
 
 | Etapa | Responsável | Cenários | Quando executar |
 | --- | --- | --- | --- |
@@ -38,7 +55,7 @@ O responsável registra ambiente, commit, resultado observado e evidência curta
 
 ## Cenários planejados
 
-| ID | Cenário | Procedimento | Resultado esperado | Estado |
+| ID | Cenário | Procedimento | Resultado esperado | Validação dos colegas |
 | --- | --- | --- | --- | --- |
 | CT01 | Links e navegação | Acionar cada link do menu e chamadas para ação | Destino correto, sem links quebrados | Não executado |
 | CT02 | Menu móvel | Abrir, fechar e escolher seção em tela pequena | Menu e estado do botão consistentes | Não executado |
@@ -97,4 +114,4 @@ Executado em 19/10/2026 durante a preparação local:
 | Resolução de 10 links locais Markdown no README | Aprovado | Não verifica disponibilidade de URLs externas |
 | HTML inicial com `lang="pt-BR"` e um `main` | Aprovado | Não é auditoria completa de acessibilidade ou HTML |
 
-Não foram executados testes de navegador, responsividade, integração com API ou publicação. O validador YAML via Python não estava disponível; os modelos de Issues receberam apenas conferência manual de estrutura.
+Na conferência inicial de 19/10/2026 não haviam sido executados testes de navegador, responsividade, API ou publicação. As verificações posteriores estão no início deste documento. O validador YAML via Python não estava disponível; os modelos de Issues receberam apenas conferência manual de estrutura.
