@@ -40,9 +40,7 @@ Os créditos básicos e as funcionalidades da Focus permanecem disponíveis se a
 
 - 📚 [Documentação oficial do GitHub](https://docs.github.com/en/rest/users/users#get-a-user).
 - 📝 [Contrato, finalidade e limites usados no projeto](docs/api.md).
-- 🧪 [Roteiro para o Insomnia](docs/insomnia.md) e [recorte OpenAPI para importar](docs/api.openapi.json).
-
-A API própria anterior foi retirada desta versão e preservada no histórico Git.
+- 🧪 [Roteiro para o Insomnia](docs/insomnia.md) e [arquivo de importação dos endpoints no Insomnia](docs/api.openapi.json).
 
 ## 👥 Equipe e frentes
 
@@ -93,5 +91,3 @@ Publicado em **20/10/2026**, primeiro no GitHub Pages e depois no Netlify:
 - 🚀 [Netlify](https://landing-page-focus-clinica-lcsf.netlify.app/).
 
 Cada envio à `main` publica automaticamente. O GitHub Actions executa os nove testes antes do deploy no Pages. O Netlify usa `netlify.toml`: `npm run build`, pasta `dist`, Node 22.
-
-Detalhes e evidências em [Publicação](docs/publicacao.md). O site consome uma API existente e não depende de backend próprio.

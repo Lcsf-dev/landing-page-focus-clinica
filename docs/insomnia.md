@@ -13,6 +13,8 @@ O serviço testado é a **API REST do GitHub**, não uma API criada pela equipe.
 
 Documentação oficial: <https://docs.github.com/en/rest/users/users#get-a-user>.
 
+O arquivo utiliza o padrão OpenAPI para descrever a requisição. OpenAPI não é OpenAI e não adiciona inteligência artificial à integração.
+
 ## Verificações necessárias
 
 | Verificação | Onde | Resultado esperado |
