@@ -38,6 +38,8 @@ O protótipo apresenta o visual e os fluxos principais. A execução de fetch, a
 
 Os créditos contemplam os quatro perfis públicos da equipe, com estados de carregamento, sucesso e falha no material de estilos. Não foram criadas imagens fictícias de agendas, pacientes ou telas internas.
 
+Em 20/10/2026, o logo original da referência foi aplicado aos cabeçalhos e rodapés dos três layouts do Figma e ao site. A Inter foi incluída localmente a partir do [repositório oficial](https://github.com/rsms/inter), com sua licença em css/fontes/LICENCA-Inter.txt. [Evidência do Figma atualizado](evidencias/figma-logo-original.png).
+
 ## Registro da revisão
 
 | Campo | Registro |

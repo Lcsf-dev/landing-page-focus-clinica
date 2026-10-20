@@ -1,72 +1,56 @@
 # Planejamento
 
-## Situação em 20/10/2026
+## Situação atual — 20/10/2026
 
-- Estrutura inicial criada e versionada.
-- Repositório GitHub privado criado na conta `Lcsf-dev`.
-- Documentação preparada para revisão.
-- Oito seções, estilos responsivos, menu, abas e ampliação implementados.
-- API REST do GitHub escolhida e integrada aos créditos da equipe.
-- Capturas das telas públicas de apresentação e acesso obtidas; sem acesso a telas internas.
-- Figma criado com três páginas e versões para computador, tablet e celular; revisão visual aprovada por Thamires em 20/10/2026.
-- develop criada para integração, conforme solicitação da equipe; revisões pendentes.
-- Frentes definidas: Lucas em Desenvolvimento e integração; Thamires em Revisão visual; Gabriel Enzo em API e testes; DumbRyder em Interface e responsividade.
-- Gabriel Enzo e DumbRyder têm acesso de escrita. O convite de Thamires aguarda aceite; sua frente de Revisão visual já está registrada.
+Prazo de entrega informado: **14/11/2026**. Canal de comunicação da equipe: **WhatsApp**. Organização das tarefas: **Issues do GitHub**, no fluxo A fazer → Em andamento → Em revisão → Concluído.
 
-## Etapas
-
-| Ordem | Entrega | Dependência | Evidência |
-| --- | --- | --- | --- |
-| 1 | Objetivo, seções, responsáveis e API definidos | Alinhamento da equipe | Issues e decisões registradas |
-| 2 | Wireframes e protótipo no Figma aprovados | Identidade visual e conteúdo | Link, versão e aprovação identificada |
-| 3 | Seções em HTML/CSS | Etapa 2 | Branch, commits, PR e capturas de implementação |
-| 4 | Interações e integração | Contratos de interface e API definidos | PRs com forma de verificar |
-| 5 | Revisão e correções | Funcionalidades disponíveis | Testes executados e problemas vinculados |
-| 6 | Publicação e verificação final | Revisão concluída | URL, data real e testes do site publicado |
-
-A tabela representa a sequência recomendada pelo material. O solicitante autorizou antecipar a programação e concluir o Figma depois. Registrar a ordem real e ajustar o código ao visual revisado, sem inventar aprovação anterior. Thamires validará o protótipo.
-
-## Decisões registradas
-
-| Data | Decisão | Contexto |
+| Etapa | Situação | Evidência |
 | --- | --- | --- |
-| 19/10/2026 | Iniciar o projeto local e criar repositório no GitHub | Autorização expressa no chat |
-| 19/10/2026 | Repositório inicialmente privado | Convites serão enviados após identificação dos colegas |
-| 19/10/2026 | Reservar API e testes ao colega interessado | Nome e usuário GitHub aguardados |
-| 19/10/2026 | Manter a implementação visual pendente do Figma | Ordem expressa na documentação do Notion |
-| 19/10/2026 | Hospedar a landing page no Netlify | Escolha expressa do solicitante; publicação ainda não realizada |
+| Planejamento e divisão das frentes | Registrados; revisões adicionais da equipe em aberto | [Requisitos](requisitos.md), [Equipe](equipe.md) e [Tarefas](tarefas.md) |
+| Figma | Wireframes, três layouts e protótipo concluídos; revisão visual aprovada por Thamires | [Design](design.md) |
+| Implementação | Oito seções, responsividade, menu, abas e ampliação concluídos | HTML, CSS e JavaScript integrados à main |
+| Identidade visual | Logo original obtido do sistema de referência; Inter hospedada localmente | [Recursos visuais](../img/README.md) e css/fontes |
+| API | GitHub REST API integrada aos créditos, com tratamento de falhas | [Contrato](api.md) e sete testes do cliente |
+| Testes técnicos | Nove testes automatizados aprovados e verificações dos endereços publicados registradas | [Testes](testes.md) |
+| Publicação | GitHub Pages e Netlify publicados em 20/10/2026, com atualização automática pela main | [Publicação](publicacao.md) |
+| Validação adicional da equipe | Pendente de execução e registro pelos integrantes | Cenários distribuídos em testes.md |
 
-## Decisões posteriores confirmadas em 20/10/2026
+## Endereços publicados
 
-- Adotar develop antes da main, com branches por tarefa e PRs.
-- Executar a implementação com auxílio do Codex; colegas revisam e registram seus próprios testes.
-- Consumir a API existente do GitHub, documentada em api.md.
-- Concluir o Figma e preparar o material para revisão posterior da Thamires.
+- GitHub Pages: <https://lcsf-dev.github.io/landing-page-focus-clinica/>.
+- Netlify: <https://landing-page-focus-clinica-lcsf.netlify.app/>.
+- Repositório público: <https://github.com/Lcsf-dev/landing-page-focus-clinica>.
+- Figma: <https://www.figma.com/design/P7K5fBiCqhBsehhrR5BNqp/>.
 
-## Pendências atuais
+## Frentes e próximas atividades
 
-- Prazos e sequência das revisões de cada frente definida em equipe.md.
-- Comparações e ajustes futuros de design conforme os testes do grupo; Figma aprovado e link no README.
-- Confirmar a marca oficial e se serão fornecidas capturas internas, sem dados pessoais.
-- Revisão da integração do GitHub e testes adicionais por Gabriel.
-- Canal de comunicação e prazos acordados.
-- Endereço e data da publicação Netlify; build e configuração já preparados.
+| Integrante | Frente | Próxima atividade |
+| --- | --- | --- |
+| Lucas Fernandes (`Lcsf-dev`) | Desenvolvimento e integração | Acompanhar revisões e corrigir problemas efetivamente encontrados |
+| Thamires (`thaamiresffranca`) | Revisão visual | Conferir a interface implementada e registrar CT01–CT03, CT08 e CT15 |
+| Gabriel Enzo (`genzo-dev`) | API e testes | Revisar o contrato e a integração; registrar CT09–CT14 e consolidar resultados |
+| `DumbRyder` | Interface e responsividade | Comparar as telas com o Figma e registrar CT04–CT07 |
 
-O arquivo Figma foi criado e teve a revisão visual aprovada em 20/10/2026. Telas, recursos e aprovação estão em design.md. O solicitante autorizou a publicação inicial após a validação técnica, com testes locais adicionais do grupo posteriormente.
+Todos participam da conferência da versão publicada (CT16). Os prazos individuais de revisão ainda precisam ser combinados antes da entrega em 14/11/2026. Os resultados devem identificar o ambiente, o commit e quem executou a atividade.
 
-## Prioridades após a estrutura inicial
+## Pendências reais
 
-1. Acompanhar as entregas das quatro frentes e combinar os prazos de revisão.
-2. Revisar o planejamento no PR #10 e o registro inicial no PR #11; integrar somente depois da aprovação.
-3. Concluir e revisar o Figma, conferir os recursos visuais e registrar aprovação.
-4. Gabriel revisa o contrato da API escolhida e registra seus testes adicionais.
-5. Enviar as branches implementadas, revisar os PRs e integrar pela develop.
-6. Executar testes integrados e conferir novamente o endereço publicado.
+- Revisões e testes adicionais dos colegas, incluindo comparação com Figma, teclado, zoom, movimento reduzido e estados visuais da API.
+- Registro e correção de problemas que surgirem nessas verificações, com reteste dos comportamentos afetados.
+- Consolidação final dos resultados e atualização das Issues antes da entrega.
 
-Os modelos de Issues e Pull Requests estão na branch de planejamento; sua disponibilização na branch padrão depende da integração do PR #10.
+Capturas internas adicionais são opcionais e dependem de material fornecido pela equipe, sem dados pessoais. A entrega atual utiliza capturas reais das telas públicas de apresentação e acesso.
 
-## Datas e autoria
+## Histórico das decisões
 
-Vários commits em um dia são válidos. Eles representam as mudanças reais daquele dia. Não distribuir artificialmente commits por datas anteriores nem registrar aprovações ou contribuição de terceiros sem que tenham ocorrido.
+| Data | Decisão |
+| --- | --- |
+| 19/10/2026 | Iniciar o projeto local, organizar responsabilidades e criar o repositório, inicialmente privado |
+| 19/10/2026 | Definir Netlify como hospedagem e reservar a frente de API/testes ao colega interessado |
+| 20/10/2026 | Adotar branches por tarefa, PRs, develop para integração e main para produção |
+| 20/10/2026 | Consumir a API existente do GitHub e registrar sua documentação |
+| 20/10/2026 | Concluir o Figma após o início da implementação, conforme sequência autorizada; revisão visual aprovada por Thamires |
+| 20/10/2026 | Tornar o repositório público e publicar primeiro no GitHub Pages e depois no Netlify |
+| 20/10/2026 | Conferir o logo no sistema de referência e alinhar a tipografia do site à Inter do Figma |
 
-O registro de alterações resume marcos; o histórico Git mostra as mudanças de código. As duas evidências se complementam.
+Os modelos de Issues e Pull Requests já estão disponíveis na branch principal. Tarefas concluídas foram integradas; a presença de um merge não substitui uma revisão independente ainda pendente. Datas, autoria e resultados permanecem vinculados ao trabalho real.
