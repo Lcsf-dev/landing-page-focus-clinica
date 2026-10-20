@@ -6,8 +6,8 @@
 - Repositório GitHub privado criado na conta `Lcsf-dev`.
 - Documentação preparada para revisão.
 - Figma, aprovação visual, escolha de API e capturas reais pendentes.
-- API e coordenação dos testes atribuídas a `genzo-dev`, confirmado pelo solicitante.
-- `thaamiresffranca`, `genzo-dev` e `DumbRyder` já aceitaram os convites e têm acesso de escrita.
+- Frentes definidas: Lucas em Desenvolvimento e integração; Thamires em Revisão visual; Gabriel Enzo em API e testes; DumbRyder em Interface e responsividade.
+- Gabriel Enzo e DumbRyder têm acesso de escrita. O convite de Thamires aguarda aceite; sua frente de Revisão visual já está registrada.
 
 ## Etapas
 
@@ -34,7 +34,7 @@ O estudo da API e a preparação dos testes podem ocorrer enquanto o protótipo 
 
 ## Decisões em aberto
 
-- Responsabilidade de `DumbRyder` e distribuição da implementação JavaScript. Lucas cria o Figma, `thaamiresffranca` revisa o protótipo e `genzo-dev` cuida de API/testes.
+- Prazos e sequência das revisões de cada frente definida em equipe.md.
 - Link do Figma, versões para dispositivos e aprovação.
 - Logotipo, fontes, tons exatos e capturas reais do produto.
 - API, finalidade, endpoints e formato dos dados.
@@ -45,10 +45,10 @@ O solicitante confirmou que ainda não existe protótipo no Figma e pediu auxíl
 
 ## Prioridades após a estrutura inicial
 
-1. Confirmar as quatro frentes por integrante e quem revisa cada entrega.
+1. Acompanhar as entregas das quatro frentes e combinar os prazos de revisão.
 2. Revisar o planejamento no PR #10 e o registro inicial no PR #11; integrar somente depois da aprovação.
 3. Criar/revisar o Figma, obter os recursos visuais e registrar aprovação.
-4. Definir a API e seu contrato com o colega responsável; proposta em api.md.
+4. Definir a API e seu contrato entre Desenvolvimento e integração e API e testes; proposta em api.md.
 5. Iniciar as tarefas de implementação por branches, com verificações pequenas por PR.
 6. Executar testes integrados e conferir novamente o endereço publicado.
 

@@ -15,13 +15,24 @@ O PDF atribui API/testes a um integrante e revisão/teste final a todos. O plano
 | Etapa | Responsável | Cenários | Quando executar |
 | --- | --- | --- | --- |
 | Conferência da tarefa | Autor de cada PR | Somente os cenários afetados pela alteração | Antes de pedir revisão |
-| Visual e responsividade | Responsável HTML/CSS com revisão de design | CT04–CT07 e CT15 | Após as seções existirem e quando o layout mudar |
-| Navegação e interações | Responsável JavaScript com outro revisor | CT01–CT03 e CT08 | Após implementar ou corrigir a interação |
-| Integração da API | Colega de API/testes | CT09–CT14 | Após integrar e quando mudar o contrato/tratamento |
-| Revisão integrada | Colega de API/testes coordena; equipe participa | Cenários aplicáveis ainda pendentes e reteste das correções | Antes da publicação |
+| Layout e responsividade | `DumbRyder` — Interface e responsividade | CT04–CT07 | Após as seções existirem e quando o layout mudar |
+| Revisão visual e interface | Thamires (`thaamiresffranca`) | Revisão do Figma; CT01–CT03, CT08 e CT15 | Após o protótipo e após implementar as interações |
+| Conferência JavaScript | Lucas (`Lcsf-dev`) | Comportamentos alterados de CT01–CT03 e CT08 | Antes de pedir revisão das interações |
+| Integração da API | Gabriel Enzo (`genzo-dev`) — API e testes | CT09–CT14 | Após integrar e quando mudar o contrato/tratamento |
+| Revisão integrada | Gabriel Enzo coordena; equipe participa | Cenários aplicáveis ainda pendentes e reteste das correções | Antes da publicação |
 | Site publicado | Equipe, coordenada pelo responsável dos testes | CT16 e verificações essenciais de links/menu/API | Após a publicação |
 
-`genzo-dev` coordena API/testes; os demais papéis ainda precisam ser associados aos colegas. Os três colaboradores já têm acesso. Não repetir casos não afetados por uma alteração documental; repetir quando houver mudança, falha ou risco concreto de regressão.
+As quatro frentes estão identificadas em equipe.md. A responsabilidade por uma verificação não depende de ter escrito o código. Não repetir casos não afetados por uma alteração documental; repetir quando houver mudança, falha ou risco concreto de regressão.
+
+### Roteiro de participação nas validações
+
+1. Abrir o protótipo ou a versão indicada na tarefa.
+2. Executar os cenários da própria frente conforme a tabela abaixo.
+3. Anotar o resultado observado e anexar captura ou evidência curta quando necessário.
+4. Abrir uma Issue se encontrar falha; depois da correção, repetir o cenário afetado.
+5. Enviar o registro em uma branch da tarefa e abrir PR, ou registrar a evidência na Issue correspondente. As aprovações do Figma ficam vinculadas à versão revisada.
+
+Não é necessário criar uma branch permanente por integrante. Exemplos para tarefas futuras: `testes/layout-responsivo`, `testes/interface-navegacao` e `testes/integracao-api`.
 
 O responsável registra ambiente, commit, resultado observado e evidência curta. Se houver falha, abrir Issue e vincular o PR de correção; registrar o reteste antes de dar o problema por resolvido.
 

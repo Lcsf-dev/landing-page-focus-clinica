@@ -4,7 +4,7 @@
 
 1. **PDF:** Guia de Responsabilidades — Projeto Front-End, duas páginas, fornecido pelo solicitante.
 2. **Notion:** Documentação do Projeto Front-End — Landing Page Focus Clínica. Texto e três capturas fornecidos pelo solicitante; o acesso direto ao endereço não foi confirmado.
-3. **Decisões da equipe:** autorização para iniciar arquivos e GitHub em 19/10/2026; colega com interesse em assumir API e testes, ainda sem nome informado.
+3. **Decisões da equipe:** autorização para iniciar arquivos e GitHub em 19/10/2026; frentes e integrantes registrados em equipe.md e cenários distribuídos em testes.md.
 
 Os documentos descrevem o escopo. Eles não constituem evidência de aprovação do Figma, participação individual, execução de testes ou publicação. Essas evidências serão registradas quando existirem.
 
