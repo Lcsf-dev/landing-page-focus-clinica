@@ -1,6 +1,6 @@
 # API REST do GitHub — créditos da equipe
 
-**Decisão de 20/10/2026:** consumir uma API existente. A API própria de funcionalidades foi retirada da versão atual; seus commits continuam no histórico para documentar a evolução real.
+O projeto consome a **API REST do GitHub**, um serviço existente com documentação pública.
 
 ## Finalidade e correspondência com o enunciado
 
@@ -42,10 +42,10 @@ Não há lista vazia neste endpoint: ele retorna um objeto por perfil; um objeto
 
 Conteúdo textual é inserido com `textContent`. Links e avatares retornados são limitados aos domínios esperados. A política CSP em `netlify.toml` permite consultas a `api.github.com` e imagens de `avatars.githubusercontent.com`. Não adicionar tokens para contornar o limite.
 
-O site passou a ser estático. Não há Netlify Function ou rota `/api/funcionalidades` nesta versão. Não é necessário servidor de API próprio para executar ou publicar.
+O site é estático e consulta diretamente a API REST do GitHub pelo navegador.
 
 ## Testes e Insomnia
 
 O comando `npm test` verifica o cliente com respostas controladas, sem consumir a cota pública. A execução real no navegador e a revisão de Gabriel são registros separados em [testes.md](testes.md).
 
-O [arquivo de importação](api.openapi.json) contém somente o recorte que usamos da API externa. **Foi preparado pela equipe para o Insomnia e não substitui a documentação oficial do GitHub.** Veja o [roteiro do Insomnia](insomnia.md).
+O [arquivo de importação](api.openapi.json) descreve o endpoint utilizado no formato **OpenAPI**, um padrão de descrição de APIs. **Foi preparado pela equipe para o Insomnia e não substitui a documentação oficial do GitHub.** Veja o [roteiro do Insomnia](insomnia.md).
