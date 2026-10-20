@@ -70,7 +70,7 @@ Ver [telas e identidade visual](docs/design.md). As capturas e o logo foram obti
 ├── js/                  # Menu, demonstração e cliente da API externa
 ├── pages/               # Reservada conforme o enunciado; entrega de página única
 ├── scripts/             # Servidor estático local e preparação de publicação
-├── testes/              # Testes necessários do cliente da API
+├── testes/              # Cliente da API e pacote de publicação
 ├── index.html
 ├── netlify.toml
 ├── package.json
