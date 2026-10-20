@@ -1,6 +1,6 @@
 # Integração com API
 
-**Status:** decisão pendente. Frente reservada ao colega interessado em API e testes. Nenhuma API foi criada ou integrada.
+**Status:** escolha da API pendente. Responsável confirmado: `genzo-dev`, para API e testes. Nenhuma API foi criada ou integrada.
 
 ## O que o material pede
 
@@ -12,11 +12,43 @@ Definir primeiro qual dado melhora a apresentação do Focus Clínica e em que s
 
 Preferência inicial para avaliação: consumir API existente, com documentação e acesso apropriado ao navegador. Uma API do próprio sistema só será usada se houver endpoint adequado e acesso autorizado.
 
+## Proposta após análise do escopo em 19/10/2026
+
+**Proposta para avaliar com o colega responsável:** uma pequena API própria de leitura para fornecer o catálogo público de funcionalidades da landing page. Não foi implementada, escolhida definitivamente nem aprovada como substituta de eventual exigência de API externa.
+
+A preferência inicial por uma API pronta dependia de encontrar dados pertinentes ao projeto. As fontes fornecidas não documentam um endpoint disponível do Focus Clínica. Usar consulta de CEP, clima ou conteúdo aleatório acrescentaria um comportamento que não está previsto na página.
+
+### Finalidade
+
+A seção Funcionalidades consultaria um endpoint e renderizaria os quatro itens já previstos no material: calendário, agendamentos, notificações e especialidades. A resposta conteria somente identificador, título e descrição pública de cada item. Isso exercita a requisição e os estados de carregamento/erro com conteúdo do próprio projeto.
+
+O serviço seria apenas um catálogo público de apresentação. Não depende de banco de dados nem de acesso aos dados internos do sistema clínico.
+
+### Contrato proposto, ainda não disponível
+
+- Método: `GET`.
+- Caminho sugerido: `/api/funcionalidades`.
+- Resposta: objeto JSON com uma lista `funcionalidades`; cada item com `id`, `titulo` e `descricao`.
+- Uso na interface: montar os blocos da seção Funcionalidades a partir da resposta.
+- Casos a tratar: carregamento, sucesso, lista vazia, falha HTTP/rede e resposta inesperada.
+
+### Possível hospedagem
+
+Se a equipe escolher Netlify, uma Netlify Function pode responder ao endpoint e ser versionada/publicada junto ao site. Isso é uma opção de implementação, não uma hospedagem já configurada.
+
+Documentação oficial consultada: <https://docs.netlify.com/build/functions/overview/> e <https://docs.netlify.com/build/functions/get-started/>.
+
+O servidor Python do README serve arquivos estáticos e não executa uma Netlify Function. Caso essa opção seja escolhida, atualizar as instruções locais para a ferramenta que executa a função; não apresentar a verificação HTTP atual como teste da futura API.
+
+### Decisão final pendente
+
+O colega de API/testes e a equipe devem confirmar a adequação ao enunciado e escolher a hospedagem. Se houver requisito adicional de consumir API externa, ou endpoint apropriado já disponível no Focus Clínica, reavaliar a proposta antes de implementar. As fontes atuais exigem integração, sem restringir explicitamente a origem da API.
+
 ## Contrato a preencher pelo responsável
 
 | Campo | Valor |
 | --- | --- |
-| Responsável / GitHub | Pendente |
+| Responsável / GitHub | `genzo-dev` |
 | Nome da API | Pendente |
 | Documentação oficial | Pendente |
 | Finalidade e seção da página | Pendente |

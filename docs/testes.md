@@ -1,12 +1,29 @@
 # Plano e registro de testes
 
-**Responsável:** colega de API e testes, identificação pendente.
+**Responsável pela coordenação dos testes:** `genzo-dev`.
 
 **Situação inicial:** testes funcionais e de publicação ainda não executados. A estrutura inicial não implementa as funcionalidades abaixo. Não confundir planejamento de teste com teste aprovado.
 
 ## Execução por outro integrante
 
 Quem testa pode ser diferente de quem programou. Clonar/atualizar a branch, executar pelo README, seguir o cenário e registrar o comportamento observado. Informar navegador, dispositivo ou viewport e commit avaliado.
+
+## Divisão e momento dos testes
+
+O plano atribui API/testes a um integrante e revisão/teste final a todos. O plano abaixo distribui essa responsabilidade sem criar uma suíte automatizada adicional.
+
+| Etapa | Responsável | Cenários | Quando executar |
+| --- | --- | --- | --- |
+| Conferência da tarefa | Autor de cada PR | Somente os cenários afetados pela alteração | Antes de pedir revisão |
+| Visual e responsividade | Responsável HTML/CSS com revisão de design | CT04–CT07 e CT15 | Após as seções existirem e quando o layout mudar |
+| Navegação e interações | Responsável JavaScript com outro revisor | CT01–CT03 e CT08 | Após implementar ou corrigir a interação |
+| Integração da API | Colega de API/testes | CT09–CT14 | Após integrar e quando mudar o contrato/tratamento |
+| Revisão integrada | Colega de API/testes coordena; equipe participa | Cenários aplicáveis ainda pendentes e reteste das correções | Antes da publicação |
+| Site publicado | Equipe, coordenada pelo responsável dos testes | CT16 e verificações essenciais de links/menu/API | Após a publicação |
+
+`genzo-dev` coordena API/testes; os demais papéis ainda precisam ser associados aos colegas. Os três colaboradores já têm acesso. Não repetir casos não afetados por uma alteração documental; repetir quando houver mudança, falha ou risco concreto de regressão.
+
+O responsável registra ambiente, commit, resultado observado e evidência curta. Se houver falha, abrir Issue e vincular o PR de correção; registrar o reteste antes de dar o problema por resolvido.
 
 ## Cenários planejados
 
