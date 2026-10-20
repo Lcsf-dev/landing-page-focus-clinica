@@ -4,8 +4,6 @@ Landing page institucional para apresentar o **Focus Clínica**, suas funcionali
 
 ## 📍 Situação do projeto
 
-Início: **19/10/2026**. Atualização: **20/10/2026**.
-
 | Entrega | Situação |
 | --- | --- |
 | 📄 Oito seções da landing page | Implementadas; revisão da equipe pendente |
