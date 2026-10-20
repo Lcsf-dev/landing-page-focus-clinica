@@ -34,7 +34,7 @@ O estudo da API e a preparação dos testes podem ocorrer enquanto o protótipo 
 
 ## Decisões em aberto
 
-- Responsabilidades de `thaamiresffranca` e `DumbRyder`; `genzo-dev` já está confirmado em API/testes.
+- Responsabilidade de `DumbRyder` e distribuição da implementação JavaScript. Lucas cria o Figma, `thaamiresffranca` revisa o protótipo e `genzo-dev` cuida de API/testes.
 - Link do Figma, versões para dispositivos e aprovação.
 - Logotipo, fontes, tons exatos e capturas reais do produto.
 - API, finalidade, endpoints e formato dos dados.
