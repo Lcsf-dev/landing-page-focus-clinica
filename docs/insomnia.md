@@ -1,48 +1,31 @@
-# Testar a API no Insomnia
+# Testar a API existente no Insomnia
 
-## Preparar
+O serviço testado é a **API REST do GitHub**, não uma API criada pela equipe. Não é necessário iniciar o servidor local para consultar o GitHub no Insomnia.
 
-1. Instalar Node.js 22 ou superior, caso ainda não esteja disponível.
-2. Na pasta do projeto, executar `npm run dev`. Não é necessário instalar dependências.
-3. Manter o terminal aberto e abrir o Insomnia já instalado.
-4. Usar **Import → File** e selecionar `docs/api.openapi.json`. Conferir e concluir a importação. Os nomes dos menus podem variar conforme a versão.
+## Importar e consultar
 
-A especificação inclui GET, HEAD e uma requisição POST para verificar sua rejeição. Nenhum token ou credencial é necessário.
+1. No Insomnia, use a opção de importar arquivo e selecione `docs/api.openapi.json`.
+2. Abra a requisição GET de perfil público, com servidor `https://api.github.com`.
+3. Preencha `usuario` com `Lcsf-dev`, `thaamiresffranca`, `genzo-dev` ou `DumbRyder`.
+4. Se necessário, adicione `Accept: application/vnd.github+json`. Deixe a autenticação como nenhuma.
+5. Envie a consulta e confira HTTP 200 e os campos `login`, `name`, `html_url`, `avatar_url`. `name: null` é permitido.
+6. Registre resultado, data e responsável. Anexe somente uma evidência útil, sem credenciais.
 
-## Requisições necessárias
+Documentação oficial: <https://docs.github.com/en/rest/users/users#get-a-user>.
 
-| Requisição | Resultado esperado |
-| --- | --- |
-| `GET http://127.0.0.1:5500/api/funcionalidades` | HTTP 200; JSON com `versao` e as quatro `funcionalidades` |
-| `HEAD http://127.0.0.1:5500/api/funcionalidades` | HTTP 200 e cabeçalhos, sem corpo |
-| `POST http://127.0.0.1:5500/api/funcionalidades` | HTTP 405 e cabeçalho `Allow: GET, HEAD` |
+## Verificações necessárias
 
-Se não quiser importar, criar uma requisição HTTP, selecionar o método e informar o endereço acima.
+| Verificação | Onde | Resultado esperado |
+| --- | --- | --- |
+| Perfis da equipe | Insomnia e navegador | 200, perfil correspondente e atualização dos créditos |
+| Perfil inexistente | Insomnia, usando um login de teste previamente conferido como inexistente | 404; registrar o status real, sem presumir que um nome está disponível |
+| Nome público ausente | Teste automatizado e perfil real quando aplicável | O nome básico do HTML permanece |
+| Sem conexão | Navegador, DevTools → Network → Offline, antes da primeira consulta do rodapé | Mensagem acessível de falha, nomes e links preservados |
+| Recuperação | Voltar a Online e usar Tentar novamente | Perfis pendentes carregados, sem duplicações |
+| Falha parcial e tempo limite | Testes controlados do cliente; inspeção da interface quando necessário | Sem carregamento permanente; créditos preservados |
 
-## Simular falhas localmente
+Não esgotar a cota do GitHub para provocar 403/429: esses estados são simulados em `npm test`. O Insomnia verifica o endpoint; ele não comprova comportamento visual, acessibilidade ou CORS no navegador.
 
-Encerrar o servidor com `Ctrl+C`. No PowerShell, executar um cenário por vez:
+## Registro
 
-```powershell
-$env:CENARIO_API = 'erro'
-npm run dev
-```
-
-Valores disponíveis: `erro` (HTTP 500), `vazio` (lista vazia), `invalido` (campos ausentes) e `lento` (atraso de dois segundos). Eles pertencem somente ao servidor local e não alteram a função publicada no Netlify.
-
-Depois de testar, encerrar o servidor, limpar a variável e iniciar normalmente:
-
-```powershell
-Remove-Item Env:CENARIO_API -ErrorAction SilentlyContinue
-npm run dev
-```
-
-O Insomnia confere o contrato HTTP. Conferir também no navegador a mensagem, o estado de carregamento e a recuperação pelo botão **Tentar novamente**.
-
-## Registrar
-
-Gabriel Enzo revisará a integração e fará os testes complementares. Registrar ambiente, commit, data, resultado observado e evidência em `docs/testes.md` ou na Issue da frente. A importação da especificação não significa que as requisições já foram executadas no Insomnia.
-
-Na publicação, substituir o servidor local pelo endereço efetivo do Netlify. A URL de produção ainda não está definida.
-
-Referência: [importação e exportação no Insomnia](https://developer.konghq.com/insomnia/import-export/).
+Gabriel Enzo (`genzo-dev`) revisa a integração e registra os testes adicionais em [testes.md](testes.md). A presença deste roteiro **não significa que o teste manual no Insomnia foi executado**.

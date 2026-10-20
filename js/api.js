@@ -1,27 +1,30 @@
-export async function consultarFuncionalidades(endereco, { tempoLimite = 8000 } = {}) {
+// Somente perfis públicos: nenhuma credencial é necessária no navegador.
+export async function consultarPerfil(usuario, { tempoLimite = 8000 } = {}) {
+  if (!/^[a-z\d](?:[a-z\d-]{0,37}[a-z\d])?$/i.test(usuario)) {
+    throw new Error("Usuário do GitHub inválido.");
+  }
   const controlador = new AbortController();
   const temporizador = setTimeout(() => controlador.abort(), tempoLimite);
 
   try {
-    const resposta = await fetch(endereco, {
+    const resposta = await fetch(`https://api.github.com/users/${encodeURIComponent(usuario)}`, {
       signal: controlador.signal,
-      headers: { Accept: "application/json" }
+      headers: { Accept: "application/vnd.github+json" }
     });
     if (!resposta.ok) throw new Error(`Falha HTTP ${resposta.status}`);
 
     const dados = await resposta.json();
-    if (!dados || !Array.isArray(dados.funcionalidades)) {
-      throw new Error("Formato de resposta inválido.");
+    if (!dados || typeof dados.login !== "string" || dados.login.toLowerCase() !== usuario.toLowerCase() ||
+        !(dados.name === null || typeof dados.name === "string")) {
+      throw new Error("Perfil ausente ou resposta inválida.");
     }
-    const identificadores = new Set();
-    for (const item of dados.funcionalidades) {
-      if (!item || ["id", "titulo", "descricao"].some((campo) => typeof item[campo] !== "string" || !item[campo].trim())) {
-        throw new Error("Funcionalidade incompleta.");
-      }
-      if (identificadores.has(item.id)) throw new Error("Identificador duplicado.");
-      identificadores.add(item.id);
+    const perfil = new URL(dados.html_url);
+    const avatar = dados.avatar_url ? new URL(dados.avatar_url) : null;
+    if (perfil.origin !== "https://github.com" || perfil.pathname.toLowerCase() !== `/${usuario.toLowerCase()}` ||
+        (avatar && avatar.origin !== "https://avatars.githubusercontent.com")) {
+      throw new Error("Endereço do perfil inválido.");
     }
-    return dados.funcionalidades;
+    return { usuario: dados.login, nome: dados.name?.trim() || null, endereco: perfil.href, avatar: avatar?.href || null };
   } finally {
     clearTimeout(temporizador);
   }

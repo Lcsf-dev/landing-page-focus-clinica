@@ -148,6 +148,18 @@ figcaption { padding: 16px 22px; color: var(--texto-suave); font-size: .8rem; bo
 .botao-icone { display: grid; place-items: center; width: 40px; height: 40px; border: 1px solid var(--borda); border-radius: 9px; background: var(--branco); }
 .js .revelacao-pendente { opacity: 0; transform: translateY(18px); }
 [data-revelar] { transition: opacity .5s ease, transform .5s ease; }
+.equipe { padding-bottom: 32px; }
+.equipe h2 { font-size: 1rem; margin-bottom: 20px; }
+.grade-equipe { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; }
+.integrante { display: flex; align-items: center; gap: 12px; min-width: 0; }
+.integrante > span:last-child { min-width: 0; }
+.integrante strong, .integrante small { display: block; overflow-wrap: anywhere; }
+.integrante strong { font-size: .82rem; }
+.integrante small { font-size: .7rem; margin-top: 4px; }
+.avatar-integrante { position: relative; display: grid; place-items: center; flex: 0 0 44px; height: 44px; border-radius: 50%; background: var(--menta, #b9f2d5); color: #123f40; font-size: .75rem; font-weight: 700; overflow: hidden; }
+.avatar-integrante img { position: absolute; inset: 0; width: 44px; height: 44px; object-fit: cover; }
+.equipe .estado-api { margin: 20px 0 0; font-size: .75rem; }
+.estado-api[data-estado="sucesso"] .indicador-carregamento, .estado-api[data-estado="erro"] .indicador-carregamento { display: none; }
 @keyframes girar { to { transform: rotate(360deg); } }
 @media (max-width: 1050px) {
   .navegacao { gap: 18px; }
@@ -180,6 +192,7 @@ figcaption { padding: 16px 22px; color: var(--texto-suave); font-size: .8rem; bo
   .cabecalho-secao > p { max-width: 250px; font-size: .86rem; }
   .chamada__interno { align-items: start; flex-direction: column; gap: 28px; }
   .rodape nav { gap: 15px 30px; }
+  .grade-equipe { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 @media (max-width: 540px) {
   .container { width: calc(100% - 36px); }
@@ -221,6 +234,7 @@ figcaption { padding: 16px 22px; color: var(--texto-suave); font-size: .8rem; bo
   .rodape__principal { flex-direction: column; gap: 30px; }
   .rodape nav { grid-template-columns: 1fr 1fr; gap: 15px; font-size: .75rem; }
   .rodape__base { flex-direction: column; gap: 8px; }
+  .grade-equipe { grid-template-columns: 1fr; }
 }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
