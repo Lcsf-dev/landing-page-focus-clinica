@@ -1,62 +1,30 @@
 {
   "openapi": "3.0.3",
   "info": {
-    "title": "API de funcionalidades — Focus Clínica",
+    "title": "Focus Clínica — consumo da API REST do GitHub",
     "version": "1.0.0",
-    "description": "Catálogo público de apresentação. Não consulta dados internos do sistema clínico."
+    "description": "Recorte do endpoint externo usado pela landing page para importação no Insomnia. Não é uma API criada pela equipe nem substitui a documentação oficial do GitHub."
   },
-  "servers": [{ "url": "http://127.0.0.1:5500", "description": "Desenvolvimento local: npm run dev" }],
-  "security": [],
+  "externalDocs": { "description": "Documentação oficial: Get a user", "url": "https://docs.github.com/en/rest/users/users#get-a-user" },
+  "servers": [{ "url": "https://api.github.com" }],
   "paths": {
-    "/api/funcionalidades": {
+    "/users/{usuario}": {
       "get": {
-        "operationId": "listarFuncionalidades",
-        "summary": "Listar funcionalidades do Focus Clínica",
+        "operationId": "consultarPerfilPublico",
+        "summary": "Consultar perfil público de um integrante",
+        "parameters": [{ "name": "usuario", "in": "path", "required": true, "description": "Exemplos da equipe: Lcsf-dev, thaamiresffranca, genzo-dev e DumbRyder.", "schema": { "type": "string", "default": "Lcsf-dev" } }],
         "responses": {
           "200": {
-            "description": "Catálogo de funcionalidades",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "required": ["versao", "funcionalidades"],
-                  "properties": {
-                    "versao": { "type": "string", "example": "1.0" },
-                    "funcionalidades": {
-                      "type": "array",
-                      "items": {
-                        "type": "object",
-                        "required": ["id", "titulo", "descricao"],
-                        "properties": {
-                          "id": { "type": "string", "example": "calendario" },
-                          "titulo": { "type": "string", "example": "Calendário" },
-                          "descricao": { "type": "string", "example": "Uma visão da agenda para acompanhar a organização dos atendimentos." }
-                        }
-                      }
-                    }
-                  }
-                }
-              }
-            }
-          }
-        }
-      },
-      "head": {
-        "operationId": "conferirCabecalhos",
-        "summary": "Conferir cabeçalhos sem receber o corpo",
-        "responses": { "200": { "description": "Cabeçalhos do catálogo, sem corpo" } }
-      },
-      "post": {
-        "operationId": "verificarMetodoNaoPermitido",
-        "summary": "Teste de contrato: confirmar rejeição de POST",
-        "description": "Operação incluída somente para testar a rejeição. A API é apenas de leitura.",
-        "responses": {
-          "405": {
-            "description": "Método não permitido",
-            "headers": { "Allow": { "schema": { "type": "string", "example": "GET, HEAD" } } },
-            "content": { "application/json": { "schema": { "type": "object", "properties": { "erro": { "type": "string" } } } } }
-          }
-        }
+            "description": "Perfil público. A resposta completa possui outros campos que não são usados pela página.",
+            "content": { "application/json": { "schema": { "type": "object", "required": ["login", "name", "html_url", "avatar_url"], "properties": {
+              "login": { "type": "string" }, "name": { "type": "string", "nullable": true }, "html_url": { "type": "string", "format": "uri" }, "avatar_url": { "type": "string", "format": "uri" }
+            } } } }
+          },
+          "403": { "description": "Acesso recusado ou limite de requisições; conferir a resposta e os cabeçalhos." },
+          "404": { "description": "Perfil não encontrado." },
+          "429": { "description": "Limite de requisições atingido." }
+        },
+        "security": []
       }
     }
   }

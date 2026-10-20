@@ -1,88 +1,51 @@
-# Integração com API
+# API REST do GitHub — créditos da equipe
 
-**Status:** definição do contrato em planejamento. Frentes: Desenvolvimento e integração (`Lcsf-dev`) e API e testes (`genzo-dev`).
+**Decisão de 20/10/2026:** consumir uma API existente. A API própria de funcionalidades foi retirada da versão atual; seus commits continuam no histórico para documentar a evolução real.
 
-## O que o material pede
+## Finalidade e correspondência com o enunciado
 
-Consultar dados com `fetch()`, apresentá-los na página e verificar carregamento e tratamento de erros. O material não exige explicitamente construir um serviço de backend próprio.
+Os requisitos incluem estudar uma API, identificar sua documentação, consultar dados com `fetch()`, exibi-los e tratar falhas. Não exigem desenvolver um backend nem informam uma API clínica obrigatória.
 
-## Decisão a tomar em equipe
+A integração enriquece a identificação do projeto no rodapé com nomes públicos, avatares e links dos quatro integrantes. Ela não consulta pacientes, não agenda consultas e não fornece as funcionalidades clínicas. Essas funcionalidades são conteúdo estático da landing page.
 
-Definir primeiro qual dado melhora a apresentação do Focus Clínica e em que seção aparecerá. Não adicionar uma funcionalidade sem relação com a landing page apenas para usar uma API.
-
-Preferência inicial para avaliação: consumir API existente, com documentação e acesso apropriado ao navegador. Uma API do próprio sistema só será usada se houver endpoint adequado e acesso autorizado.
-
-## Proposta após análise do escopo em 19/10/2026
-
-**Proposta para avaliação entre as frentes:** uma pequena API própria de leitura para fornecer o catálogo público de funcionalidades da landing page. A implementação depende da definição do contrato e da confirmação da adequação à atividade.
-
-A preferência inicial por uma API pronta dependia de encontrar dados pertinentes ao projeto. As fontes fornecidas não documentam um endpoint disponível do Focus Clínica. Usar consulta de CEP, clima ou conteúdo aleatório acrescentaria um comportamento que não está previsto na página.
-
-### Finalidade
-
-A seção Funcionalidades consultaria um endpoint e renderizaria os quatro itens já previstos no material: calendário, agendamentos, notificações e especialidades. A resposta conteria somente identificador, título e descrição pública de cada item. Isso exercita a requisição e os estados de carregamento/erro com conteúdo do próprio projeto.
-
-O serviço seria apenas um catálogo público de apresentação. Não depende de banco de dados nem de acesso aos dados internos do sistema clínico.
-
-### Contrato proposto, ainda não disponível
-
-- Método: `GET`.
-- Caminho sugerido: `/api/funcionalidades`.
-- Resposta: objeto JSON com uma lista `funcionalidades`; cada item com `id`, `titulo` e `descricao`.
-- Uso na interface: montar os blocos da seção Funcionalidades a partir da resposta.
-- Casos a tratar: carregamento, sucesso, lista vazia, falha HTTP/rede e resposta inesperada.
-
-### Plataforma escolhida
-
-A plataforma **Netlify** foi definida em 19/10/2026. Para a API própria proposta, uma Netlify Function pode responder ao endpoint e ser versionada/publicada junto ao site. A plataforma está definida; a API e a configuração de publicação ainda não foram implementadas.
-
-Documentação oficial consultada: <https://docs.netlify.com/build/functions/overview/> e <https://docs.netlify.com/build/functions/get-started/>.
-
-O servidor Python do README serve arquivos estáticos e não executa uma Netlify Function. Caso essa opção seja escolhida, atualizar as instruções locais para a ferramenta que executa a função; não apresentar a verificação HTTP atual como teste da futura API.
-
-### Decisão final pendente
-
-As frentes de Desenvolvimento e integração e de API e testes devem confirmar a adequação da API ao enunciado, usando o Netlify como plataforma definida. Se houver requisito adicional de consumir API externa, ou endpoint apropriado já disponível no Focus Clínica, reavaliar a proposta antes de implementar. As fontes atuais exigem integração, sem restringir explicitamente a origem da API.
-
-## Contrato a preencher pelo responsável
+## Documentação e contrato
 
 | Campo | Valor |
 | --- | --- |
-| Desenvolvimento e integração | Lucas (`Lcsf-dev`) |
-| API e testes | Gabriel Enzo (`genzo-dev`) |
-| Nome da API | Pendente |
-| Documentação oficial | Pendente |
-| Finalidade e seção da página | Pendente |
-| URL base e endpoint | Pendente |
-| Método e parâmetros | Pendente |
-| Campos esperados da resposta | Pendente |
-| Exemplo de resposta anonimizado | Pendente |
-| Autenticação e restrições | Pendente |
-| Limites de uso | Pendente |
-| Compatibilidade CORS com a origem publicada | Pendente |
-| Confirmação de adequação à atividade | Pendente |
+| Serviço existente | GitHub REST API — Users |
+| Documentação oficial | <https://docs.github.com/en/rest/users/users#get-a-user> |
+| URL base | `https://api.github.com` |
+| Endpoint / método | `GET /users/{username}` |
+| Usuários | `Lcsf-dev`, `thaamiresffranca`, `genzo-dev`, `DumbRyder` |
+| Cabeçalho | `Accept: application/vnd.github+json` |
+| Campos usados | `login`, `name`, `html_url`, `avatar_url` |
+| Autenticação | Nenhuma para esses perfis públicos; sem token no frontend |
+| Limite não autenticado | 60 requisições por hora por IP; compartilhado com outros acessos do mesmo IP |
+| CORS | A API REST admite consultas entre origens; verificar também no endereço publicado |
+| Cliente | `js/api.js`, função `consultarPerfil()` |
+| Interface | `js/principal.js`, créditos em `#lista-equipe` |
+| Revisão e testes adicionais | Gabriel Enzo (`genzo-dev`) |
 
-## Contrato com a interface
+Referências: [limites](https://docs.github.com/en/rest/using-the-rest-api/rate-limits-for-the-rest-api) e [CORS](https://docs.github.com/en/rest/using-the-rest-api/using-cors-and-jsonp-to-make-cross-origin-requests).
 
-Após a aprovação do design, combinar com quem implementa HTML/JS:
+## Fluxo no site
 
-- Elemento onde os dados serão apresentados.
-- Quando a consulta acontece.
-- Mensagem ou indicador de carregamento.
-- Resultado de sucesso e resultado vazio.
-- Mensagem de erro e possibilidade de tentar novamente.
-- Timeout e cancelamento, se necessários.
-- Apresentação acessível de mudanças de estado.
+1. Os quatro nomes e links já existem no HTML, inclusive sem JavaScript ou com API indisponível.
+2. Ao chegar próximo ao rodapé, a página consulta cada perfil uma vez, em paralelo.
+3. Nome e avatar são atualizados somente quando a resposta é válida. `name: null` mantém o nome já informado no HTML.
+4. Falha parcial preserva os perfis bem-sucedidos e informa a indisponibilidade. O botão Tentar novamente consulta somente os perfis pendentes, sem repetição automática.
+5. Erro HTTP, rede, resposta vazia/incompleta e tempo superior a oito segundos encerram o carregamento e preservam os créditos básicos. Falha na imagem mantém as iniciais.
 
-## Regras de implementação
+Não há lista vazia neste endpoint: ele retorna um objeto por perfil; um objeto ausente ou inválido é tratado como falha. Não criar um teste de array vazio sem relação com esse contrato.
 
-- Verificar `response.ok`, além de tratar falha de rede.
-- Validar a estrutura antes de acessar os campos retornados.
-- Finalizar o estado de carregamento em sucesso ou falha.
-- Inserir conteúdo textual sem interpretar dados externos como HTML.
-- Não colocar credenciais privadas em arquivos JavaScript, histórico Git ou exemplos.
-- Dados fictícios de desenvolvimento devem estar identificados e não substituem a validação da API real.
+## Segurança e publicação
 
-## Critério de conclusão
+Conteúdo textual é inserido com `textContent`. Links e avatares retornados são limitados aos domínios esperados. A política CSP em `netlify.toml` permite consultas a `api.github.com` e imagens de `avatars.githubusercontent.com`. Não adicionar tokens para contornar o limite.
 
-API documentada, dados úteis apresentados, estados de carregamento/vazio/erro tratados, testes com evidências e PR revisado. Não marcar a frente como concluída apenas por existir um `fetch()`.
+O site passou a ser estático. Não há Netlify Function ou rota `/api/funcionalidades` nesta versão. Não é necessário servidor de API próprio para executar ou publicar.
+
+## Testes e Insomnia
+
+O comando `npm test` verifica o cliente com respostas controladas, sem consumir a cota pública. A execução real no navegador e a revisão de Gabriel são registros separados em [testes.md](testes.md).
+
+O [arquivo de importação](api.openapi.json) contém somente o recorte que usamos da API externa. **Foi preparado pela equipe para o Insomnia e não substitui a documentação oficial do GitHub.** Veja o [roteiro do Insomnia](insomnia.md).

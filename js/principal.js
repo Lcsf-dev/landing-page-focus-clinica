@@ -1,4 +1,4 @@
-import { consultarFuncionalidades } from "./api.js";
+import { consultarPerfil } from "./api.js";
 
 document.documentElement.classList.add("js");
 
@@ -122,70 +122,71 @@ iniciarDemonstracao();
 iniciarAmpliacao();
 iniciarRevelacoes();
 
-const listaFuncionalidades = document.querySelector("#lista-funcionalidades");
-const estadoFuncionalidades = document.querySelector("#estado-funcionalidades");
-const mensagemFuncionalidades = document.querySelector("#mensagem-funcionalidades");
+const listaEquipe = document.querySelector("#lista-equipe");
+const estadoEquipe = document.querySelector("#estado-equipe");
+const mensagemEquipe = document.querySelector("#mensagem-equipe");
 const botaoTentarNovamente = document.querySelector("#tentar-novamente");
-const iconesPorRecurso = { calendario: "calendario", agendamentos: "relogio", notificacoes: "sino", especialidades: "camadas" };
 let carregando = false;
 
-function criarCartaoRecurso(recurso, indice) {
-  const cartao = document.createElement("article");
-  cartao.className = "cartao-recurso";
-  cartao.dataset.recurso = recurso.id;
-  const numero = document.createElement("span");
-  numero.className = "numero-recurso";
-  numero.textContent = String(indice + 1).padStart(2, "0");
-  numero.setAttribute("aria-hidden", "true");
-  const suporteIcone = document.createElement("span");
-  suporteIcone.className = "cartao-recurso__icone";
-  const icone = document.createElementNS("http://www.w3.org/2000/svg", "svg");
-  icone.classList.add("icone");
-  icone.setAttribute("aria-hidden", "true");
-  const uso = document.createElementNS("http://www.w3.org/2000/svg", "use");
-  const nomeIcone = Object.hasOwn(iconesPorRecurso, recurso.id) ? iconesPorRecurso[recurso.id] : "camadas";
-  uso.setAttribute("href", `img/icones.svg#${nomeIcone}`);
-  icone.append(uso);
-  suporteIcone.append(icone);
-  const titulo = document.createElement("h3");
-  titulo.textContent = recurso.titulo;
-  const descricao = document.createElement("p");
-  descricao.textContent = recurso.descricao;
-  cartao.append(numero, suporteIcone, titulo, descricao);
-  return cartao;
+function atualizarIntegrante(cartao, perfil) {
+  if (perfil.nome) cartao.querySelector(".nome-integrante").textContent = perfil.nome;
+  cartao.href = perfil.endereco;
+  if (perfil.avatar) {
+    const imagem = document.createElement("img");
+    imagem.width = 44;
+    imagem.height = 44;
+    imagem.alt = "";
+    imagem.addEventListener("load", () => { cartao.querySelector(".iniciais-integrante").hidden = true; }, { once: true });
+    imagem.addEventListener("error", () => imagem.remove(), { once: true });
+    imagem.src = perfil.avatar;
+    cartao.querySelector(".avatar-integrante").append(imagem);
+  }
+  cartao.dataset.carregado = "true";
 }
 
-async function carregarFuncionalidades() {
+async function carregarEquipe() {
   if (carregando) return;
   carregando = true;
-  listaFuncionalidades.setAttribute("aria-busy", "true");
-  estadoFuncionalidades.hidden = false;
-  estadoFuncionalidades.dataset.estado = "carregando";
-  mensagemFuncionalidades.textContent = "Carregando funcionalidades…";
+  listaEquipe.setAttribute("aria-busy", "true");
+  estadoEquipe.hidden = false;
+  estadoEquipe.dataset.estado = "carregando";
+  mensagemEquipe.textContent = "Carregando perfis da equipe…";
   botaoTentarNovamente.hidden = true;
   botaoTentarNovamente.disabled = true;
   try {
-    const endereco = new URL("api/funcionalidades", document.baseURI);
-    const recursos = await consultarFuncionalidades(endereco);
-    listaFuncionalidades.replaceChildren(...recursos.map(criarCartaoRecurso));
-    if (recursos.length === 0) {
-      estadoFuncionalidades.dataset.estado = "vazio";
-      mensagemFuncionalidades.textContent = "Nenhuma funcionalidade disponível no momento.";
+    // Em uma nova tentativa, consultar somente os perfis que ainda falharam.
+    const pendentes = [...listaEquipe.querySelectorAll("[data-usuario]:not([data-carregado])")];
+    const resultados = await Promise.allSettled(pendentes.map(async (cartao) => {
+      atualizarIntegrante(cartao, await consultarPerfil(cartao.dataset.usuario));
+    }));
+    if (resultados.some((resultado) => resultado.status === "rejected")) {
+      estadoEquipe.dataset.estado = "erro";
+      mensagemEquipe.textContent = "Alguns perfis não puderam ser atualizados. Os nomes e links da equipe continuam disponíveis. Tente novamente mais tarde.";
       botaoTentarNovamente.hidden = false;
     } else {
-      estadoFuncionalidades.hidden = true;
+      estadoEquipe.dataset.estado = "sucesso";
+      mensagemEquipe.textContent = "Perfis atualizados pelo GitHub.";
     }
   } catch {
-    listaFuncionalidades.replaceChildren();
-    estadoFuncionalidades.dataset.estado = "erro";
-    mensagemFuncionalidades.textContent = "Não foi possível carregar as funcionalidades. Verifique sua conexão e tente novamente.";
+    estadoEquipe.dataset.estado = "erro";
+    mensagemEquipe.textContent = "Não foi possível atualizar os perfis. Os links da equipe continuam disponíveis.";
     botaoTentarNovamente.hidden = false;
   } finally {
     carregando = false;
-    listaFuncionalidades.setAttribute("aria-busy", "false");
+    listaEquipe.setAttribute("aria-busy", "false");
     botaoTentarNovamente.disabled = false;
   }
 }
 
-botaoTentarNovamente.addEventListener("click", carregarFuncionalidades);
-carregarFuncionalidades();
+botaoTentarNovamente.addEventListener("click", carregarEquipe);
+// Carregar os créditos quando o visitante chegar ao rodapé: até quatro consultas por visita.
+if ("IntersectionObserver" in window) {
+  const observadorEquipe = new IntersectionObserver((entradas) => {
+    if (!entradas.some((entrada) => entrada.isIntersecting)) return;
+    observadorEquipe.disconnect();
+    carregarEquipe();
+  }, { rootMargin: "200px" });
+  observadorEquipe.observe(listaEquipe);
+} else {
+  carregarEquipe();
+}

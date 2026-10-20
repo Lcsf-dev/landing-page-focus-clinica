@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "type": "module",
-  "description": "Landing page institucional do Focus Clínica com API de funcionalidades.",
+  "description": "Landing page institucional do Focus Clínica com créditos integrados à API REST do GitHub.",
   "engines": { "node": ">=22" },
   "scripts": {
     "dev": "node scripts/servidor-local.mjs",

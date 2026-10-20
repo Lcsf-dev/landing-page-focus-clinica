@@ -1,63 +1,58 @@
 import { test, afterEach, mock } from "node:test";
 import assert from "node:assert/strict";
-import responderFuncionalidades from "../netlify/functions/funcionalidades.mjs";
-import { consultarFuncionalidades } from "../js/api.js";
+import { consultarPerfil } from "../js/api.js";
 
-const endereco = "http://localhost:5500/api/funcionalidades";
+const perfilExemplo = { login: "pessoa-equipe", name: "Pessoa da Equipe", html_url: "https://github.com/pessoa-equipe", avatar_url: "https://avatars.githubusercontent.com/u/1?v=4" };
 afterEach(() => mock.restoreAll());
 
-test("GET fornece as quatro funcionalidades exigidas em JSON", async () => {
-  const resposta = responderFuncionalidades(new Request(endereco));
-  assert.equal(resposta.status, 200);
-  assert.match(resposta.headers.get("content-type"), /application\/json/);
-  const dados = await resposta.json();
-  assert.deepEqual(dados.funcionalidades.map((item) => item.id), ["calendario", "agendamentos", "notificacoes", "especialidades"]);
-  assert.ok(dados.funcionalidades.every((item) => item.titulo && item.descricao));
+test("consulta o endpoint público e interpreta somente os campos usados", async () => {
+  const consulta = mock.method(globalThis, "fetch", () => Promise.resolve(Response.json(perfilExemplo)));
+  const perfil = await consultarPerfil("pessoa-equipe");
+  assert.equal(consulta.mock.calls[0].arguments[0], "https://api.github.com/users/pessoa-equipe");
+  assert.equal(perfil.nome, "Pessoa da Equipe");
+  assert.equal(perfil.endereco, perfilExemplo.html_url);
+  assert.equal(perfil.avatar, perfilExemplo.avatar_url);
 });
 
-test("HEAD retorna cabeçalhos sem corpo", async () => {
-  const resposta = responderFuncionalidades(new Request(endereco, { method: "HEAD" }));
-  assert.equal(resposta.status, 200);
-  assert.equal(await resposta.text(), "");
+test("nome público nulo preserva a possibilidade de usar o nome estático", async () => {
+  mock.method(globalThis, "fetch", () => Promise.resolve(Response.json({ ...perfilExemplo, name: null, avatar_url: null })));
+  const perfil = await consultarPerfil("pessoa-equipe");
+  assert.equal(perfil.nome, null);
+  assert.equal(perfil.avatar, null);
 });
 
-test("POST é rejeitado e informa os métodos permitidos", () => {
-  const resposta = responderFuncionalidades(new Request(endereco, { method: "POST" }));
-  assert.equal(resposta.status, 405);
-  assert.equal(resposta.headers.get("allow"), "GET, HEAD");
-});
-
-test("cliente interpreta a resposta real da função", async () => {
-  mock.method(globalThis, "fetch", () => Promise.resolve(responderFuncionalidades(new Request(endereco))));
-  assert.equal((await consultarFuncionalidades(endereco)).length, 4);
-});
-
-test("cliente rejeita falha HTTP mesmo quando fetch resolve", async () => {
-  mock.method(globalThis, "fetch", () => Promise.resolve(new Response("Falha", { status: 500 })));
-  await assert.rejects(consultarFuncionalidades(endereco), /HTTP 500/);
-});
-
-test("cliente permite lista vazia para a interface apresentar estado vazio", async () => {
-  mock.method(globalThis, "fetch", () => Promise.resolve(Response.json({ funcionalidades: [] })));
-  assert.deepEqual(await consultarFuncionalidades(endereco), []);
-});
-
-test("cliente rejeita campos ausentes e resposta inesperada", async () => {
-  for (const dados of [{}, { funcionalidades: [{ id: "calendario" }] }]) {
-    mock.method(globalThis, "fetch", () => Promise.resolve(Response.json(dados)));
-    await assert.rejects(consultarFuncionalidades(endereco), /inválido|incompleta/);
+test("rejeita perfil ausente, limite de uso e falha do serviço", async () => {
+  for (const status of [404, 403, 429, 500]) {
+    mock.method(globalThis, "fetch", () => Promise.resolve(new Response("Falha", { status })));
+    await assert.rejects(consultarPerfil("pessoa-equipe"), new RegExp(`HTTP ${status}`));
     mock.restoreAll();
   }
 });
 
-test("cliente propaga erro de rede para o tratamento da interface", async () => {
-  mock.method(globalThis, "fetch", () => Promise.reject(new TypeError("Conexão indisponível")));
-  await assert.rejects(consultarFuncionalidades(endereco), /Conexão indisponível/);
+test("rejeita resposta vazia, incompleta ou referente a outro usuário", async () => {
+  for (const dados of [null, {}, [], { ...perfilExemplo, login: "outra-pessoa" }]) {
+    mock.method(globalThis, "fetch", () => Promise.resolve(Response.json(dados)));
+    await assert.rejects(consultarPerfil("pessoa-equipe"), /inválida/);
+    mock.restoreAll();
+  }
 });
 
-test("cliente cancela uma consulta que ultrapassa o tempo limite", async () => {
+test("não aceita endereços externos inesperados retornados pela API", async () => {
+  for (const campo of ["html_url", "avatar_url"]) {
+    mock.method(globalThis, "fetch", () => Promise.resolve(Response.json({ ...perfilExemplo, [campo]: "https://exemplo.invalid/perfil" })));
+    await assert.rejects(consultarPerfil("pessoa-equipe"), /inválido/);
+    mock.restoreAll();
+  }
+});
+
+test("propaga falha de rede para o tratamento da interface", async () => {
+  mock.method(globalThis, "fetch", () => Promise.reject(new TypeError("Conexão indisponível")));
+  await assert.rejects(consultarPerfil("pessoa-equipe"), /Conexão indisponível/);
+});
+
+test("cancela uma consulta que ultrapassa o tempo limite", async () => {
   mock.method(globalThis, "fetch", (_endereco, opcoes) => new Promise((_concluir, rejeitar) => {
     opcoes.signal.addEventListener("abort", () => rejeitar(new DOMException("Tempo excedido", "AbortError")), { once: true });
   }));
-  await assert.rejects(consultarFuncionalidades(endereco, { tempoLimite: 10 }), { name: "AbortError" });
+  await assert.rejects(consultarPerfil("pessoa-equipe", { tempoLimite: 10 }), { name: "AbortError" });
 });
