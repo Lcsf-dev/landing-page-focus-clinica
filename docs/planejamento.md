@@ -6,7 +6,8 @@
 - Repositório GitHub privado criado na conta `Lcsf-dev`.
 - Documentação preparada para revisão.
 - Figma, aprovação visual, escolha de API e capturas reais pendentes.
-- API e testes reservados ao colega que manifestou interesse; identificação pendente.
+- API e coordenação dos testes atribuídas a `genzo-dev`, confirmado pelo solicitante.
+- `thaamiresffranca`, `genzo-dev` e `DumbRyder` já aceitaram os convites e têm acesso de escrita.
 
 ## Etapas
 
@@ -32,12 +33,25 @@ O estudo da API e a preparação dos testes podem ocorrer enquanto o protótipo 
 
 ## Decisões em aberto
 
-- Nome e usuário GitHub dos três colegas; confirmação de responsáveis.
+- Responsabilidades de `thaamiresffranca` e `DumbRyder`; `genzo-dev` já está confirmado em API/testes.
 - Link do Figma, versões para dispositivos e aprovação.
 - Logotipo, fontes, tons exatos e capturas reais do produto.
 - API, finalidade, endpoints e formato dos dados.
 - Canal de comunicação e prazos acordados.
 - Plataforma e data de publicação.
+
+O solicitante confirmou que ainda não existe protótipo no Figma e pediu auxílio para construí-lo. O briefing em design.md é a base para essa próxima entrega; não há aprovação visual registrada.
+
+## Prioridades após a estrutura inicial
+
+1. Confirmar as quatro frentes por integrante e quem revisa cada entrega.
+2. Revisar o planejamento no PR #10 e o registro inicial no PR #11; integrar somente depois da aprovação.
+3. Criar/revisar o Figma, obter os recursos visuais e registrar aprovação.
+4. Definir a API e seu contrato com o colega responsável; proposta em api.md.
+5. Iniciar as tarefas de implementação por branches, com verificações pequenas por PR.
+6. Executar testes integrados e conferir novamente o endereço publicado.
+
+Os modelos de Issues e Pull Requests estão na branch de planejamento; sua disponibilização na branch padrão depende da integração do PR #10.
 
 ## Datas e autoria
 
