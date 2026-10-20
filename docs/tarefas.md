@@ -13,16 +13,18 @@ Atualização: 20/10/2026. Fluxo: **A fazer → Em andamento → Em revisão →
 | [T07 / #6](https://github.com/Lcsf-dev/landing-page-focus-clinica/issues/6) — interações | Lucas / revisão visual | Em revisão | PR #15; revisão independente das interações |
 | [T08 / #7](https://github.com/Lcsf-dev/landing-page-focus-clinica/issues/7) — integração | Lucas / Gabriel | Em revisão | PR #16; sete testes e consulta real aprovados; revisão de Gabriel pendente |
 | [T09 / #8](https://github.com/Lcsf-dev/landing-page-focus-clinica/issues/8) — testes adicionais | Gabriel Enzo | A fazer | Revisar integração, CT09–CT14 e consolidar resultados reais |
-| [T10 / #9](https://github.com/Lcsf-dev/landing-page-focus-clinica/issues/9) — Netlify | Lucas / equipe | A fazer | Build pronto; publicar versão revisada e verificar URL final |
+| [T10 / #9](https://github.com/Lcsf-dev/landing-page-focus-clinica/issues/9) — publicação | Lucas / equipe | Concluído | GitHub Pages e Netlify publicados; HTTP, menu, imagens e API verificados; detalhes em publicacao.md |
 | [T11 / #12](https://github.com/Lcsf-dev/landing-page-focus-clinica/issues/12) — revisão visual | Thamires | Em andamento | Figma aprovado; testes de interface CT01–CT03, CT08 e CT15 serão registrados após execução |
 | [T12 / #13](https://github.com/Lcsf-dev/landing-page-focus-clinica/issues/13) — layout | DumbRyder | A fazer | CT04–CT07 com ambiente e evidências |
 
 ## Pull Requests para develop
 
 - [#10 — Planejamento](https://github.com/Lcsf-dev/landing-page-focus-clinica/pull/10).
-- [#11 — Verificações iniciais](https://github.com/Lcsf-dev/landing-page-focus-clinica/pull/11); cobre a estrutura inicial, não a API final.
+- [#11 — Verificações iniciais](https://github.com/Lcsf-dev/landing-page-focus-clinica/pull/11); fechado como substituído, sem integrar o estado inicial sobre a entrega atual.
 - [#14 — Estrutura e estilos](https://github.com/Lcsf-dev/landing-page-focus-clinica/pull/14); depende do planejamento.
 - [#15 — Menu e demonstração](https://github.com/Lcsf-dev/landing-page-focus-clinica/pull/15); depende da estrutura.
 - [#16 — API existente e entrega documentada](https://github.com/Lcsf-dev/landing-page-focus-clinica/pull/16); depende das etapas anteriores e contém o estado final.
+
+PRs #10, #14, #15 e #16 integrados; implementação enviada à main pelo [#17](https://github.com/Lcsf-dev/landing-page-focus-clinica/pull/17). Configuração de publicação integrada por [#18](https://github.com/Lcsf-dev/landing-page-focus-clinica/pull/18) e [#19](https://github.com/Lcsf-dev/landing-page-focus-clinica/pull/19). Entregas implementadas permanecem em revisão onde há validação independente da equipe pendente.
 
 Não integrar o experimento antigo da API própria como solução final. Branches reservadas ou sem commits próprios não contam como entregas. Datas e autoria devem corresponder ao trabalho real; cada colega registra sua revisão ou teste quando o executar.
