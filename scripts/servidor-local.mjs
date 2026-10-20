@@ -5,7 +5,7 @@ import { resolve, relative, extname } from "node:path";
 
 const raiz = fileURLToPath(new URL("../", import.meta.url));
 const porta = Number(process.env.PORT || 5500);
-const tipos = { ".html": "text/html", ".css": "text/css", ".js": "text/javascript", ".svg": "image/svg+xml", ".jpg": "image/jpeg", ".png": "image/png", ".webp": "image/webp" };
+const tipos = { ".html": "text/html", ".css": "text/css", ".js": "text/javascript", ".svg": "image/svg+xml", ".jpg": "image/jpeg", ".png": "image/png", ".webp": "image/webp", ".woff2": "font/woff2", ".txt": "text/plain" };
 
 const servidor = createServer(async (entrada, saida) => {
   try {
