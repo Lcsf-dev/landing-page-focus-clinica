@@ -1,3 +1,5 @@
+import { consultarFuncionalidades } from "./api.js";
+
 document.documentElement.classList.add("js");
 
 function iniciarMenu() {
@@ -119,3 +121,71 @@ iniciarMenu();
 iniciarDemonstracao();
 iniciarAmpliacao();
 iniciarRevelacoes();
+
+const listaFuncionalidades = document.querySelector("#lista-funcionalidades");
+const estadoFuncionalidades = document.querySelector("#estado-funcionalidades");
+const mensagemFuncionalidades = document.querySelector("#mensagem-funcionalidades");
+const botaoTentarNovamente = document.querySelector("#tentar-novamente");
+const iconesPorRecurso = { calendario: "calendario", agendamentos: "relogio", notificacoes: "sino", especialidades: "camadas" };
+let carregando = false;
+
+function criarCartaoRecurso(recurso, indice) {
+  const cartao = document.createElement("article");
+  cartao.className = "cartao-recurso";
+  cartao.dataset.recurso = recurso.id;
+  const numero = document.createElement("span");
+  numero.className = "numero-recurso";
+  numero.textContent = String(indice + 1).padStart(2, "0");
+  numero.setAttribute("aria-hidden", "true");
+  const suporteIcone = document.createElement("span");
+  suporteIcone.className = "cartao-recurso__icone";
+  const icone = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+  icone.classList.add("icone");
+  icone.setAttribute("aria-hidden", "true");
+  const uso = document.createElementNS("http://www.w3.org/2000/svg", "use");
+  const nomeIcone = Object.hasOwn(iconesPorRecurso, recurso.id) ? iconesPorRecurso[recurso.id] : "camadas";
+  uso.setAttribute("href", `img/icones.svg#${nomeIcone}`);
+  icone.append(uso);
+  suporteIcone.append(icone);
+  const titulo = document.createElement("h3");
+  titulo.textContent = recurso.titulo;
+  const descricao = document.createElement("p");
+  descricao.textContent = recurso.descricao;
+  cartao.append(numero, suporteIcone, titulo, descricao);
+  return cartao;
+}
+
+async function carregarFuncionalidades() {
+  if (carregando) return;
+  carregando = true;
+  listaFuncionalidades.setAttribute("aria-busy", "true");
+  estadoFuncionalidades.hidden = false;
+  estadoFuncionalidades.dataset.estado = "carregando";
+  mensagemFuncionalidades.textContent = "Carregando funcionalidades…";
+  botaoTentarNovamente.hidden = true;
+  botaoTentarNovamente.disabled = true;
+  try {
+    const endereco = new URL("api/funcionalidades", document.baseURI);
+    const recursos = await consultarFuncionalidades(endereco);
+    listaFuncionalidades.replaceChildren(...recursos.map(criarCartaoRecurso));
+    if (recursos.length === 0) {
+      estadoFuncionalidades.dataset.estado = "vazio";
+      mensagemFuncionalidades.textContent = "Nenhuma funcionalidade disponível no momento.";
+      botaoTentarNovamente.hidden = false;
+    } else {
+      estadoFuncionalidades.hidden = true;
+    }
+  } catch {
+    listaFuncionalidades.replaceChildren();
+    estadoFuncionalidades.dataset.estado = "erro";
+    mensagemFuncionalidades.textContent = "Não foi possível carregar as funcionalidades. Verifique sua conexão e tente novamente.";
+    botaoTentarNovamente.hidden = false;
+  } finally {
+    carregando = false;
+    listaFuncionalidades.setAttribute("aria-busy", "false");
+    botaoTentarNovamente.disabled = false;
+  }
+}
+
+botaoTentarNovamente.addEventListener("click", carregarFuncionalidades);
+carregarFuncionalidades();
