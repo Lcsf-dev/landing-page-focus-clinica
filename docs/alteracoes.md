@@ -18,4 +18,14 @@ Datas reais no fuso de São Paulo. Este registro resume marcos e complementa os 
 | 19/10/2026 | Organização da equipe por frentes de trabalho e distribuição das verificações de interface, responsividade e API | Responsabilidades e roteiros registrados em equipe.md e testes.md |
 | 19/10/2026 | Criação das tarefas de Revisão visual e de Validação de layout; conferência das atribuições | Convite de Thamires pendente de aceite; demais atribuições confirmadas |
 
-Figma aprovado, API integrada, testes funcionais e publicação ainda não ocorreram.
+| 20/10/2026 | Implementação das oito seções e responsividade, menu acessível, abas e ampliação de capturas reais | Entregas em commits e branches específicos |
+| 20/10/2026 | Criação de develop conforme fluxo solicitado pela equipe | PRs de tarefas direcionados à integração |
+| 20/10/2026 | Implementação experimental de catálogo próprio e posterior substituição pela API REST do GitHub | A versão final não usa backend próprio; histórico preservado |
+| 20/10/2026 | Integração de perfis públicos no rodapé; documentação oficial, contrato e roteiro de Insomnia | Fetch, validação e estados de falha implementados |
+| 20/10/2026 | Verificação da API real no Chrome e do rodapé em celular/computador | Quatro perfis carregados, sem overflow; evidências em testes.md |
+| 20/10/2026 | Arquivo Figma com wireframes, três layouts, estilos, capturas reais e protótipo; revisão visual de Thamires | Aprovado |
+| 20/10/2026 | README atualizado com emojis e instruções; nove testes atuais aprovados | Sete casos de API e dois de publicação |
+| 20/10/2026 | Repositório alterado para público com autorização expressa | Consulta e avaliação públicas; GitHub Pages autorizado |
+| 20/10/2026 | Envio das branches e abertura dos PRs #14, #15 e #16 | Histórico organizado por entregas reais |
+
+Dados da publicação e verificações do endereço final ficam em publicacao.md. Testes adicionais dos integrantes são registrados após sua execução.
