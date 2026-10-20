@@ -6,7 +6,7 @@ import { resolve } from "node:path";
 const pastaPublica = resolve("dist");
 const pagina = readFileSync(resolve(pastaPublica, "index.html"), "utf8");
 
-test("links, imagens e scripts locais resolvem também no subdiretório do GitHub Pages", () => {
+test("links, imagens, fontes e scripts locais resolvem também no subdiretório do GitHub Pages", () => {
   const base = new URL("https://lcsf-dev.github.io/landing-page-focus-clinica/");
   const identificadores = [...pagina.matchAll(/\bid="([^"]+)"/g)].map((item) => item[1]);
   assert.equal(new Set(identificadores).size, identificadores.length, "IDs devem ser únicos.");
@@ -26,6 +26,16 @@ test("links, imagens e scripts locais resolvem também no subdiretório do GitHu
       assert.ok(identificadores.includes(identificador), `Referência acessível inexistente: ${identificador}`);
     }
   }
+  const enderecoEstilos = new URL("css/estilos.css", base);
+  const estilos = readFileSync(resolve(pastaPublica, "css/estilos.css"), "utf8");
+  for (const [, referencia] of estilos.matchAll(/url\(["']?([^"')]+)["']?\)/g)) {
+    const endereco = new URL(referencia, enderecoEstilos);
+    if (endereco.origin !== base.origin) continue;
+    assert.ok(endereco.pathname.startsWith(base.pathname), `Recurso CSS fora do projeto: ${referencia}`);
+    const arquivo = resolve(pastaPublica, decodeURIComponent(endereco.pathname.slice(base.pathname.length)));
+    assert.ok(existsSync(arquivo) && statSync(arquivo).isFile(), `Recurso CSS ausente: ${referencia}`);
+  }
+  assert.ok(existsSync(resolve(pastaPublica, "css/fontes/LICENCA-Inter.txt")), "Licença da fonte deve acompanhar a publicação.");
 });
 
 test("pacote público não inclui histórico, documentos de trabalho ou credenciais locais", () => {

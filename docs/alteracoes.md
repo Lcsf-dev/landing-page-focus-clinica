@@ -31,3 +31,10 @@ Datas reais no fuso de São Paulo. Este registro resume marcos e complementa os 
 | 20/10/2026 | README com links publicados e simplificação das referências e atribuições conforme solicitado | Evidências e detalhes preservados na documentação específica |
 
 Dados da publicação e verificações do endereço final ficam em publicacao.md. Testes adicionais dos integrantes são registrados após sua execução.
+
+## Acabamento da identidade e planejamento — 20/10/2026
+
+- Logo original obtido do sistema de referência, aplicado no site e nos três layouts do Figma; origem documentada em img/README.md.
+- Fonte Inter variável hospedada no projeto com licença; build e servidor local preparados para WOFF2.
+- Nove testes aprovados, com conferência dos recursos CSS e da licença no pacote; layout e menu retestados em celular e computador.
+- Planejamento atualizado com Figma concluído, links publicados, prazo de entrega em 14/11/2026 e somente as revisões adicionais reais em aberto.

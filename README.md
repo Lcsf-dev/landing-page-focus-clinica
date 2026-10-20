@@ -57,7 +57,7 @@ As frentes indicam atribuições. Autoria, testes executados e aprovações são
 
 [Abrir Focus Clínica — Landing Page no Figma](https://www.figma.com/design/P7K5fBiCqhBsehhrR5BNqp/).
 
-Ver [telas e identidade visual](docs/design.md). As capturas mostram as telas públicas de apresentação e acesso. A marca usada é provisória.
+Ver [telas e identidade visual](docs/design.md). As capturas e o logo foram obtidos do sistema de referência. A fonte Inter é hospedada junto ao projeto.
 
 ## 🗂️ Estrutura
 
@@ -70,7 +70,7 @@ Ver [telas e identidade visual](docs/design.md). As capturas mostram as telas p�
 ├── js/                  # Menu, demonstração e cliente da API externa
 ├── pages/               # Reservada conforme o enunciado; entrega de página única
 ├── scripts/             # Servidor estático local e preparação de publicação
-├── testes/              # Testes necessários do cliente da API
+├── testes/              # Cliente da API e pacote de publicação
 ├── index.html
 ├── netlify.toml
 ├── package.json

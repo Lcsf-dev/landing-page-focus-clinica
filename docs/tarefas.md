@@ -1,6 +1,6 @@
 # Quadro de tarefas
 
-Atualização: 20/10/2026. Fluxo: **A fazer → Em andamento → Em revisão → Concluído**. Usar Issues do GitHub como quadro operacional. Prazos ainda não acordados; status Em revisão não significa aprovação.
+Atualização: 20/10/2026. Entrega: **14/11/2026**. Fluxo: **A fazer → Em andamento → Em revisão → Concluído**. Usar Issues do GitHub como quadro operacional. Prazos individuais de revisão ainda não acordados; status Em revisão não significa aprovação.
 
 | Tarefa / Issue | Frente | Estado | Evidência e critério restante |
 | --- | --- | --- | --- |
@@ -8,7 +8,7 @@ Atualização: 20/10/2026. Fluxo: **A fazer → Em andamento → Em revisão →
 | [T02 / #1](https://github.com/Lcsf-dev/landing-page-focus-clinica/issues/1) — planejamento | Lucas / equipe | Em revisão | PR #10 e atualização no PR #16; equipe revisa decisões |
 | [T03 / #2](https://github.com/Lcsf-dev/landing-page-focus-clinica/issues/2) — Figma | Lucas cria; Thamires valida | Concluído | Wireframes, layouts e protótipo; revisão visual aprovada em 20/10/2026 |
 | [T04 / #3](https://github.com/Lcsf-dev/landing-page-focus-clinica/issues/3) — API e contrato | Lucas / Gabriel | Em revisão | GitHub REST API escolhida; api.md e PR #16; Gabriel revisa |
-| [T05 / #4](https://github.com/Lcsf-dev/landing-page-focus-clinica/issues/4) — cabeçalho e hero | Interface / desenvolvimento | Em revisão | PR #14; comparar ao Figma aprovado |
+| [T05 / #4](https://github.com/Lcsf-dev/landing-page-focus-clinica/issues/4) — cabeçalho e hero | Interface / desenvolvimento | Em revisão | Implementados e publicados; logo do sistema de referência e fonte Inter aplicados; comparação adicional pela equipe |
 | [T06 / #5](https://github.com/Lcsf-dev/landing-page-focus-clinica/issues/5) — seções responsivas | Interface / desenvolvimento | Em revisão | PR #14; DumbRyder valida layout e registra resultados |
 | [T07 / #6](https://github.com/Lcsf-dev/landing-page-focus-clinica/issues/6) — interações | Lucas / revisão visual | Em revisão | PR #15; revisão independente das interações |
 | [T08 / #7](https://github.com/Lcsf-dev/landing-page-focus-clinica/issues/7) — integração | Lucas / Gabriel | Em revisão | PR #16; sete testes e consulta real aprovados; revisão de Gabriel pendente |
