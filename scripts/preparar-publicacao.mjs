@@ -11,11 +11,12 @@ if (relative(raiz, destino) !== "dist" || resolve(dirname(destino)) !== resolve(
 await rm(destino, { recursive: true, force: true });
 await mkdir(destino, { recursive: true });
 await cp(resolve(raiz, "index.html"), resolve(destino, "index.html"));
-const extensoes = new Set([".html", ".css", ".js", ".svg", ".jpg", ".jpeg", ".png", ".webp", ".avif", ".ico"]);
+const extensoes = new Set([".html", ".css", ".js", ".svg", ".jpg", ".jpeg", ".png", ".webp", ".avif", ".ico", ".woff2"]);
+const licencaFonte = resolve(raiz, "css/fontes/LICENCA-Inter.txt");
 for (const pasta of ["css", "js", "img", "pages"]) {
   await cp(resolve(raiz, pasta), resolve(destino, pasta), {
     recursive: true,
-    filter: async (origem) => (await stat(origem)).isDirectory() || extensoes.has(extname(origem))
+    filter: async (origem) => (await stat(origem)).isDirectory() || extensoes.has(extname(origem)) || origem === licencaFonte
   });
 }
 console.log("Publicação preparada em dist/. Documentação, testes e arquivos locais não foram copiados.");

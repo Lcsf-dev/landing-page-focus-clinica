@@ -31,10 +31,10 @@ O protótipo apresenta o visual e os fluxos principais. A execução de fetch, a
 | Verde | `#16765C` |
 | Menta | `#B9F2D5` |
 | Branco / fundo claro | `#FFFFFF`, `#F8FBF9` |
-| Tipografia do protótipo | Inter; implementação usa a pilha de fontes do sistema |
+| Tipografia | Inter no protótipo e no site; fonte variável WOFF2 hospedada em css/fontes, com licença SIL Open Font License |
 | Organização | Auto Layout, camadas em português, cartões e botões reutilizáveis |
 | Capturas reais | Apresentação pública e acesso do Focus Clínica; origem registrada em img/README.md |
-| Marca | Composição provisória criada para a apresentação; não apresentada como marca oficial fornecida pelo produto |
+| Marca | Logo original usado pelo sistema de referência, preservado em img/logo-focus-clinica.png; origem em img/README.md |
 
 Os créditos contemplam os quatro perfis públicos da equipe, com estados de carregamento, sucesso e falha no material de estilos. Não foram criadas imagens fictícias de agendas, pacientes ou telas internas.
 
