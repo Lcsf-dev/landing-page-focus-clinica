@@ -11,7 +11,6 @@ Datas reais no fuso de São Paulo. Este registro resume marcos e complementa os 
 | 19/10/2026 | Cadastro de nove Issues e quatro rótulos de status no GitHub | Concluído; tarefas funcionais ainda não iniciadas |
 | 19/10/2026 | Conferência de estrutura, links locais, HTML inicial e sintaxe JavaScript | Verificações da estrutura aprovadas; testes funcionais pendentes |
 | 19/10/2026 | Confirmação do aceite dos três colaboradores e atualização da organização por frente, testes e dependências dos PRs | Responsabilidades nominais aguardando confirmação |
-| 19/10/2026 | Documentação da proposta de API própria de catálogo público de funcionalidades | Proposta em avaliação; nenhuma API implementada |
 | 19/10/2026 | Confirmação de genzo-dev como responsável por API/testes e da ausência de protótipo Figma | Responsabilidade confirmada; prototipação pendente |
 | 19/10/2026 | Escolha do Netlify para hospedagem da landing page | Plataforma confirmada; publicação pendente |
 | 19/10/2026 | Definição de Lucas como autor do Figma e thaamiresffranca como revisora visual | Criação, revisão e aprovação ainda pendentes |
@@ -20,7 +19,6 @@ Datas reais no fuso de São Paulo. Este registro resume marcos e complementa os 
 
 | 20/10/2026 | Implementação das oito seções e responsividade, menu acessível, abas e ampliação de capturas reais | Entregas em commits e branches específicos |
 | 20/10/2026 | Criação de develop para integração das tarefas | PRs de tarefas direcionados à integração |
-| 20/10/2026 | Implementação experimental de catálogo próprio e posterior substituição pela API REST do GitHub | A versão final não usa backend próprio; histórico preservado |
 | 20/10/2026 | Integração de perfis públicos no rodapé; documentação oficial, contrato e roteiro de Insomnia | Fetch, validação e estados de falha implementados |
 | 20/10/2026 | Verificação da API real no Chrome e do rodapé em celular/computador | Quatro perfis carregados, sem overflow; evidências em testes.md |
 | 20/10/2026 | Arquivo Figma com wireframes, três layouts, estilos, capturas reais e protótipo; revisão visual de Thamires | Aprovado |

@@ -22,8 +22,7 @@ Foi criada `develop` para integrar as tarefas antes da versão de produção:
 | `testes/cenarios-manuais` | Verificações iniciais; PR #11 fechado por ter sido substituído pela validação atual |
 | `funcionalidade/estrutura-responsiva` | HTML, estilos e capturas públicas |
 | `funcionalidade/menu-demonstracao` | Menu acessível, abas, ampliação e animações |
-| `integracao/catalogo-funcionalidades` | Experimento anterior de API própria; não é a solução final |
-| `integracao/api-github` | Integração escolhida, retirada do backend, testes e documentação atualizados |
+| `integracao/api-github` | Consumo da API REST do GitHub, testes e documentação |
 | `design/prototipo-figma` | Branch reservada anteriormente; link e evidências do Figma podem ser entregues em PR documental |
 | `integracao/api` | Reserva anterior, sem implementação específica |
 | `publicacao/github-pages` | Workflow de testes e publicação; PR #18 integrado em develop |
@@ -31,7 +30,7 @@ Foi criada `develop` para integrar as tarefas antes da versão de produção:
 
 As branches de estrutura, interações e API foram construídas sequencialmente: estrutura depende do planejamento, interações dependem da estrutura, e a integração final depende de ambas. Enquanto não houver merge das anteriores, o PR seguinte pode exibir também seus commits. Conferir as dependências antes de integrar; não apresentar os mesmos commits como trabalho independente.
 
-A API própria permanece no histórico como decisão substituída; o estado final remove a função e consome o GitHub. Não publicar o estado intermediário como entrega final.
+Para novas tarefas, usar a implementação atual da API REST do GitHub como base.
 
 ## Rotina por tarefa
 

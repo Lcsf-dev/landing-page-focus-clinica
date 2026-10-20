@@ -27,4 +27,4 @@ Atualização: 20/10/2026. Fluxo: **A fazer → Em andamento → Em revisão →
 
 PRs #10, #14, #15 e #16 integrados; implementação enviada à main pelo [#17](https://github.com/Lcsf-dev/landing-page-focus-clinica/pull/17). Configuração de publicação integrada por [#18](https://github.com/Lcsf-dev/landing-page-focus-clinica/pull/18) e [#19](https://github.com/Lcsf-dev/landing-page-focus-clinica/pull/19). Entregas implementadas permanecem em revisão onde há validação independente da equipe pendente.
 
-Não integrar o experimento antigo da API própria como solução final. Branches reservadas ou sem commits próprios não contam como entregas. Datas e autoria devem corresponder ao trabalho real; cada colega registra sua revisão ou teste quando o executar.
+Branches reservadas ou sem commits próprios não contam como entregas. Datas e autoria devem corresponder ao trabalho real; cada colega registra sua revisão ou teste quando o executar.
