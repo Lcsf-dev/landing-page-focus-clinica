@@ -1,5 +1,7 @@
 # Equipe e frentes de trabalho
 
+A validação técnica de 29/10/2026 está em [Finalização técnica](technical-review.md). As responsabilidades abaixo permanecem para conferência posterior da equipe, sem atribuir autoria ou testes não realizados pelos colegas.
+
 ## Distribuição das frentes
 
 | Integrante | GitHub | Frente | Entregas da frente |

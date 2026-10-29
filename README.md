@@ -6,13 +6,15 @@ Landing page institucional para apresentar o **Focus Clínica**, suas funcionali
 
 | Entrega | Situação |
 | --- | --- |
-| 📄 Oito seções da landing page | Implementadas; revisão da equipe pendente |
+| 📄 Oito partes da landing page | Implementadas e conferidas tecnicamente; conferência humana posterior |
 | 📱 Layout responsivo e interações | Implementados; registros em [Testes](docs/testing.md) |
 | 🔌 API existente | GitHub REST API integrada aos créditos da equipe |
-| 🎨 Figma | Wireframes, três layouts e protótipo navegável |
-| 🧪 Testes automatizados | 22 testes aprovados localmente em 29/10/2026: API, equipe e pacote público |
+| 🎨 Figma | Arquivo consultado; há diferenças visuais para a implementação atual, registradas na auditoria |
+| 🧪 Testes automatizados | 26 testes locais aprovados em 29/10/2026; validação remota pelo workflow com Node 22 |
 | 👀 Revisão dos colegas | Pendente; não substituída pelos testes do autor |
 | 🚀 Publicação | GitHub Pages e Netlify; atualização da refatoração pelo fluxo de publicação da `main` |
+
+A finalização técnica foi preparada na branch `chore/technical-finalization`, baseada em `13edfc0`. Veja o [relatório de finalização](docs/technical-review.md), com checklist, auditoria da API antiga, resultados e limites. Esse relatório registra a etapa anterior ao envio; a versão publicada acompanha a última execução bem-sucedida do [workflow da main](https://github.com/Lcsf-dev/landing-page-focus-clinica/actions/workflows/ci-pages.yml?query=branch%3Amain).
 
 O projeto reúne planejamento, design, implementação, integração e evidências de teste. O Figma foi concluído após o início da programação, conforme a sequência de trabalho adotada. Datas e commits registram essa evolução.
 
@@ -83,6 +85,7 @@ Ver [telas e identidade visual](docs/design.md). As capturas e o logo foram obti
 │   ├── requirements.md
 │   ├── tasks.md
 │   ├── team.md
+│   ├── technical-review.md
 │   └── testing.md
 ├── img/
 │   ├── icons.svg
@@ -104,7 +107,12 @@ Ver [telas e identidade visual](docs/design.md). As capturas e o logo foram obti
 │   └── reveal-animations.js
 ├── pages/
 ├── scripts/{build,dev-server}.mjs
-├── tests/{api,deployment,team-profiles}.test.mjs
+├── tests/
+│   ├── api.test.mjs
+│   ├── deployment.test.mjs
+│   ├── reveal-animations.test.mjs
+│   ├── team-profiles.test.mjs
+│   └── team-view.test.mjs
 ├── index.html
 ├── netlify.toml
 ├── package.json
@@ -148,9 +156,21 @@ O Netlify mantém `netlify.toml`: `npm run build`, pasta `dist`, Node 22 e CSP e
 
 ## Verificação da refatoração — 29/10/2026
 
+Registro da etapa anterior, com 22 testes. O resultado atual é de 26 testes e está na finalização técnica abaixo.
+
 - `npm test`: 22 testes aprovados; respostas controladas para HTTP, rede, timeout, JSON inválido, dados opcionais, URLs inesperadas, concorrência e tentativas apenas dos perfis pendentes.
 - `npm run build`: concluído; caminhos relativos, imports ES, símbolos SVG e licença da fonte verificados pela suíte.
 - Chrome local: abas por clique e teclado, diálogo com Escape, menu móvel com retorno do foco e navegação, quatro perfis reais e quatro avatares carregados; sem erros/avisos no console capturado.
 - Sem overflow horizontal em 360, 390, 768, 1280 e 1440 px. Em 1440 px, dimensões das seções, textos e rótulos acessíveis coincidiram com a referência anterior à refatoração.
 
 Ambiente local: Node.js 24.16.0 / npm 11.13.0. O workflow mantém Node 22. Na etapa local da refatoração, o workflow remoto não foi executado e não houve push, merge ou publicação; o envio e o deploy ocorreram na etapa seguinte. Movimento reduzido foi preservado no código, sem emulação da preferência no navegador; não foi feita auditoria completa de acessibilidade, comparação visual com Figma ou teste em outros navegadores. Detalhes em [Testes](docs/testing.md).
+
+## Finalização técnica — 29/10/2026
+
+- `npm test`: 26 aprovados; `npm run build`: concluído. Os quatro casos adicionais verificam falha de avatar, inserção textual segura e animações/fallback.
+- Corrigido o foco de “Pular para o conteúdo” com `tabindex="-1"` no `main`; Enter e continuidade por Tab retestados no Chrome.
+- Conferidos menu, abas, diálogo e layouts em 360/390/768/1440 px. Falha parcial e recuperação da equipe verificadas no navegador com respostas controladas; novas tentativas somente dos pendentes.
+- A API própria já tinha sido removida em `13081b8`; removidos apenas diretórios locais vazios remanescentes. Cliente GitHub, OpenAPI e Insomnia preservados. Não foram encontradas credenciais na árvore inspecionada.
+- Pages e Netlify responderam HTTP 200 para a versão anterior `13edfc0`; esta branch não foi publicada. O workflow dessa base passou com 22 testes em Node 22.23.4 na etapa anterior.
+
+Limites: diferenças visuais para o Figma registradas, zoom real de 200% e emulação real de movimento reduzido não comprovados; sem auditoria completa de acessibilidade ou aprovação final humana. A execução dos testes registrados não é atribuída aos colegas.

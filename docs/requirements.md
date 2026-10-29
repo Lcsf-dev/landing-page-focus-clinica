@@ -8,6 +8,8 @@
 
 Os documentos descrevem o escopo. Eles não constituem evidência de aprovação do Figma, participação individual, execução de testes ou publicação. Essas evidências serão registradas quando existirem.
 
+A validação e os limites de design/acessibilidade estão em [Finalização técnica](technical-review.md). A integração do GitHub atende ao requisito de consumir uma API; não há exigência de uma API clínica.
+
 ## Objetivo
 
 Apresentar profissionalmente o Focus Clínica, um sistema de gestão clínica, destacar suas funcionalidades e incentivar clínicas, gestores e profissionais da saúde a conhecer ou acessar a plataforma.

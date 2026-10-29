@@ -1,5 +1,18 @@
 # Registro de alterações
 
+## Finalização técnica local — 29/10/2026
+
+- Auditoria em `chore/technical-finalization`, base `13edfc0`, com análise do Figma e da documentação técnica.
+- A API própria já havia sido retirada em `13081b8`; removidos somente diretórios locais vazios remanescentes, sem excluir cliente GitHub ou OpenAPI.
+- Link de salto corrigido com `tabindex="-1"` no `main`, com foco e continuidade por teclado retestados.
+- Quatro testes adicionais para avatar, inserção textual e animações/fallback: 26 aprovados; build concluído. Falha parcial e recuperação também conferidas no navegador.
+- Referências documentais e contagens operacionais corrigidas, histórico preservado e [relatório técnico](technical-review.md) consolidado com limites de design, zoom e movimento real.
+- Sem commit, push, merge ou publicação desta etapa. Conferência humana posterior não equivale a aprovação concedida.
+
+## Publicação da refatoração — 29/10/2026
+
+Os commits `1912cf9` e `13edfc0` foram enviados à `main`. O workflow `40937911844` passou com 22 testes em Node 22.23.4 e publicou no Pages; o Netlify também passou a servir a nova versão. Os registros de ausência de publicação abaixo correspondem à etapa anterior ao envio.
+
 ## Refatoração local — 29/10/2026
 
 - Nomes técnicos, arquivos, diretórios, CSS BEM e seletores padronizados em inglês; interface, acessibilidade e documentação da equipe preservadas em português.
