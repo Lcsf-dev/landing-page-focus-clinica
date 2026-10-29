@@ -1,53 +1,42 @@
-# Publicação e verificação final
+# CI/CD e publicação
 
-**Publicação:** GitHub Pages e Netlify acompanham a `main`; o Pages exige validação aprovada. Consulte a última execução do [workflow da main](https://github.com/Lcsf-dev/landing-page-focus-clinica/actions/workflows/ci-pages.yml?query=branch%3Amain) para identificar a versão efetivamente publicada. A publicação inicial ocorreu em 20/10/2026, primeiro no GitHub Pages e depois no Netlify.
+## Produção
 
-Os registros a seguir descrevem a base `13edfc0` e a auditoria feita antes do envio. A ausência de push/deploy mencionada nesses registros corresponde à etapa de auditoria, não ao estado operacional após a publicação.
-
-## Versão publicada e branch local
-
-Os commits `1912cf9` e `13edfc0` foram enviados à `main`. O [workflow 40937911844](https://github.com/Lcsf-dev/landing-page-focus-clinica/actions/runs/40937911844) passou com 22 testes em Node 22.23.4 e publicou no Pages. O Netlify também passou a servir os arquivos atualizados; suas inserções próprias de hospedagem foram diferenciadas do HTML da aplicação.
-
-Nesta auditoria, os dois endereços responderam HTTP 200. O `tabindex` do link de salto e os quatro testes adicionais existem somente em `chore/technical-finalization`; não se declara que produção contenha essas alterações. Não houve novo push, merge ou deploy. Resultados em [Finalização técnica](technical-review.md).
-
-A configuração de PRs/branches sem deploy foi conferida no workflow do Pages. As opções externas de previews/branch deploys no painel do Netlify não foram inspecionadas nesta auditoria; não se afirma que estejam desabilitadas.
-
-## Endereços da entrega
-
-| Plataforma | Endereço | Publicação inicial |
-| --- | --- | --- |
-| GitHub Pages | <https://lcsf-dev.github.io/landing-page-focus-clinica/> | Commit `a5569fe`; [execução aprovada](https://github.com/Lcsf-dev/landing-page-focus-clinica/actions/runs/39421037690) |
-| Netlify | <https://landing-page-focus-clinica-lcsf.netlify.app/> | Commit `a5569fe`; [deploy publicado](https://app.netlify.com/projects/landing-page-focus-clinica-lcsf/deploys/6ad75c448744501e4d0ddb7a) |
-
-Responsável pela publicação: Lucas Fernandes (`Lcsf-dev`). Data: 20/10/2026, fuso de São Paulo. Atualizações posteriores de documentação mantêm os mesmos arquivos públicos; o histórico de cada plataforma identifica o commit mais recente.
-
-O endereço <https://focus-clinica.netlify.app/> é o sistema de referência, não a publicação desta landing page.
-
-## Publicação automática
-
-- Produção acompanha `main`; tarefas passam por branches próprias e `develop`.
-- GitHub Pages: `.github/workflows/ci-pages.yml`, Node 22. PRs destinados a `develop`/`main` e pushes nessas branches passam por `npm test`; o `pretest` prepara `dist` uma única vez. Ações fixadas por commit; leitura de conteúdo na validação e permissões de publicação somente no deploy.
-- O upload e o deploy exigem `refs/heads/main`, evento diferente de PR e validação aprovada (`needs: validate`). PRs e branches de desenvolvimento não publicam no Pages. A concorrência cancela validações ultrapassadas do mesmo PR/branch de desenvolvimento e serializa execuções da `main`.
-- Netlify: repositório conectado, branch `main`, `netlify.toml`, comando `npm run build`, pasta `dist`, Node 22. Não há função ou API própria.
-- Somente arquivos públicos entram em `dist`; documentos, testes e histórico Git ficam fora.
-- Os cabeçalhos definidos no `netlify.toml` são aplicados pelo Netlify. O GitHub Pages utiliza os cabeçalhos da própria plataforma.
-
-Configuração revisada localmente em 29/10/2026. Foram executados `npm test` (22 aprovados) e `npm run build`; o workflow remoto e novos deploys não foram executados nesta tarefa. O Node local é 24.16.0; CI e Netlify continuam configurados com Node 22. A configuração da branch e dos previews do Netlify na plataforma foi preservada.
-
-## Verificações executadas
-
-| Verificação | Resultado em 20/10/2026 |
+| Plataforma | Endereço |
 | --- | --- |
-| HTTP dos dois endereços | `200 OK`, conteúdo HTML |
-| Testes locais | Nove aprovados |
-| GitHub Actions em Ubuntu / Node 22 | Testes, pacote e publicação aprovados |
-| CSS e imagens | Estilos aplicados; capturas e avatares carregados |
-| Demonstração nas duas origens | Aba de acesso selecionada, captura ampliada e diálogo fechado com Escape |
-| API nas duas origens | Quatro perfis e quatro avatares; estado `sucesso`; sem erros/avisos no console capturado |
-| Menu móvel nas duas origens | Abriu, navegou para Sobre e fechou; `aria-expanded` atualizado |
-| Responsividade em 390 px | Conteúdo e área útil com 375 px, sem overflow horizontal nas duas origens |
-| Cabeçalhos Netlify | CSP, X-Content-Type-Options, Referrer-Policy e X-Frame-Options presentes |
+| GitHub Pages | <https://lcsf-dev.github.io/landing-page-focus-clinica/> |
+| Netlify | <https://landing-page-focus-clinica-lcsf.netlify.app/> |
 
-Evidências: [GitHub Pages](evidence/github-pages-deployment.png) e [Netlify](evidence/netlify-deployment.png). Roteiros e limites em [Testes](testing.md).
+A versão validada em 29/10/2026 é `8b8ba58`, integrada pelos PRs #28 e #29. O [workflow de produção](https://github.com/Lcsf-dev/landing-page-focus-clinica/actions/runs/40945562687) passou com 26 testes em Node 22.23.4, gerou o pacote pelo `pretest` e publicou no Pages. Os dois endereços responderam HTTP 200 e serviram a versão atualizada, incluindo a correção do foco do link de salto.
 
-Os testes locais adicionais dos colegas continuam pendentes. A publicação e as verificações técnicas não representam execução desses testes por outros integrantes.
+O [sistema de referência](https://focus-clinica.netlify.app/) é uma aplicação externa, distinta desta landing page. A última versão de produção deve ser conferida no [workflow da main](https://github.com/Lcsf-dev/landing-page-focus-clinica/actions/workflows/ci-pages.yml?query=branch%3Amain) e no histórico do Netlify.
+
+## GitHub Actions
+
+O workflow `.github/workflows/ci-pages.yml` executa em PRs destinados a `develop` e `main`, pushes nessas branches e execuções manuais.
+
+- Node.js 22, ações fixadas por commit e `contents: read` na validação.
+- `npm test` gera `dist/` uma vez pelo `pretest`; o mesmo pacote é usado na publicação.
+- Upload e deploy somente na referência `refs/heads/main`, fora de PRs e após sucesso de `validate`.
+- `pages: write` e `id-token: write` restritos ao job de deploy.
+- Validações ultrapassadas do mesmo PR/branch de desenvolvimento são canceladas; execuções da `main` são serializadas.
+
+PRs e pushes em `develop` não publicam no GitHub Pages. Validações de push e PR têm grupos separados por verificarem o commit da branch e a integração do PR.
+
+## Netlify e pacote público
+
+`netlify.toml` define `npm run build`, publicação de `dist`, Node 22 e cabeçalhos CSP, X-Content-Type-Options, Referrer-Policy e X-Frame-Options. A CSP permite consultas ao GitHub e avatares no domínio esperado.
+
+A produção acompanha `main`. O Netlify também gerou uma [prévia do PR #29](https://deploy-preview-29--landing-page-focus-clinica-lcsf.netlify.app/); previews são separados de produção e controlados pelas configurações da plataforma. Não presumir que estejam desabilitados.
+
+O pacote contém HTML, CSS, JavaScript, imagens, fontes e a licença da Inter. Documentação, testes, configurações locais e histórico Git ficam fora. Caminhos relativos preservam a compatibilidade com o subdiretório do Pages. O Pages aplica os cabeçalhos da própria plataforma.
+
+## Histórico de publicação
+
+| Data | Versão | Registro |
+| --- | --- | --- |
+| 20/10/2026 | `a5569fe` | Publicação inicial no Pages e depois no Netlify; [workflow](https://github.com/Lcsf-dev/landing-page-focus-clinica/actions/runs/39421037690) e [deploy Netlify](https://app.netlify.com/projects/landing-page-focus-clinica-lcsf/deploys/6ad75c448744501e4d0ddb7a). |
+| 29/10/2026 | `13edfc0` | Refatoração publicada com 22 testes no [workflow](https://github.com/Lcsf-dev/landing-page-focus-clinica/actions/runs/40937911844). |
+| 29/10/2026 | `8b8ba58` | Finalização publicada com 26 testes e correção de foco; [workflow](https://github.com/Lcsf-dev/landing-page-focus-clinica/actions/runs/40945562687). |
+
+Evidências iniciais: [Pages](evidence/github-pages-deployment.png) e [Netlify](evidence/netlify-deployment.png). Cenários e limites de verificação em [Testes](testing.md). A limpeza documental integrada apenas em `develop` não altera a produção.
