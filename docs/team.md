@@ -1,6 +1,6 @@
 # Equipe e frentes de trabalho
 
-A validação técnica de 29/10/2026 está em [Finalização técnica](technical-review.md). As responsabilidades abaixo permanecem para conferência posterior da equipe, sem atribuir autoria ou testes não realizados pelos colegas.
+As frentes abaixo indicam responsabilidades. Os [resultados técnicos](testing.md) são separados da conferência posterior dos colegas; tarefas atribuídas não comprovam execução, autoria ou aprovação.
 
 ## Distribuição das frentes
 
@@ -11,7 +11,7 @@ A validação técnica de 29/10/2026 está em [Finalização técnica](technical
 | Gabriel Enzo | `genzo-dev` | API e testes | Revisão do contrato da API, testes de integração e consolidação dos resultados |
 | DumbRyder | `DumbRyder` | Interface e responsividade | Acompanhamento do HTML/CSS, revisão da estrutura e testes de layout |
 
-As frentes cobrem Figma/design, HTML/CSS, JavaScript e API/testes. A implementação pode ser centralizada no desenvolvimento, com participação dos demais integrantes na revisão e validação das respectivas frentes. Cada tarefa informa responsáveis e critérios de conclusão; os registros de execução identificam quem realizou a atividade.
+As frentes cobrem design, HTML/CSS, JavaScript e API/testes. Cada tarefa informa responsáveis e critérios de conclusão; os registros de execução identificam quem realizou a atividade.
 
 ## API e testes de integração
 
@@ -28,7 +28,7 @@ Gabriel Enzo coordena a validação da API e dos resultados integrados. O roteir
 
 ## Acesso ao GitHub
 
-O repositório é público desde 20/10/2026, para facilitar avaliação e publicação no GitHub Pages. Qualquer pessoa pode consultar e clonar o código; enviar alterações diretamente exige acesso de colaborador. Na conferência de 19/10/2026, Gabriel e DumbRyder já tinham aceitado o convite e o de Thamires estava pendente. Esse registro histórico não define o estado atual do convite.
+O repositório é público desde 20/10/2026. Qualquer pessoa pode consultar e clonar o código; enviar alterações diretamente exige acesso de colaborador.
 
 **Revisão visual do Figma: Thamires — aprovado em 20/10/2026.** Testes locais adicionais são registrados separadamente por quem os executar.
 

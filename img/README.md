@@ -7,7 +7,7 @@
 | `logo-focus-clinica.png` | Arquivo original usado no sistema de referência: https://focus-clinica.netlify.app/assets/focuslogo-DVNGTueR.png; PNG 500 × 500 px, preservado sem alteração |
 | `icons.svg` | Ícones vetoriais locais |
 
-As capturas e o logo foram obtidos da referência pública, sem acessar agendas ou outras telas internas. O logo foi conferido em 20/10/2026 e também é servido como favicon pelo sistema de referência. Capturas internas adicionais dependem de material fornecido pela equipe.
+As capturas e o logo têm origem na referência pública, sem agendas ou dados de pacientes. O logo foi conferido em 20/10/2026 e também é servido como favicon pelo sistema de referência. Capturas internas adicionais exigem revisão de privacidade antes de inclusão.
 
 - Usar nomes técnicos em inglês, como `calendar-focus-clinica.webp`.
 - Registrar a origem e a autorização de uso quando necessário.
