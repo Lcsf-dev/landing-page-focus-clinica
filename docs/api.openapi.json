@@ -8,11 +8,11 @@
   "externalDocs": { "description": "Documentação oficial: Get a user", "url": "https://docs.github.com/en/rest/users/users#get-a-user" },
   "servers": [{ "url": "https://api.github.com" }],
   "paths": {
-    "/users/{usuario}": {
+    "/users/{username}": {
       "get": {
-        "operationId": "consultarPerfilPublico",
+        "operationId": "fetchGithubProfile",
         "summary": "Consultar perfil público de um integrante",
-        "parameters": [{ "name": "usuario", "in": "path", "required": true, "description": "Exemplos da equipe: Lcsf-dev, thaamiresffranca, genzo-dev e DumbRyder.", "schema": { "type": "string", "default": "Lcsf-dev" } }],
+        "parameters": [{ "name": "username", "in": "path", "required": true, "description": "Exemplos da equipe: Lcsf-dev, thaamiresffranca, genzo-dev e DumbRyder.", "schema": { "type": "string", "default": "Lcsf-dev" } }],
         "responses": {
           "200": {
             "description": "Perfil público. A resposta completa possui outros campos que não são usados pela página.",

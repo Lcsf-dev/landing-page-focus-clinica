@@ -4,6 +4,8 @@ Repositório: <https://github.com/Lcsf-dev/landing-page-focus-clinica> (público
 
 ## Fluxo adotado
 
+Atualização local em 29/10/2026: o workflow `ci-pages.yml` valida PRs destinados a `develop`/`main` e pushes nessas branches. Somente a `main`, fora de PRs e após validação aprovada, publica no Pages. Nomes de branches históricas abaixo foram preservados; novas tarefas devem usar nomes técnicos em inglês. Nenhum push, merge ou deploy foi realizado nesta refatoração.
+
 Foi criada `develop` para integrar as tarefas antes da versão de produção:
 
 **Issue → branch da tarefa → commits → Pull Request → revisão → develop → testes integrados → Pull Request → revisão → main → GitHub Pages / Netlify.**
@@ -55,4 +57,4 @@ Não integrar alterações em nome de uma revisão de terceiros que ainda não o
 
 A integração e publicação de 20/10/2026 ocorreram após a validação técnica; os testes locais adicionais do grupo ficaram para depois. A revisão visual do Figma foi aprovada por Thamires. Isso não representa execução antecipada dos testes dos demais integrantes.
 
-GitHub Pages e Netlify publicados em 20/10/2026. Novos envios à `main` atualizam os dois endereços; o Pages exige a execução bem-sucedida dos testes no workflow. Links e evidências em [Publicação](publicacao.md).
+GitHub Pages e Netlify publicados em 20/10/2026. Novos envios à `main` atualizam os dois endereços; o Pages exige a execução bem-sucedida dos testes no workflow. Links e evidências em [Publicação](deployment.md).

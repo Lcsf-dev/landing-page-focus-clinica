@@ -22,8 +22,10 @@ A integração enriquece a identificação do projeto no rodapé com nomes públ
 | Autenticação | Nenhuma para esses perfis públicos; sem token no frontend |
 | Limite não autenticado | 60 requisições por hora por IP; compartilhado com outros acessos do mesmo IP |
 | CORS | A API REST admite consultas entre origens; verificar também no endereço publicado |
-| Cliente | `js/api.js`, função `consultarPerfil()` |
-| Interface | `js/principal.js`, créditos em `#lista-equipe` |
+| Cliente | `js/github/github-client.js`, função `fetchGithubProfile()` |
+| Validação e normalização | `js/github/github-profile.js`, contrato JSDoc `GithubProfile` |
+| Controle da equipe | `js/team/team-profiles.js`, carregamento sob demanda e novas tentativas |
+| Interface | `js/team/team-view.js`, créditos em `#team-list` |
 | Revisão e testes adicionais | Gabriel Enzo (`genzo-dev`) |
 
 Referências: [limites](https://docs.github.com/en/rest/using-the-rest-api/rate-limits-for-the-rest-api) e [CORS](https://docs.github.com/en/rest/using-the-rest-api/using-cors-and-jsonp-to-make-cross-origin-requests).
@@ -44,8 +46,20 @@ Conteúdo textual é inserido com `textContent`. Links e avatares retornados sã
 
 O site é estático e consulta diretamente a API REST do GitHub pelo navegador.
 
+## Decisões da refatoração — 29/10/2026
+
+O contrato externo preserva `login`, `name`, `html_url` e `avatar_url`. Depois da validação em tempo de execução, o contrato interno `GithubProfile` expõe `username`, `name`, `profileUrl` e `avatarUrl`. O JSDoc descreve os contratos; não substitui as verificações.
+
+Nenhuma proteção de HTTP, rede, timeout, identidade ou origem das URLs foi removida. As condições foram extraídas para `isValidGithubUsername`, `isExpectedGithubUser` e `parseTrustedUrl`. O timeout cobre também a leitura do JSON e é limpo em `finally`, no sucesso e na falha. JSON inválido continua sendo tratado como falha pela interface.
+
+O nome público aceita string ou `null`; espaços nas extremidades são removidos e nome vazio mantém o nome estático. Avatar ausente, `null` ou string vazia mantém as iniciais. Tipos incompatíveis, como `false` e `0`, agora são rejeitados em vez de confundidos com ausência. O usuário de entrada deve ser uma string; a comparação com `login` ignora maiúsculas e minúsculas.
+
+A URL do perfil exige origem `https://github.com` e caminho correspondente ao usuário consultado. O avatar exige origem `https://avatars.githubusercontent.com`. URLs malformadas e valores que não são strings são rejeitados com mensagem controlada; credenciais embutidas também são rejeitadas, reforçando a validação anterior de origem e caminho.
+
+`Promise.allSettled` preserva os resultados bem-sucedidos. A marca `data-loaded` só é aplicada após apresentar um perfil válido; novas tentativas selecionam apenas cartões pendentes. `isLoading` bloqueia chamadas concorrentes e é liberado em `finally`. A renderização usa `textContent`; falhas da API mantêm nomes e links estáticos e falhas do avatar mantêm as iniciais.
+
 ## Testes e Insomnia
 
-O comando `npm test` verifica o cliente com respostas controladas, sem consumir a cota pública. A execução real no navegador e a revisão de Gabriel são registros separados em [testes.md](testes.md).
+O comando `npm test` verifica o cliente com respostas controladas, sem consumir a cota pública. A execução real no navegador e a revisão de Gabriel são registros separados em [testing.md](testing.md).
 
 O [arquivo de importação](api.openapi.json) descreve o endpoint utilizado no formato **OpenAPI**, um padrão de descrição de APIs. **Foi preparado pela equipe para o Insomnia e não substitui a documentação oficial do GitHub.** Veja o [roteiro do Insomnia](insomnia.md).

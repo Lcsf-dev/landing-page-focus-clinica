@@ -2,8 +2,8 @@
 
 | Arquivo | Origem e finalidade |
 | --- | --- |
-| `apresentacao-focus-clinica.jpg` | Captura real da apresentação pública em https://focus-clinica.netlify.app/; 2560 × 1271 px |
-| `acesso-focus-clinica.jpg` | Captura real da tela pública de login aberta a partir da apresentação; sem credenciais ou dados de pacientes; 2560 × 1271 px |
+| `presentation-focus-clinica.jpg` | Captura real da apresentação pública em https://focus-clinica.netlify.app/; 2560 × 1271 px |
+| `login-focus-clinica.jpg` | Captura real da tela pública de login aberta a partir da apresentação; sem credenciais ou dados de pacientes; 2560 × 1271 px |
 | `logo-focus-clinica.png` | Arquivo original usado no sistema de referência: https://focus-clinica.netlify.app/assets/focuslogo-DVNGTueR.png; PNG 500 × 500 px, preservado sem alteração |
 | `icones.svg` | Ícones vetoriais locais |
 
