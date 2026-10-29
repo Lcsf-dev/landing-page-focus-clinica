@@ -1,12 +1,10 @@
 # Quadro de tarefas
 
-## Consolidação técnica — 29/10/2026
+## Estado técnico — 29/10/2026
 
-Esta consolidação registra o encerramento da auditoria local. O envio e a publicação foram autorizados em etapa posterior; as descrições de ausência de envio abaixo preservam o histórico da verificação.
+As oito partes da landing page, interações e integração GitHub estão implementadas. A finalização passou com 26 testes, build e verificações de navegador, foi integrada pelos PRs #28/#29 e está publicada em `8b8ba58`. Resultados e limites estão em [Testes](testing.md); produção em [Publicação](deployment.md).
 
-Auditoria executada pelo Codex nesta sessão, a pedido do solicitante: oito partes implementadas, 26 testes aprovados, build concluído, ajuste de foco retestado, falha parcial/recuperação e larguras de referência conferidas. Limites de design, zoom e movimento real documentados em [Finalização técnica](technical-review.md).
-
-As alterações estão na branch local `chore/technical-finalization`, sem envio/publicação. A conferência humana fica para depois; não condicionou testes ou correções disponíveis nesta execução. Não foram alterados estados das Issues nem concedidas aprovações em nome dos colegas.
+As Issues do GitHub são o quadro operacional. A conferência posterior dos colegas deve registrar resultados reais; a integração técnica não concede aprovação humana nem altera automaticamente os estados históricos abaixo.
 
 ## Quadro histórico — 20/10/2026
 
@@ -26,15 +24,3 @@ Registro de 20/10/2026. Entrega informada: **14/11/2026**. Fluxo: **A fazer → 
 | [T10 / #9](https://github.com/Lcsf-dev/landing-page-focus-clinica/issues/9) — publicação | Lucas / equipe | Concluído | GitHub Pages e Netlify publicados; HTTP, menu, imagens e API verificados; detalhes em deployment.md |
 | [T11 / #12](https://github.com/Lcsf-dev/landing-page-focus-clinica/issues/12) — revisão visual | Thamires | Em andamento | Figma aprovado; testes de interface CT01–CT03, CT08 e CT15 serão registrados após execução |
 | [T12 / #13](https://github.com/Lcsf-dev/landing-page-focus-clinica/issues/13) — layout | DumbRyder | A fazer | CT04–CT07 com ambiente e evidências |
-
-## Pull Requests para develop
-
-- [#10 — Planejamento](https://github.com/Lcsf-dev/landing-page-focus-clinica/pull/10).
-- [#11 — Verificações iniciais](https://github.com/Lcsf-dev/landing-page-focus-clinica/pull/11); fechado como substituído, sem integrar o estado inicial sobre a entrega atual.
-- [#14 — Estrutura e estilos](https://github.com/Lcsf-dev/landing-page-focus-clinica/pull/14); depende do planejamento.
-- [#15 — Menu e demonstração](https://github.com/Lcsf-dev/landing-page-focus-clinica/pull/15); depende da estrutura.
-- [#16 — API existente e entrega documentada](https://github.com/Lcsf-dev/landing-page-focus-clinica/pull/16); depende das etapas anteriores e contém o estado final.
-
-PRs #10, #14, #15 e #16 integrados; implementação enviada à main pelo [#17](https://github.com/Lcsf-dev/landing-page-focus-clinica/pull/17). Configuração de publicação integrada por [#18](https://github.com/Lcsf-dev/landing-page-focus-clinica/pull/18) e [#19](https://github.com/Lcsf-dev/landing-page-focus-clinica/pull/19). Entregas implementadas permanecem em revisão onde há validação independente da equipe pendente.
-
-Branches reservadas ou sem commits próprios não contam como entregas. Datas e autoria devem corresponder ao trabalho real; cada colega registra sua revisão ou teste quando o executar.

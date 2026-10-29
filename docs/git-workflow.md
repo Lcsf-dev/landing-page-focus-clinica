@@ -1,62 +1,32 @@
 # Fluxo de Git e GitHub
 
-Repositório: <https://github.com/Lcsf-dev/landing-page-focus-clinica> (público desde 20/10/2026).
+Repositório: <https://github.com/Lcsf-dev/landing-page-focus-clinica>.
 
-Finalização de 29/10/2026 na branch local `chore/technical-finalization`, criada de `13edfc0`, sem push, merge ou deploy nesta etapa. A refatoração anterior foi enviada à `main` e publicada em uma etapa separada, autorizada pelo solicitante; isso não representa revisão de terceiros. O registro abaixo que descreve a etapa local sem publicação é histórico. A publicação existente e as alterações locais são diferenciadas em deployment.md.
+## Branches e integração
 
-## Fluxo adotado
+**Issue → branch da tarefa → commits → PR para develop → checks → integração → PR para main → checks → publicação.**
 
-Atualização local em 29/10/2026: o workflow `ci-pages.yml` valida PRs destinados a `develop`/`main` e pushes nessas branches. Somente a `main`, fora de PRs e após validação aprovada, publica no Pages. Nomes de branches históricas abaixo foram preservados; novas tarefas devem usar nomes técnicos em inglês. Nenhum push, merge ou deploy foi realizado nesta refatoração.
+- `develop` reúne as entregas de integração.
+- `main` contém a versão destinada à produção.
+- Cada tarefa usa uma branch específica, com nomes técnicos em inglês, como `docs/final-cleanup` ou `fix/skip-navigation`.
+- Commits usam títulos objetivos em inglês, como `docs: streamline project documentation`.
+- Preservar histórico, autoria e trabalhos existentes; não usar force push ou alterar proteções para integrar.
 
-Por solicitação da equipe, foi criada `develop` para integrar as tarefas antes da versão de produção:
+## Rotina de uma tarefa
 
-**Issue → branch da tarefa → commits → Pull Request → revisão → develop → testes integrados → Pull Request → revisão → main → GitHub Pages / Netlify.**
+1. Atualizar referências e conferir a base, as alterações locais e o escopo da Issue.
+2. Criar uma branch da tarefa a partir de `develop`.
+3. Implementar a menor alteração necessária e executar verificações proporcionais.
+4. Conferir o diff, adicionar os arquivos da entrega e criar o commit.
+5. Enviar somente a branch da tarefa e abrir PR para `develop`; atualizar o existente se origem/destino já coincidirem.
+6. Registrar resultados e limitações no PR, aguardar os checks e respeitar as proteções da branch.
+7. Integrar por merge quando os requisitos estiverem satisfeitos. A conferência posterior dos colegas é registrada separadamente, sem presumir aprovação.
+8. Promover para `main` apenas em uma entrega de publicação; acompanhar o workflow e conferir a produção.
 
-- `main`: versão revisada destinada à publicação.
-- `develop`: base de integração, sem representar aprovação para produção.
-- Branch por tarefa: não é uma branch permanente por pessoa.
-- Correções: `correcao/<problema>`, com commit `fix:` e reteste do caso afetado.
-- Preservar commits com merge commit quando a revisão estiver aprovada; não retroagir datas, trocar autoria ou criar commits vazios para aparentar progresso.
+Mudanças documentais exigem links locais, whitespace e revisão do diff, sem repetir testes funcionais localmente. O CI obrigatório continua sendo executado. Regras de deploy e permissões estão em [Publicação](deployment.md).
 
-## Branches e dependências
+## Histórico relevante
 
-| Branch | Conteúdo |
-| --- | --- |
-| `documentacao/planejamento` | Requisitos, equipe e documentação inicial; PR #10 para develop |
-| `testes/cenarios-manuais` | Verificações iniciais; PR #11 fechado por ter sido substituído pela validação atual |
-| `funcionalidade/estrutura-responsiva` | HTML, estilos e capturas públicas |
-| `funcionalidade/menu-demonstracao` | Menu acessível, abas, ampliação e animações |
-| `integracao/api-github` | Consumo da API REST do GitHub, testes e documentação |
-| `design/prototipo-figma` | Branch reservada anteriormente; link e evidências do Figma podem ser entregues em PR documental |
-| `integracao/api` | Reserva anterior, sem implementação específica |
-| `publicacao/github-pages` | Workflow de testes e publicação; PR #18 integrado em develop |
-| `documentacao/publicacao` | URLs, evidências e atualização documental após os deploys |
+`develop` foi adotada para integração em 20/10/2026. Os PRs #10, #14, #15 e #16 integraram planejamento, estrutura, interações e API; #17 levou a implementação para `main`. O PR #11 foi encerrado como substituído. A configuração de publicação entrou por #18 e #19.
 
-As branches de estrutura, interações e API foram construídas sequencialmente: estrutura depende do planejamento, interações dependem da estrutura, e a integração final depende de ambas. Enquanto não houver merge das anteriores, o PR seguinte pode exibir também seus commits. Conferir as dependências antes de integrar; não apresentar os mesmos commits como trabalho independente.
-
-Para novas tarefas, usar a implementação atual da API REST do GitHub como base.
-
-## Rotina por tarefa
-
-1. Conferir Issue, responsável, critério de conclusão e base atualizada em `develop`.
-2. Criar branch da tarefa, implementar uma alteração delimitada e conferir `git diff`.
-3. Executar apenas as verificações afetadas.
-4. Adicionar explicitamente os arquivos da entrega e criar commit descritivo: `feat:`, `fix:`, `docs:` ou `test:`.
-5. Enviar a branch e abrir PR para `develop`, com Issue, contexto, resultados e pendências. Manter rascunho enquanto incompleto.
-6. Outro integrante revisa; corrigir com novos commits e registrar o reteste quando necessário.
-7. Integrar após aprovação, atualizar o quadro de tarefas e preparar a revisão integrada.
-8. Abrir PR de `develop` para `main` quando a entrega estiver validada; publicar pelo Netlify e testar a URL final.
-
-Os PRs #10, #14, #15 e #16 foram integrados em `develop`; o PR #17 levou a implementação à `main`. O PR #11 foi fechado como substituído. A configuração de publicação entrou por #18 (`develop`) e #19 (`main`). As aprovações de código, do Figma e do site publicado são registros diferentes.
-
-## Participação e acesso
-
-Colaboradores que aceitaram o convite podem enviar branches, commits e PRs. O aceite do convite do GitHub é separado do acesso ao Figma. Testar e revisar são contribuições válidas, mas não alteram a autoria do código.
-
-Não integrar alterações em nome de uma revisão de terceiros que ainda não ocorreu. Vários commits na mesma data são normais; o que demonstra o desenvolvimento é o conteúdo das entregas e seus registros reais.
-
-## Publicação inicial
-
-Em 20/10/2026, o solicitante autorizou integrar e publicar após a validação técnica, com testes locais adicionais do grupo posteriormente. A revisão visual do Figma foi aprovada por Thamires. Essa autorização não representa execução antecipada dos testes dos demais integrantes.
-
-GitHub Pages e Netlify publicados em 20/10/2026. Novos envios à `main` atualizam os dois endereços; o Pages exige a execução bem-sucedida dos testes no workflow. Links e evidências em [Publicação](deployment.md).
+Em 29/10/2026, #28 integrou a finalização em `develop` e #29 em `main`, resultando na produção `8b8ba58`. Esses merges comprovam integração técnica; não constituem aprovação visual ou revisão independente dos colegas. O [histórico de alterações](changelog.md) mantém os marcos datados.

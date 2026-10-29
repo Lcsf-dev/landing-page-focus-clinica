@@ -1,12 +1,8 @@
 # API REST do GitHub — créditos da equipe
 
-Auditoria de 29/10/2026: integração atual preservada e validada; a API própria foi removida em `13081b8`. Nesta etapa foram removidos somente os diretórios locais vazios remanescentes. O OpenAPI e o roteiro do Insomnia descrevem o GitHub e permanecem necessários. A suíte atual tem 26 testes; detalhes em [Finalização técnica](technical-review.md).
-
 O projeto consome a **API REST do GitHub**, um serviço existente com documentação pública.
 
-## Finalidade e correspondência com o enunciado
-
-O PDF e o texto do Notion pedem estudar uma API, identificar sua documentação, consultar dados com `fetch()`, exibi-los e tratar falhas. Não exigem desenvolver um backend nem informam uma API clínica obrigatória.
+## Finalidade
 
 A integração enriquece a identificação do projeto no rodapé com nomes públicos, avatares e links dos quatro integrantes. Ela não consulta pacientes, não agenda consultas e não fornece as funcionalidades clínicas. Essas funcionalidades são conteúdo estático da landing page.
 
@@ -64,4 +60,10 @@ A URL do perfil exige origem `https://github.com` e caminho correspondente ao us
 
 O comando `npm test` verifica o cliente com respostas controladas, sem consumir a cota pública. A execução real no navegador e a revisão de Gabriel são registros separados em [testing.md](testing.md).
 
-O [arquivo de importação](api.openapi.json) descreve o endpoint utilizado no formato **OpenAPI**, um padrão de descrição de APIs sem relação com a empresa OpenAI. **Foi preparado pela equipe para o Insomnia e não substitui a documentação oficial do GitHub.** Veja o [roteiro do Insomnia](insomnia.md).
+O [arquivo OpenAPI](api.openapi.json) descreve o endpoint público para importação no Insomnia. Veja o [roteiro de consulta](insomnia.md); resultados da suíte e do navegador estão em [Testes](testing.md).
+
+## Histórico da integração
+
+Em 20/10/2026, `13081b8` substituiu a API própria de funcionalidades pela integração pública do GitHub e removeu `dados/funcionalidades.mjs` e `netlify/functions/funcionalidades.mjs`. Os diretórios locais vazios remanescentes foram removidos em 29/10/2026.
+
+O servidor `scripts/dev-server.mjs` serve arquivos estáticos para desenvolvimento; não é um backend de negócio. Cliente GitHub, testes, OpenAPI e roteiro do Insomnia pertencem à integração atual e são preservados. Não há banco de dados, autenticação própria ou dependências de backend na implementação atual. A inspeção de 29/10/2026 não encontrou credenciais privadas na árvore de aplicação/documentação; não foi uma varredura integral de segredos do histórico Git.
