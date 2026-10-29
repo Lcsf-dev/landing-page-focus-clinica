@@ -4,6 +4,12 @@
 
 Design: Lucas Fernandes (`Lcsf-dev`). A aprovação visual é distinta dos testes locais adicionais da equipe.
 
+## Conferência de 29/10/2026
+
+Arquivo consultado pelo navegador e evidência local `evidence/figma-original-logo.png` inspecionada. As páginas de wireframes, layouts/protótipo e estilos/revisão estão disponíveis. O quadro desktop observado tem viewport 1440 × 1000 com recorte; a página também contém referências tablet/celular e estados de demonstração/ampliação.
+
+Logo, Inter, paleta e estrutura estão presentes na implementação, mas composição do hero, textos e aparência de seções diferem da referência observada. Não foi declarada equivalência visual integral nem renovada a aprovação histórica. Esta auditoria preservou o visual publicado; a escolha da referência visual final fica explícita para a conferência humana posterior. A implementação precedeu a conclusão do Figma. Detalhes e limites em [Finalização técnica](technical-review.md).
+
 ## Arquivo e apresentação
 
 - [Arquivo editável no Figma Design](https://www.figma.com/design/P7K5fBiCqhBsehhrR5BNqp/).
@@ -31,14 +37,14 @@ O protótipo apresenta o visual e os fluxos principais. A execução de fetch, a
 | Verde | `#16765C` |
 | Menta | `#B9F2D5` |
 | Branco / fundo claro | `#FFFFFF`, `#F8FBF9` |
-| Tipografia | Inter no protótipo e no site; fonte variável WOFF2 hospedada em css/fontes, com licença SIL Open Font License |
+| Tipografia | Inter no protótipo e no site; fonte variável WOFF2 hospedada em css/fonts, com licença SIL Open Font License |
 | Organização | Auto Layout, camadas em português, cartões e botões reutilizáveis |
 | Capturas reais | Apresentação pública e acesso do Focus Clínica; origem registrada em img/README.md |
 | Marca | Logo original usado pelo sistema de referência, preservado em img/logo-focus-clinica.png; origem em img/README.md |
 
 Os créditos contemplam os quatro perfis públicos da equipe, com estados de carregamento, sucesso e falha no material de estilos. Não foram criadas imagens fictícias de agendas, pacientes ou telas internas.
 
-Em 20/10/2026, o logo original da referência foi aplicado aos cabeçalhos e rodapés dos três layouts do Figma e ao site. A Inter foi incluída localmente a partir do [repositório oficial](https://github.com/rsms/inter), com sua licença em css/fontes/LICENCA-Inter.txt. [Evidência do Figma atualizado](evidencias/figma-logo-original.png).
+Em 20/10/2026, o logo original da referência foi aplicado aos cabeçalhos e rodapés dos três layouts do Figma e ao site. A Inter foi incluída localmente a partir do [repositório oficial](https://github.com/rsms/inter), com sua licença em css/fonts/LICENSE-Inter.txt. [Evidência do Figma atualizado](evidence/figma-original-logo.png).
 
 ## Registro da revisão
 

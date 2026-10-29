@@ -2,6 +2,43 @@
 
 **Responsável pela coordenação dos testes:** `genzo-dev`.
 
+## Finalização técnica — 29/10/2026
+
+Registro da auditoria anterior ao envio. A publicação ocorreu posteriormente; as menções a testes ainda não enviados ao CI ou ausência de deploy abaixo preservam o momento da verificação. Resultados remotos posteriores ficam no [workflow da main](https://github.com/Lcsf-dev/landing-page-focus-clinica/actions/workflows/ci-pages.yml?query=branch%3Amain).
+
+Verificação técnica sem atribuir execução aos colegas. Branch `chore/technical-finalization`, base `13edfc0`, ambiente Windows/Chrome, Node 24.16.0 e npm 11.13.0. **26 testes locais aprovados e build concluído**. Os 22 testes anteriores foram preservados e quatro foram acrescentados para avatar, inserção segura e animações.
+
+Correção: `main` passou a ter `tabindex="-1"`; Enter no link de salto focou `MAIN#content`, e Tab alcançou a primeira ação do conteúdo com foco visível. Menu, abas, diálogo, larguras 360/390/768/1440 e falha parcial/recuperação com respostas controladas foram conferidos. A nova tentativa repetiu somente os três perfis pendentes.
+
+Verificação real adicional: quatro perfis e quatro avatares carregados no Chrome local, estado `success`, `aria-busy="false"` e console capturado sem erros/avisos. Auditoria de 46 links locais Markdown, sintaxe de 16 arquivos JavaScript, estrutura semântica básica e `git diff --check` aprovada.
+
+Relatório completo, checklist de requisitos, auditoria da API antiga, resultados e limites em [technical-review.md](technical-review.md). Zoom real de 200%, preferência de movimento reduzido no navegador e equivalência visual integral ao Figma não foram comprovados. A lógica de movimento reduzido passou em teste controlado; não é uma emulação da preferência real. A conferência humana posterior não bloqueou a execução técnica disponível. Nenhum push, merge ou deploy desta branch.
+
+Os registros abaixo são históricos. A publicação anterior `13edfc0` passou com 22 testes em Node 22.23.4 no workflow `40937911844`, acompanhada na etapa anterior desta sessão. A suíte de 26 casos ainda não foi enviada ao CI.
+
+## Refatoração local — 29/10/2026
+
+Verificação técnica sem atribuir testes aos demais integrantes. Ambiente: Windows, Chrome, Node.js 24.16.0 e npm 11.13.0. A configuração do CI permanece Node 22. Esta refatoração não foi enviada nem publicada.
+
+| Verificação executada | Resultado e limite |
+| --- | --- |
+| `npm test` | 22 aprovados: 14 de API/normalização, cinco de equipe e três de pacote público. |
+| `npm run build` | Pacote estático gerado em `dist/`, sem dependências adicionais. |
+| API com respostas controladas | HTTP 403/404/429/500, rede, timeout na requisição e no corpo, limpeza do temporizador, JSON inválido, identidade, campos opcionais e tipos incompatíveis, URLs malformadas, origens/caminhos inesperados e credenciais embutidas. |
+| Equipe com respostas controladas | Falha parcial preserva cartões estáticos; nova tentativa consulta somente pendentes; carregamentos simultâneos são bloqueados; controles de carregamento/erro/sucesso e recuperação conferidos. |
+| Pacote público | Caminhos relativos no subdiretório do Pages, IDs e referências acessíveis, fontes/licença, imports ES e símbolos SVG; exclusão de arquivos de trabalho. Não é deploy real. |
+| Comparação antes/depois no Chrome, 1440 px | Dimensões das seções, textos de títulos/parágrafos/legendas e rótulos `aria-label` coincidiram; sem overflow horizontal. |
+| Abas no Chrome | Clique, ArrowLeft, Home e End alteraram seleção, painel e foco. |
+| Imagem no Chrome | Ampliação abriu o diálogo, preservou texto alternativo e focou o botão de fechar; Escape fechou e retornou o foco ao link. |
+| Menu no Chrome, 390 px | Abriu/fechou, atualizou `aria-expanded`/`aria-hidden` e ícone; Escape retornou foco visível ao botão; link Sobre fechou o menu e focou a seção. |
+| Responsividade no Chrome | Sem overflow em 360, 390, 768, 1280 e 1440 px. Não substitui teste em dispositivos físicos ou todos os tamanhos intermediários. |
+| API real no Chrome | Quatro perfis e quatro avatares carregados, estado `success`, `aria-busy="false"`; console capturado sem erros/avisos. |
+| Referências e recursos | 36 links locais Markdown resolvidos e 14 arquivos binários comparados por SHA-256 com o Git, sem alteração de conteúdo. |
+| Sintaxe e whitespace | `node --check` nos módulos, scripts e testes; `git diff --check` aprovado. |
+| Servidor local renomeado | HTML, CSS, módulos, SVG e fonte responderam HTTP 200; README retornou 404 e POST retornou 405. |
+
+Limites: o workflow foi revisado localmente, sem execução remota ou deploy; Node 22 não foi executado neste ambiente. Movimento reduzido e fallback sem JavaScript foram preservados por inspeção do código, sem emulação no navegador. Não houve auditoria completa de acessibilidade, zoom de 200%, comparação com Figma ou teste em outros navegadores. Os registros a seguir descrevem execuções anteriores; caminhos documentais foram atualizados para a estrutura atual.
+
 **Situação em 20/10/2026:** nove testes automatizados aprovados: sete do cliente da API externa e dois do pacote de publicação. Revisão visual do Figma aprovada por Thamires. Testes locais adicionais do grupo e verificações da publicação são registros separados.
 
 ## Execuções técnicas em 20/10/2026
@@ -10,15 +47,15 @@ Verificações registradas sem atribuir execução aos colegas. Cliente da API a
 
 | Verificação | Resultado | Evidência e limite |
 | --- | --- | --- |
-| Cliente da API no `npm test` | 7 testes aprovados: sucesso, nome nulo, HTTP 404/403/429/500, resposta ausente/inválida, endereço inesperado, rede e timeout | `testes/api.test.mjs`; respostas simuladas, sem consumir a cota pública |
+| Cliente da API no `npm test` | 7 testes aprovados: sucesso, nome nulo, HTTP 404/403/429/500, resposta ausente/inválida, endereço inesperado, rede e timeout | `tests/api.test.mjs`; respostas simuladas, sem consumir a cota pública |
 | `npm run build` | Arquivos públicos preparados em dist | Documentação e testes não são publicados; não é um deploy |
-| Pacote estático — `testes/publicacao.test.mjs` | Dois testes aprovados: recursos/âncoras/referências acessíveis resolvem também no subdiretório do Pages; pacote exclui documentos de trabalho e credenciais locais | Executados pelo npm test após preparação automática do build |
-| API real no Chrome, Windows | Quatro perfis e avatares carregaram; estado sucesso e aria-busy false; sem erros/avisos no console capturado | [Computador](evidencias/api-github-computador.jpg) |
-| Créditos em 390 e 1440 px | Sem overflow: conteúdo/área útil 375/375 e 1425/1425 px; quatro perfis preservados | [Celular](evidencias/api-github-celular.jpg); área útil exclui a barra de rolagem |
-| `node --check js/principal.js` e `git diff --check` | Aprovados | Sintaxe e whitespace, sem auditar toda a interface |
-| Interface antes da substituição da API | Menu móvel abriu/fechou ao navegar; abas funcionaram por clique/teclado; Escape fechou diálogo e devolveu foco; layouts em 360, 390, 768 e 1440 px sem overflow | [Prévia desktop](evidencias/previa-computador.jpg) e [celular](evidencias/previa-celular.jpg). Não comprovam a API atual nem aderência ao Figma aprovado |
+| Pacote estático — `tests/deployment.test.mjs` | Dois testes aprovados: recursos/âncoras/referências acessíveis resolvem também no subdiretório do Pages; pacote exclui documentos de trabalho e credenciais locais | Executados pelo npm test após preparação automática do build |
+| API real no Chrome, Windows | Quatro perfis e avatares carregaram; estado sucesso e aria-busy false; sem erros/avisos no console capturado | [Computador](evidence/github-api-desktop.jpg) |
+| Créditos em 390 e 1440 px | Sem overflow: conteúdo/área útil 375/375 e 1425/1425 px; quatro perfis preservados | [Celular](evidence/github-api-mobile.jpg); área útil exclui a barra de rolagem |
+| `node --check js/main.js` e `git diff --check` | Aprovados | Sintaxe e whitespace, sem auditar toda a interface |
+| Interface antes da substituição da API | Menu móvel abriu/fechou ao navegar; abas funcionaram por clique/teclado; Escape fechou diálogo e devolveu foco; layouts em 360, 390, 768 e 1440 px sem overflow | [Prévia desktop](evidence/preview-desktop.jpg) e [celular](evidence/preview-mobile.jpg). Não comprovam a API atual nem aderência ao Figma aprovado |
 
-O total atual é de nove testes: sete casos do cliente da API REST do GitHub e dois do pacote de publicação.
+Na execução de 20/10/2026, o total era de nove testes: sete casos do cliente da API REST do GitHub e dois do pacote de publicação.
 
 Validações adicionais do grupo: comparação com Figma, zoom 200%, navegação completa por teclado, preferência por movimento reduzido e falha/recuperação visual da API externa. O roteiro do Insomnia está em insomnia.md; não há execução manual registrada como realizada.
 
@@ -28,7 +65,7 @@ Versão inicial publicada: `a5569fe`. Conferência registrada sem atribuir execu
 
 Nas duas origens, foram conferidos CSS, capturas, aba Acesso do cliente, ampliação e fechamento com Escape, quatro perfis e avatares da API com estado sucesso e console sem erros/avisos capturados. Em 390 px, o menu abriu, navegou para Sobre e fechou; conteúdo e área útil com 375 px, sem overflow. Cabeçalhos configurados do Netlify presentes na resposta HTTP.
 
-Links, execução e evidências em [Publicação](publicacao.md). Essas verificações técnicas não alteram a coluna de testes dos colegas, que serão registrados após a execução efetiva.
+Links, execução e evidências em [Publicação](deployment.md). Essas verificações técnicas não alteram a coluna de testes dos colegas, que serão registrados após a execução efetiva.
 
 ## Reteste da identidade visual — 20/10/2026
 
@@ -38,7 +75,7 @@ Alteração técnica: `e4c47bb`. Conferência técnica registrada. Logo original
 - Fonte local respondeu HTTP 200 com tipo `font/woff2`; estilo calculado da página utiliza Inter.
 - Chrome em 390 e 1440 px: conteúdo/área útil de 375/375 e 1425/1425 px, respectivamente, sem overflow horizontal.
 - Logos do cabeçalho e rodapé carregados. Menu móvel abriu, navegou para Sobre e fechou com `aria-expanded` atualizado.
-- Evidências: [computador](evidencias/identidade-computador.png) e [celular](evidencias/identidade-celular.png).
+- Evidências: [computador](evidence/identity-desktop.png) e [celular](evidence/identity-mobile.png).
 
 Essas verificações não representam execução dos testes adicionais atribuídos aos colegas.
 
@@ -60,7 +97,7 @@ O plano atribui API/testes a um integrante e revisão/teste final a todos. O pla
 | Revisão integrada | Gabriel Enzo coordena; equipe participa | Cenários aplicáveis ainda pendentes e reteste das correções | Antes da publicação |
 | Site publicado | Equipe, coordenada pelo responsável dos testes | CT16 e verificações essenciais de links/menu/API | Após a publicação |
 
-As quatro frentes estão identificadas em equipe.md. A responsabilidade por uma verificação não depende de ter escrito o código. Não repetir casos não afetados por uma alteração documental; repetir quando houver mudança, falha ou risco concreto de regressão.
+As quatro frentes estão identificadas em team.md. A responsabilidade por uma verificação não depende de ter escrito o código. Não repetir casos não afetados por uma alteração documental; repetir quando houver mudança, falha ou risco concreto de regressão.
 
 ### Roteiro de participação nas validações
 
@@ -70,7 +107,7 @@ As quatro frentes estão identificadas em equipe.md. A responsabilidade por uma 
 4. Abrir uma Issue se encontrar falha; depois da correção, repetir o cenário afetado.
 5. Enviar o registro em uma branch da tarefa e abrir PR, ou registrar a evidência na Issue correspondente. As aprovações do Figma ficam vinculadas à versão revisada.
 
-Não é necessário criar uma branch permanente por integrante. Exemplos para tarefas futuras: `testes/layout-responsivo`, `testes/interface-navegacao` e `testes/integracao-api`.
+Não é necessário criar uma branch permanente por integrante. Exemplos para tarefas futuras: `tests/responsive-layout`, `tests/interface-navigation` e `tests/github-api`.
 
 O responsável registra ambiente, commit, resultado observado e evidência curta. Se houver falha, abrir Issue e vincular o PR de correção; registrar o reteste antes de dar o problema por resolvido.
 
@@ -117,7 +154,7 @@ Issue de problema, se houver:
 
 ## Problemas corrigidos
 
-Nenhum problema funcional corrigido registrado nesta etapa. Quando ocorrer:
+Na finalização de 29/10/2026 foi corrigido e retestado o foco do link de salto, conforme o relatório acima. O quadro a seguir é o modelo histórico, sem atribuição fictícia de Issue ou aprovação:
 
 | Problema / Issue | Como reproduzir | Correção / PR / commit | Reteste e evidência |
 | --- | --- | --- | --- |
@@ -130,7 +167,7 @@ Executado em 19/10/2026 durante a preparação local:
 | Verificação | Resultado | Limite |
 | --- | --- | --- |
 | `git diff --check` | Aprovado | Verifica problemas de whitespace no diff |
-| `node --check js/principal.js` | Aprovado | Arquivo ainda contém somente a indicação da etapa futura |
+| `node --check js/main.js` | Aprovado | Arquivo ainda contém somente a indicação da etapa futura |
 | Existência de 16 caminhos de estrutura/documentação | Aprovado | Não verifica funcionalidades |
 | Resolução de 10 links locais Markdown no README | Aprovado | Não verifica disponibilidade de URLs externas |
 | HTML inicial com `lang="pt-BR"` e um `main` | Aprovado | Não é auditoria completa de acessibilidade ou HTML |

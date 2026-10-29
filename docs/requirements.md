@@ -4,9 +4,11 @@
 
 1. **Responsabilidades:** design, HTML/CSS, JavaScript, API/testes e revisão compartilhada.
 2. **Escopo:** landing page institucional com oito partes, responsividade e integração de API.
-3. **Decisões da equipe:** início dos arquivos e do GitHub em 19/10/2026; frentes e integrantes registrados em equipe.md e cenários distribuídos em testes.md.
+3. **Decisões da equipe:** início dos arquivos e do GitHub em 19/10/2026; frentes e integrantes registrados em team.md e cenários distribuídos em testing.md.
 
 Os documentos descrevem o escopo. Eles não constituem evidência de aprovação do Figma, participação individual, execução de testes ou publicação. Essas evidências serão registradas quando existirem.
+
+A validação e os limites de design/acessibilidade estão em [Finalização técnica](technical-review.md). A integração do GitHub atende ao requisito de consumir uma API; não há exigência de uma API clínica.
 
 ## Objetivo
 
