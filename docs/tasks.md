@@ -1,6 +1,16 @@
 # Quadro de tarefas
 
-Atualização: 20/10/2026. Entrega: **14/11/2026**. Fluxo: **A fazer → Em andamento → Em revisão → Concluído**. Usar Issues do GitHub como quadro operacional. Prazos individuais de revisão ainda não acordados; status Em revisão não significa aprovação.
+## Consolidação técnica — 29/10/2026
+
+Esta consolidação registra o encerramento da auditoria local. O envio e a publicação foram autorizados em etapa posterior; as descrições de ausência de envio abaixo preservam o histórico da verificação.
+
+Auditoria executada pelo Codex nesta sessão, a pedido do solicitante: oito partes implementadas, 26 testes aprovados, build concluído, ajuste de foco retestado, falha parcial/recuperação e larguras de referência conferidas. Limites de design, zoom e movimento real documentados em [Finalização técnica](technical-review.md).
+
+As alterações estão na branch local `chore/technical-finalization`, sem envio/publicação. A conferência humana fica para depois; não condicionou testes ou correções disponíveis nesta execução. Não foram alterados estados das Issues nem concedidas aprovações em nome dos colegas.
+
+## Quadro histórico — 20/10/2026
+
+Registro de 20/10/2026. Entrega informada: **14/11/2026**. Fluxo: **A fazer → Em andamento → Em revisão → Concluído**. Usar Issues do GitHub como quadro operacional. Os números de testes abaixo são históricos; a suíte atual possui 26. Prazos individuais de revisão ainda não acordados; status Em revisão não significa aprovação.
 
 | Tarefa / Issue | Frente | Estado | Evidência e critério restante |
 | --- | --- | --- | --- |

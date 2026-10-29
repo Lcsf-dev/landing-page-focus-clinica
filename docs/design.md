@@ -4,6 +4,12 @@
 
 Autoria do design: Lucas Fernandes (`Lcsf-dev`), com auxílio de ferramentas de IA e ajustes no editor. A aprovação visual é distinta dos testes locais adicionais da equipe.
 
+## Conferência de 29/10/2026
+
+Arquivo consultado pelo navegador e evidência local `evidence/figma-original-logo.png` inspecionada. As páginas de wireframes, layouts/protótipo e estilos/revisão estão disponíveis. O quadro desktop observado tem viewport 1440 × 1000 com recorte; a página também contém referências tablet/celular e estados de demonstração/ampliação.
+
+Logo, Inter, paleta e estrutura estão presentes na implementação, mas composição do hero, textos e aparência de seções diferem da referência observada. Não foi declarada equivalência visual integral nem renovada a aprovação histórica. Esta auditoria preservou o visual publicado; a escolha da referência visual final fica explícita para a conferência humana posterior. O histórico de autorização para programar antes de concluir o Figma permanece inalterado. Detalhes e limites em [Finalização técnica](technical-review.md).
+
 ## Arquivo e apresentação
 
 - [Arquivo editável no Figma Design](https://www.figma.com/design/P7K5fBiCqhBsehhrR5BNqp/).

@@ -2,6 +2,20 @@
 
 **Responsável pela coordenação dos testes:** `genzo-dev`, confirmado pelo solicitante.
 
+## Finalização técnica — 29/10/2026
+
+Registro da auditoria anterior ao envio. A publicação foi autorizada posteriormente; as menções a testes ainda não enviados ao CI ou ausência de deploy abaixo preservam o momento da verificação. Resultados remotos posteriores ficam no [workflow da main](https://github.com/Lcsf-dev/landing-page-focus-clinica/actions/workflows/ci-pages.yml?query=branch%3Amain).
+
+Execução atual: Codex nesta sessão, a pedido de Lucas, sem atribuir execução aos colegas. Branch `chore/technical-finalization`, base `13edfc0`, ambiente Windows/Chrome, Node 24.16.0 e npm 11.13.0. **26 testes locais aprovados e build concluído**. Os 22 testes anteriores foram preservados e quatro foram acrescentados para avatar, inserção segura e animações.
+
+Correção: `main` passou a ter `tabindex="-1"`; Enter no link de salto focou `MAIN#content`, e Tab alcançou a primeira ação do conteúdo com foco visível. Menu, abas, diálogo, larguras 360/390/768/1440 e falha parcial/recuperação com respostas controladas foram conferidos. A nova tentativa repetiu somente os três perfis pendentes.
+
+Verificação real adicional: quatro perfis e quatro avatares carregados no Chrome local, estado `success`, `aria-busy="false"` e console capturado sem erros/avisos. Auditoria de 46 links locais Markdown, sintaxe de 16 arquivos JavaScript, estrutura semântica básica e `git diff --check` aprovada.
+
+Relatório completo, checklist de requisitos, auditoria da API antiga, resultados e limites em [technical-review.md](technical-review.md). Zoom real de 200%, preferência de movimento reduzido no navegador e equivalência visual integral ao Figma não foram comprovados. A lógica de movimento reduzido passou em teste controlado; não é uma emulação da preferência real. A conferência humana posterior não bloqueou a execução técnica disponível. Nenhum push, merge ou deploy desta branch.
+
+Os registros abaixo são históricos. A publicação anterior `13edfc0` passou com 22 testes em Node 22.23.4 no workflow `40937911844`, acompanhada na etapa anterior desta sessão. A suíte de 26 casos ainda não foi enviada ao CI.
+
 ## Refatoração local — 29/10/2026
 
 Execução técnica com auxílio do Codex, sem atribuir testes aos demais integrantes. Ambiente: Windows, Chrome, Node.js 24.16.0 e npm 11.13.0. A configuração do CI permanece Node 22. Esta refatoração não foi enviada nem publicada.
@@ -41,7 +55,7 @@ Realizadas por Lucas (`Lcsf-dev`) com auxílio do Codex, sem atribuir execução
 | `node --check js/main.js` e `git diff --check` | Aprovados | Sintaxe e whitespace, sem auditar toda a interface |
 | Interface antes da substituição da API | Menu móvel abriu/fechou ao navegar; abas funcionaram por clique/teclado; Escape fechou diálogo e devolveu foco; layouts em 360, 390, 768 e 1440 px sem overflow | [Prévia desktop](evidence/preview-desktop.jpg) e [celular](evidence/preview-mobile.jpg). Não comprovam a API atual nem aderência ao Figma aprovado |
 
-O total atual é de nove testes: sete casos do cliente da API REST do GitHub e dois do pacote de publicação.
+Na execução de 20/10/2026, o total era de nove testes: sete casos do cliente da API REST do GitHub e dois do pacote de publicação.
 
 Validações adicionais do grupo: comparação com Figma, zoom 200%, navegação completa por teclado, preferência por movimento reduzido e falha/recuperação visual da API externa. O roteiro do Insomnia está em insomnia.md; não há execução manual registrada como realizada.
 
@@ -140,7 +154,7 @@ Issue de problema, se houver:
 
 ## Problemas corrigidos
 
-Nenhum problema funcional corrigido registrado nesta etapa. Quando ocorrer:
+Na finalização de 29/10/2026 foi corrigido e retestado o foco do link de salto, conforme o relatório acima. O quadro a seguir é o modelo histórico, sem atribuição fictícia de Issue ou aprovação:
 
 | Problema / Issue | Como reproduzir | Correção / PR / commit | Reteste e evidência |
 | --- | --- | --- | --- |

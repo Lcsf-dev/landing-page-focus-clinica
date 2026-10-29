@@ -1,5 +1,7 @@
 # Equipe e frentes de trabalho
 
+A validação técnica de 29/10/2026 foi executada pelo Codex nesta sessão, a pedido do solicitante, e está em [Finalização técnica](technical-review.md). As responsabilidades do guia abaixo continuam preservadas para a conferência humana posterior; não foram usadas como dependência para impedir testes ou correções agora, nem como atribuição de autoria/testes não realizados pelos colegas.
+
 ## Distribuição das frentes
 
 | Integrante | GitHub | Frente | Entregas da frente |
