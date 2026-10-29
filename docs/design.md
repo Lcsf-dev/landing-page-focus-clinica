@@ -2,13 +2,13 @@
 
 **Revisão visual: Thamires (`thaamiresffranca`) — aprovado em 20/10/2026.**
 
-Autoria do design: Lucas Fernandes (`Lcsf-dev`), com auxílio de ferramentas de IA e ajustes no editor. A aprovação visual é distinta dos testes locais adicionais da equipe.
+Responsável pelo design: Lucas Fernandes (`Lcsf-dev`). A aprovação visual registrada é específica do protótipo de 20/10/2026 e distinta da validação da implementação.
 
 ## Conferência de 29/10/2026
 
-Arquivo consultado pelo navegador e evidência local `evidence/figma-original-logo.png` inspecionada. As páginas de wireframes, layouts/protótipo e estilos/revisão estão disponíveis. O quadro desktop observado tem viewport 1440 × 1000 com recorte; a página também contém referências tablet/celular e estados de demonstração/ampliação.
+O arquivo contém wireframes, layouts/protótipo e estilos/revisão. O quadro desktop tem viewport 1440 × 1000 com recorte; há referências tablet/celular e estados de demonstração/ampliação. A [evidência da identidade](evidence/figma-original-logo.png) registra a versão anterior.
 
-Logo, Inter, paleta e estrutura estão presentes na implementação, mas composição do hero, textos e aparência de seções diferem da referência observada. Não foi declarada equivalência visual integral nem renovada a aprovação histórica. Esta auditoria preservou o visual publicado; a escolha da referência visual final fica explícita para a conferência humana posterior. O histórico de autorização para programar antes de concluir o Figma permanece inalterado. Detalhes e limites em [Finalização técnica](technical-review.md).
+Logo, Inter, paleta e estrutura estão presentes na implementação, mas composição do hero, textos e aparência de seções diferem do Figma. A equivalência visual integral não está comprovada. A referência visual final deve ser conciliada na conferência de design; a aprovação histórica não é uma aprovação da versão atual do site. Cenários verificados e limitações estão em [Testes](testing.md).
 
 ## Arquivo e apresentação
 
@@ -56,4 +56,4 @@ Em 20/10/2026, o logo original da referência foi aplicado aos cabeçalhos e rod
 | Estado | Aprovado |
 | Data | 20/10/2026 |
 
-O solicitante autorizou antecipar a programação e finalizar o Figma posteriormente. O histórico registra essa sequência real. Ajustes futuros no conteúdo, marca ou layout devem ser registrados e conferidos sem alterar retroativamente esta versão.
+A implementação começou antes da conclusão do Figma. Ajustes futuros no conteúdo, marca ou layout devem ser registrados e conferidos sem alterar retroativamente as datas ou a revisão dessa versão.
