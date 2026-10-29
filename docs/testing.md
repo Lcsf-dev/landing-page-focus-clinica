@@ -1,175 +1,72 @@
-# Plano e registro de testes
+# Testes e verificações
 
-**Responsável pela coordenação dos testes:** `genzo-dev`.
+## Referência validada — 29/10/2026
 
-## Finalização técnica — 29/10/2026
+Versão publicada: `8b8ba58`, integrada pelos PRs [#28](https://github.com/Lcsf-dev/landing-page-focus-clinica/pull/28) e [#29](https://github.com/Lcsf-dev/landing-page-focus-clinica/pull/29). O [workflow de produção](https://github.com/Lcsf-dev/landing-page-focus-clinica/actions/runs/40945562687) concluiu com 26 testes aprovados, zero falhas e Node.js 22.23.4. O build foi executado pelo `pretest`.
 
-Registro da auditoria anterior ao envio. A publicação ocorreu posteriormente; as menções a testes ainda não enviados ao CI ou ausência de deploy abaixo preservam o momento da verificação. Resultados remotos posteriores ficam no [workflow da main](https://github.com/Lcsf-dev/landing-page-focus-clinica/actions/workflows/ci-pages.yml?query=branch%3Amain).
+As verificações locais de 29/10/2026 usaram Windows, Chrome, Node.js 24.16.0 e npm 11.13.0. Os resultados abaixo não representam testes executados pelos demais integrantes nem aprovação final de acessibilidade ou design.
 
-Verificação técnica sem atribuir execução aos colegas. Branch `chore/technical-finalization`, base `13edfc0`, ambiente Windows/Chrome, Node 24.16.0 e npm 11.13.0. **26 testes locais aprovados e build concluído**. Os 22 testes anteriores foram preservados e quatro foram acrescentados para avatar, inserção segura e animações.
+## Suíte automatizada
 
-Correção: `main` passou a ter `tabindex="-1"`; Enter no link de salto focou `MAIN#content`, e Tab alcançou a primeira ação do conteúdo com foco visível. Menu, abas, diálogo, larguras 360/390/768/1440 e falha parcial/recuperação com respostas controladas foram conferidos. A nova tentativa repetiu somente os três perfis pendentes.
-
-Verificação real adicional: quatro perfis e quatro avatares carregados no Chrome local, estado `success`, `aria-busy="false"` e console capturado sem erros/avisos. Auditoria de 46 links locais Markdown, sintaxe de 16 arquivos JavaScript, estrutura semântica básica e `git diff --check` aprovada.
-
-Relatório completo, checklist de requisitos, auditoria da API antiga, resultados e limites em [technical-review.md](technical-review.md). Zoom real de 200%, preferência de movimento reduzido no navegador e equivalência visual integral ao Figma não foram comprovados. A lógica de movimento reduzido passou em teste controlado; não é uma emulação da preferência real. A conferência humana posterior não bloqueou a execução técnica disponível. Nenhum push, merge ou deploy desta branch.
-
-Os registros abaixo são históricos. A publicação anterior `13edfc0` passou com 22 testes em Node 22.23.4 no workflow `40937911844`, acompanhada na etapa anterior desta sessão. A suíte de 26 casos ainda não foi enviada ao CI.
-
-## Refatoração local — 29/10/2026
-
-Verificação técnica sem atribuir testes aos demais integrantes. Ambiente: Windows, Chrome, Node.js 24.16.0 e npm 11.13.0. A configuração do CI permanece Node 22. Esta refatoração não foi enviada nem publicada.
-
-| Verificação executada | Resultado e limite |
-| --- | --- |
-| `npm test` | 22 aprovados: 14 de API/normalização, cinco de equipe e três de pacote público. |
-| `npm run build` | Pacote estático gerado em `dist/`, sem dependências adicionais. |
-| API com respostas controladas | HTTP 403/404/429/500, rede, timeout na requisição e no corpo, limpeza do temporizador, JSON inválido, identidade, campos opcionais e tipos incompatíveis, URLs malformadas, origens/caminhos inesperados e credenciais embutidas. |
-| Equipe com respostas controladas | Falha parcial preserva cartões estáticos; nova tentativa consulta somente pendentes; carregamentos simultâneos são bloqueados; controles de carregamento/erro/sucesso e recuperação conferidos. |
-| Pacote público | Caminhos relativos no subdiretório do Pages, IDs e referências acessíveis, fontes/licença, imports ES e símbolos SVG; exclusão de arquivos de trabalho. Não é deploy real. |
-| Comparação antes/depois no Chrome, 1440 px | Dimensões das seções, textos de títulos/parágrafos/legendas e rótulos `aria-label` coincidiram; sem overflow horizontal. |
-| Abas no Chrome | Clique, ArrowLeft, Home e End alteraram seleção, painel e foco. |
-| Imagem no Chrome | Ampliação abriu o diálogo, preservou texto alternativo e focou o botão de fechar; Escape fechou e retornou o foco ao link. |
-| Menu no Chrome, 390 px | Abriu/fechou, atualizou `aria-expanded`/`aria-hidden` e ícone; Escape retornou foco visível ao botão; link Sobre fechou o menu e focou a seção. |
-| Responsividade no Chrome | Sem overflow em 360, 390, 768, 1280 e 1440 px. Não substitui teste em dispositivos físicos ou todos os tamanhos intermediários. |
-| API real no Chrome | Quatro perfis e quatro avatares carregados, estado `success`, `aria-busy="false"`; console capturado sem erros/avisos. |
-| Referências e recursos | 36 links locais Markdown resolvidos e 14 arquivos binários comparados por SHA-256 com o Git, sem alteração de conteúdo. |
-| Sintaxe e whitespace | `node --check` nos módulos, scripts e testes; `git diff --check` aprovado. |
-| Servidor local renomeado | HTML, CSS, módulos, SVG e fonte responderam HTTP 200; README retornou 404 e POST retornou 405. |
-
-Limites: o workflow foi revisado localmente, sem execução remota ou deploy; Node 22 não foi executado neste ambiente. Movimento reduzido e fallback sem JavaScript foram preservados por inspeção do código, sem emulação no navegador. Não houve auditoria completa de acessibilidade, zoom de 200%, comparação com Figma ou teste em outros navegadores. Os registros a seguir descrevem execuções anteriores; caminhos documentais foram atualizados para a estrutura atual.
-
-**Situação em 20/10/2026:** nove testes automatizados aprovados: sete do cliente da API externa e dois do pacote de publicação. Revisão visual do Figma aprovada por Thamires. Testes locais adicionais do grupo e verificações da publicação são registros separados.
-
-## Execuções técnicas em 20/10/2026
-
-Verificações registradas sem atribuir execução aos colegas. Cliente da API avaliado no commit `13081b8`; os commits documentais seguintes não alteram esse cliente.
-
-| Verificação | Resultado | Evidência e limite |
-| --- | --- | --- |
-| Cliente da API no `npm test` | 7 testes aprovados: sucesso, nome nulo, HTTP 404/403/429/500, resposta ausente/inválida, endereço inesperado, rede e timeout | `tests/api.test.mjs`; respostas simuladas, sem consumir a cota pública |
-| `npm run build` | Arquivos públicos preparados em dist | Documentação e testes não são publicados; não é um deploy |
-| Pacote estático — `tests/deployment.test.mjs` | Dois testes aprovados: recursos/âncoras/referências acessíveis resolvem também no subdiretório do Pages; pacote exclui documentos de trabalho e credenciais locais | Executados pelo npm test após preparação automática do build |
-| API real no Chrome, Windows | Quatro perfis e avatares carregaram; estado sucesso e aria-busy false; sem erros/avisos no console capturado | [Computador](evidence/github-api-desktop.jpg) |
-| Créditos em 390 e 1440 px | Sem overflow: conteúdo/área útil 375/375 e 1425/1425 px; quatro perfis preservados | [Celular](evidence/github-api-mobile.jpg); área útil exclui a barra de rolagem |
-| `node --check js/main.js` e `git diff --check` | Aprovados | Sintaxe e whitespace, sem auditar toda a interface |
-| Interface antes da substituição da API | Menu móvel abriu/fechou ao navegar; abas funcionaram por clique/teclado; Escape fechou diálogo e devolveu foco; layouts em 360, 390, 768 e 1440 px sem overflow | [Prévia desktop](evidence/preview-desktop.jpg) e [celular](evidence/preview-mobile.jpg). Não comprovam a API atual nem aderência ao Figma aprovado |
-
-Na execução de 20/10/2026, o total era de nove testes: sete casos do cliente da API REST do GitHub e dois do pacote de publicação.
-
-Validações adicionais do grupo: comparação com Figma, zoom 200%, navegação completa por teclado, preferência por movimento reduzido e falha/recuperação visual da API externa. O roteiro do Insomnia está em insomnia.md; não há execução manual registrada como realizada.
-
-## Verificação das publicações em 20/10/2026
-
-Versão inicial publicada: `a5569fe`. Conferência registrada sem atribuir execução aos demais integrantes. Primeiro GitHub Pages, depois Netlify. Ambos responderam HTTP 200. Os nove testes passaram localmente e no GitHub Actions em Ubuntu / Node 22.
-
-Nas duas origens, foram conferidos CSS, capturas, aba Acesso do cliente, ampliação e fechamento com Escape, quatro perfis e avatares da API com estado sucesso e console sem erros/avisos capturados. Em 390 px, o menu abriu, navegou para Sobre e fechou; conteúdo e área útil com 375 px, sem overflow. Cabeçalhos configurados do Netlify presentes na resposta HTTP.
-
-Links, execução e evidências em [Publicação](deployment.md). Essas verificações técnicas não alteram a coluna de testes dos colegas, que serão registrados após a execução efetiva.
-
-## Reteste da identidade visual — 20/10/2026
-
-Alteração técnica: `e4c47bb`. Conferência técnica registrada. Logo original da referência e fonte Inter local aplicados.
-
-- Nove testes aprovados; o caso do pacote público passou a conferir também os recursos apontados pelo CSS e a presença da licença da fonte.
-- Fonte local respondeu HTTP 200 com tipo `font/woff2`; estilo calculado da página utiliza Inter.
-- Chrome em 390 e 1440 px: conteúdo/área útil de 375/375 e 1425/1425 px, respectivamente, sem overflow horizontal.
-- Logos do cabeçalho e rodapé carregados. Menu móvel abriu, navegou para Sobre e fechou com `aria-expanded` atualizado.
-- Evidências: [computador](evidence/identity-desktop.png) e [celular](evidence/identity-mobile.png).
-
-Essas verificações não representam execução dos testes adicionais atribuídos aos colegas.
-
-## Execução por outro integrante
-
-Quem testa pode ser diferente de quem programou. Clonar/atualizar a branch, executar pelo README, seguir o cenário e registrar o comportamento observado. Informar navegador, dispositivo ou viewport e commit avaliado.
-
-## Divisão e momento dos testes
-
-O plano atribui API/testes a um integrante e revisão/teste final a todos. O plano distribui as validações adicionais; a suíte existente cobre somente os cenários necessários do cliente da API.
-
-| Etapa | Responsável | Cenários | Quando executar |
-| --- | --- | --- | --- |
-| Conferência da tarefa | Autor de cada PR | Somente os cenários afetados pela alteração | Antes de pedir revisão |
-| Layout e responsividade | `DumbRyder` — Interface e responsividade | CT04–CT07 | Após as seções existirem e quando o layout mudar |
-| Revisão visual e interface | Thamires (`thaamiresffranca`) | Revisão do Figma; CT01–CT03, CT08 e CT15 | Após o protótipo e após implementar as interações |
-| Conferência JavaScript | Lucas (`Lcsf-dev`) | Comportamentos alterados de CT01–CT03 e CT08 | Antes de pedir revisão das interações |
-| Integração da API | Gabriel Enzo (`genzo-dev`) — API e testes | CT09–CT14 | Após integrar e quando mudar o contrato/tratamento |
-| Revisão integrada | Gabriel Enzo coordena; equipe participa | Cenários aplicáveis ainda pendentes e reteste das correções | Antes da publicação |
-| Site publicado | Equipe, coordenada pelo responsável dos testes | CT16 e verificações essenciais de links/menu/API | Após a publicação |
-
-As quatro frentes estão identificadas em team.md. A responsabilidade por uma verificação não depende de ter escrito o código. Não repetir casos não afetados por uma alteração documental; repetir quando houver mudança, falha ou risco concreto de regressão.
-
-### Roteiro de participação nas validações
-
-1. Abrir o protótipo ou a versão indicada na tarefa.
-2. Executar os cenários da própria frente conforme a tabela abaixo.
-3. Anotar o resultado observado e anexar captura ou evidência curta quando necessário.
-4. Abrir uma Issue se encontrar falha; depois da correção, repetir o cenário afetado.
-5. Enviar o registro em uma branch da tarefa e abrir PR, ou registrar a evidência na Issue correspondente. As aprovações do Figma ficam vinculadas à versão revisada.
-
-Não é necessário criar uma branch permanente por integrante. Exemplos para tarefas futuras: `tests/responsive-layout`, `tests/interface-navigation` e `tests/github-api`.
-
-O responsável registra ambiente, commit, resultado observado e evidência curta. Se houver falha, abrir Issue e vincular o PR de correção; registrar o reteste antes de dar o problema por resolvido.
-
-## Cenários planejados
-
-| ID | Cenário | Procedimento | Resultado esperado | Validação dos colegas |
-| --- | --- | --- | --- | --- |
-| CT01 | Links e navegação | Acionar cada link do menu e chamadas para ação | Destino correto, sem links quebrados | Não executado |
-| CT02 | Menu móvel | Abrir, fechar e escolher seção em tela pequena | Menu e estado do botão consistentes | Não executado |
-| CT03 | Teclado | Navegar com Tab, Shift+Tab, Enter e Escape quando aplicável | Foco visível, ordem lógica e controles acessíveis | Não executado |
-| CT04 | Celular | Conferir 360 e 390 px de largura | Texto legível e sem rolagem horizontal indevida | Não executado |
-| CT05 | Tablet | Conferir 768 px de largura | Layout e navegação utilizáveis | Não executado |
-| CT06 | Computador | Conferir 1280 e 1440 px de largura | Seções e imagens consistentes com Figma | Não executado |
-| CT07 | Zoom | Aumentar zoom para 200% | Conteúdo e controles continuam utilizáveis | Não executado |
-| CT08 | Animações | Acionar efeitos e preferência por movimento reduzido | Efeitos discretos, sem impedir navegação | Não executado |
-| CT09 | API: sucesso | Consultar endpoint válido | Dados corretos apresentados | Não executado |
-| CT10 | API: carregamento | Simular conexão lenta | Estado de carregamento perceptível e finalizado | Não executado |
-| CT11 | API: rede indisponível | Simular offline antes da consulta | Erro tratado sem quebrar a página | Não executado |
-| CT12 | API: erro HTTP | Simular resposta 4xx/5xx em ambiente controlado | Falha identificada mesmo com fetch resolvido | Não executado |
-| CT13 | API: dados ausentes | Simular resposta vazia ou campo ausente | Estado vazio/erro adequado, sem exceção não tratada | Não executado |
-| CT14 | API: resposta inválida | Simular corpo inesperado | Mensagem adequada e interface recuperável | Não executado |
-| CT15 | Imagens reais | Conferir origem, legenda e texto alternativo | Capturas corretas e acessíveis | Não executado |
-| CT16 | Publicação | Abrir URL final e repetir verificações essenciais | Recursos, navegação e API funcionam na origem publicada | Não executado |
-
-As larguras são referências de teste, não aprovação antecipada dos breakpoints do design. Simular falhas de forma controlada, sem depender de que a API pública apresente erros reais.
-
-## Modelo de resultado executado
-
-Copiar para cada execução efetiva:
-
-```text
-Cenário:
-Data e hora:
-Responsável:
-Branch e commit:
-Navegador / versão:
-Dispositivo / viewport:
-Passos executados:
-Resultado observado:
-Situação: Aprovado / Reprovado / Bloqueado
-Evidência:
-Issue de problema, se houver:
+```powershell
+npm test
 ```
 
-## Problemas corrigidos
+| Arquivo | Casos | Cobertura |
+| --- | ---: | --- |
+| `tests/api.test.mjs` | 14 | CT09–CT14: HTTP 403/404/429/500, rede (CT11), timeout da requisição e do corpo, limpeza do temporizador, JSON inválido (CT14), identidade, URLs, tipos e campos opcionais (CT13) |
+| `tests/deployment.test.mjs` | 3 | Recursos e âncoras em subdiretório do Pages, referências acessíveis, fontes/licença, imports ES, símbolos SVG e exclusão de arquivos de trabalho |
+| `tests/team-profiles.test.mjs` | 5 | Falha parcial, preservação dos cartões, tentativas só dos pendentes, concorrência e estados da apresentação |
+| `tests/team-view.test.mjs` | 2 | Falha do avatar, iniciais e inserção do nome como texto |
+| `tests/reveal-animations.test.mjs` | 2 | Movimento reduzido, ausência de observer e revelação dos elementos |
 
-Na finalização de 29/10/2026 foi corrigido e retestado o foco do link de salto, conforme o relatório acima. O quadro a seguir é o modelo histórico, sem atribuição fictícia de Issue ou aprovação:
+Os testes usam respostas controladas e não consomem a cota pública do GitHub. `npm run build` também foi executado separadamente em 29/10/2026 e concluiu com sucesso.
 
-| Problema / Issue | Como reproduzir | Correção / PR / commit | Reteste e evidência |
-| --- | --- | --- | --- |
-| A preencher após ocorrência | — | — | — |
+## Verificações no Chrome — 29/10/2026
 
-## Verificações da estrutura inicial
-
-Executado em 19/10/2026 durante a preparação local:
-
-| Verificação | Resultado | Limite |
+| ID | Cenário | Resultado registrado |
 | --- | --- | --- |
-| `git diff --check` | Aprovado | Verifica problemas de whitespace no diff |
-| `node --check js/main.js` | Aprovado | Arquivo ainda contém somente a indicação da etapa futura |
-| Existência de 16 caminhos de estrutura/documentação | Aprovado | Não verifica funcionalidades |
-| Resolução de 10 links locais Markdown no README | Aprovado | Não verifica disponibilidade de URLs externas |
-| HTML inicial com `lang="pt-BR"` e um `main` | Aprovado | Não é auditoria completa de acessibilidade ou HTML |
+| CT01 / CT03 | Link de salto e teclado | Antes da correção, a âncora mudava, mas o foco permanecia no `body`. Com `tabindex="-1"` no `main`, Enter focou `MAIN#content` e o próximo Tab alcançou a ação do conteúdo com foco visível. |
+| CT02 / CT03 | Menu móvel | Abertura por clique/teclado, estados `aria-expanded`/`aria-hidden`, Tab até Sobre, Escape com retorno ao botão e navegação com foco em `#features`. |
+| CT03 | Abas | Clique, ArrowLeft/ArrowRight, Home e End alteraram seleção, painel e foco. |
+| CT15 / CT03 | Imagens e ampliação | Capturas reais com texto alternativo; clique/Enter abriram o diálogo; botão e Escape fecharam, devolvendo foco ao link. |
+| CT04–CT06 | Celular, tablet e computador | Sem overflow horizontal em 360, 390, 768 e 1440 px; áreas úteis de 345, 375, 753 e 1425 px. |
+| CT10 | Carregamento da equipe | Quatro respostas pendentes exibiram mensagem, `aria-busy="true"` e botão de nova tentativa desabilitado. |
+| CT12 | Falha parcial e recuperação | Uma resposta válida e três HTTP 503 preservaram nomes/links. A nova tentativa repetiu só os três pendentes; contagens finais `1, 2, 2, 2`, quatro cartões concluídos e estado `success`. |
+| CT09 | API real | Quatro perfis e quatro avatares carregados; `aria-busy="false"` e console capturado sem erros/avisos. |
+| CT16 | Publicação | Pages e Netlify responderam HTTP 200 e passaram a servir o conteúdo de `8b8ba58`, incluindo o destino de foco no `main`. |
 
-Na conferência inicial de 19/10/2026 não haviam sido executados testes de navegador, responsividade, API ou publicação. As verificações posteriores estão no início deste documento. O validador YAML via Python não estava disponível; os modelos de Issues receberam apenas conferência manual de estrutura.
+As falhas foram provocadas com respostas controladas, sem depender de indisponibilidade do serviço público. O roteiro de consulta manual está em [Insomnia](insomnia.md); não há execução manual registrada nessa ferramenta.
+
+## Verificações estruturais registradas
+
+Na finalização de 29/10/2026, 46 links locais Markdown resolveram, 16 arquivos JavaScript passaram em `node --check` e `git diff --check` passou. O HTML apresentou um `h1`, sem salto de nível nos títulos, landmarks `header/main/footer`, seis seções no `main`, atributo `alt` nas seis imagens e `rel` seguro nos links em nova aba. Esses números descrevem aquela versão, não a quantidade atual de referências documentais.
+
+## Limitações e conferência posterior
+
+- CT07: zoom real de 200% não foi comprovado.
+- CT08: a lógica de movimento reduzido passou com respostas controladas e as regras CSS foram inspecionadas; a preferência real não foi emulada no navegador.
+- As verificações usaram um navegador, sem dispositivos físicos, leitor de tela ou auditoria completa de acessibilidade.
+- Existem diferenças de composição e texto entre site e Figma, descritas em [Design](design.md); equivalência visual integral não foi comprovada.
+- Não houve avaliação quantitativa de desempenho ou execução manual no Insomnia.
+
+A equipe fará a conferência posterior dos PRs integrados. Registrar somente cenários efetivamente executados e aprovações comprovadas.
+
+## Histórico de verificações
+
+| Data | Versão/etapa | Resultado e evidência |
+| --- | --- | --- |
+| 19/10/2026 | Estrutura inicial | Whitespace, sintaxe inicial, estrutura e links conferidos; testes funcionais ainda não executados. |
+| 20/10/2026 | Integração GitHub e pacote | Nove testes: sete de API e dois de publicação. API real e layouts em [computador](evidence/github-api-desktop.jpg) e [celular](evidence/github-api-mobile.jpg). |
+| 20/10/2026 | Publicação inicial `a5569fe` | Pages e Netlify com HTTP 200; demonstração, menu, perfis e responsividade conferidos. [Pages](evidence/github-pages-deployment.png), [Netlify](evidence/netlify-deployment.png). |
+| 20/10/2026 | Identidade `e4c47bb` | Logo e Inter locais; nove testes aprovados. Layouts de 390 e 1440 px sem overflow: [celular](evidence/identity-mobile.png), [computador](evidence/identity-desktop.png). |
+| 29/10/2026 | Refatoração `13edfc0` | 22 testes no [workflow](https://github.com/Lcsf-dev/landing-page-focus-clinica/actions/runs/40937911844); dimensões/textos/rótulos preservados na comparação a 1440 px; 14 recursos binários sem alteração de conteúdo. |
+| 29/10/2026 | Finalização `8b8ba58` | 26 testes no CI; correção do foco e verificações descritas acima. |
+
+As [prévias desktop](evidence/preview-desktop.jpg) e [celular](evidence/preview-mobile.jpg) anteriores à substituição da API são registros históricos de interface; não comprovam a integração atual ou aderência ao Figma.
+
+## Como registrar um novo resultado
+
+Informar data, responsável pela execução, branch/commit, navegador/viewport, passos, resultado, evidência e Issue relacionada quando houver falha. Após corrigir um problema, repetir o cenário afetado.
+
+Para alterações exclusivamente documentais, conferir links afetados, `git diff --check`, diff e termos removidos. Para alterações funcionais, executar os testes afetados. Os checks obrigatórios do GitHub continuam valendo, mesmo quando executam a suíte completa.
