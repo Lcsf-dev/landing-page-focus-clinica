@@ -6,14 +6,14 @@ Prazo de entrega informado: **14/11/2026**. Canal de comunicação da equipe: **
 
 | Etapa | Situação | Evidência |
 | --- | --- | --- |
-| Planejamento e divisão das frentes | Registrados; revisões adicionais da equipe em aberto | [Requisitos](requisitos.md), [Equipe](equipe.md) e [Tarefas](tarefas.md) |
+| Planejamento e divisão das frentes | Registrados; revisões adicionais da equipe em aberto | [Requisitos](requirements.md), [Equipe](team.md) e [Tarefas](tasks.md) |
 | Figma | Wireframes, três layouts e protótipo concluídos; revisão visual aprovada por Thamires | [Design](design.md) |
 | Implementação | Oito seções, responsividade, menu, abas e ampliação concluídos | HTML, CSS e JavaScript integrados à main |
-| Identidade visual | Logo original obtido do sistema de referência; Inter hospedada localmente | [Recursos visuais](../img/README.md) e css/fontes |
+| Identidade visual | Logo original obtido do sistema de referência; Inter hospedada localmente | [Recursos visuais](../img/README.md) e css/fonts |
 | API | GitHub REST API integrada aos créditos, com tratamento de falhas | [Contrato](api.md) e sete testes do cliente |
-| Testes técnicos | Nove testes automatizados aprovados e verificações dos endereços publicados registradas | [Testes](testes.md) |
-| Publicação | GitHub Pages e Netlify publicados em 20/10/2026, com atualização automática pela main | [Publicação](publicacao.md) |
-| Validação adicional da equipe | Pendente de execução e registro pelos integrantes | Cenários distribuídos em testes.md |
+| Testes técnicos | Nove testes automatizados aprovados e verificações dos endereços publicados registradas | [Testes](testing.md) |
+| Publicação | GitHub Pages e Netlify publicados em 20/10/2026, com atualização automática pela main | [Publicação](deployment.md) |
+| Validação adicional da equipe | Pendente de execução e registro pelos integrantes | Cenários distribuídos em testing.md |
 
 ## Endereços publicados
 

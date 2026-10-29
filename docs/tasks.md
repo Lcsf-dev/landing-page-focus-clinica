@@ -13,7 +13,7 @@ Atualização: 20/10/2026. Entrega: **14/11/2026**. Fluxo: **A fazer → Em anda
 | [T07 / #6](https://github.com/Lcsf-dev/landing-page-focus-clinica/issues/6) — interações | Lucas / revisão visual | Em revisão | PR #15; revisão independente das interações |
 | [T08 / #7](https://github.com/Lcsf-dev/landing-page-focus-clinica/issues/7) — integração | Lucas / Gabriel | Em revisão | PR #16; sete testes e consulta real aprovados; revisão de Gabriel pendente |
 | [T09 / #8](https://github.com/Lcsf-dev/landing-page-focus-clinica/issues/8) — testes adicionais | Gabriel Enzo | A fazer | Revisar integração, CT09–CT14 e consolidar resultados reais |
-| [T10 / #9](https://github.com/Lcsf-dev/landing-page-focus-clinica/issues/9) — publicação | Lucas / equipe | Concluído | GitHub Pages e Netlify publicados; HTTP, menu, imagens e API verificados; detalhes em publicacao.md |
+| [T10 / #9](https://github.com/Lcsf-dev/landing-page-focus-clinica/issues/9) — publicação | Lucas / equipe | Concluído | GitHub Pages e Netlify publicados; HTTP, menu, imagens e API verificados; detalhes em deployment.md |
 | [T11 / #12](https://github.com/Lcsf-dev/landing-page-focus-clinica/issues/12) — revisão visual | Thamires | Em andamento | Figma aprovado; testes de interface CT01–CT03, CT08 e CT15 serão registrados após execução |
 | [T12 / #13](https://github.com/Lcsf-dev/landing-page-focus-clinica/issues/13) — layout | DumbRyder | A fazer | CT04–CT07 com ambiente e evidências |
 

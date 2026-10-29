@@ -16,10 +16,13 @@ O endereço <https://focus-clinica.netlify.app/> é o sistema de referência, n�
 ## Publicação automática
 
 - Produção acompanha `main`; tarefas passam por branches próprias e `develop`.
-- GitHub Pages: `.github/workflows/publicar-pages.yml`, Node 22, `npm test` prepara `dist` e executa nove testes antes de publicar. Ações fixadas por commit; permissão de publicação restrita ao job de deploy.
+- GitHub Pages: `.github/workflows/ci-pages.yml`, Node 22. PRs destinados a `develop`/`main` e pushes nessas branches passam por `npm test`; o `pretest` prepara `dist` uma única vez. Ações fixadas por commit; leitura de conteúdo na validação e permissões de publicação somente no deploy.
+- O upload e o deploy exigem `refs/heads/main`, evento diferente de PR e validação aprovada (`needs: validate`). PRs e branches de desenvolvimento não publicam no Pages. A concorrência cancela validações ultrapassadas do mesmo PR/branch de desenvolvimento e serializa execuções da `main`.
 - Netlify: repositório conectado, branch `main`, `netlify.toml`, comando `npm run build`, pasta `dist`, Node 22. Não há função ou API própria.
 - Somente arquivos públicos entram em `dist`; documentos, testes e histórico Git ficam fora.
 - Os cabeçalhos definidos no `netlify.toml` são aplicados pelo Netlify. O GitHub Pages utiliza os cabeçalhos da própria plataforma.
+
+Configuração revisada localmente em 29/10/2026. Foram executados `npm test` (22 aprovados) e `npm run build`; o workflow remoto e novos deploys não foram executados nesta tarefa. O Node local é 24.16.0; CI e Netlify continuam configurados com Node 22. A configuração da branch e dos previews do Netlify na plataforma foi preservada.
 
 ## Verificações executadas
 
@@ -35,6 +38,6 @@ O endereço <https://focus-clinica.netlify.app/> é o sistema de referência, n�
 | Responsividade em 390 px | Conteúdo e área útil com 375 px, sem overflow horizontal nas duas origens |
 | Cabeçalhos Netlify | CSP, X-Content-Type-Options, Referrer-Policy e X-Frame-Options presentes |
 
-Evidências: [GitHub Pages](evidencias/publicacao-github-pages.png) e [Netlify](evidencias/publicacao-netlify.png). Roteiros e limites em [Testes](testes.md).
+Evidências: [GitHub Pages](evidence/github-pages-deployment.png) e [Netlify](evidence/netlify-deployment.png). Roteiros e limites em [Testes](testing.md).
 
 Os testes locais adicionais dos colegas continuam pendentes. A publicação e as verificações técnicas não representam execução desses testes por outros integrantes.
