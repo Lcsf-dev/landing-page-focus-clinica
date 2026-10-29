@@ -4,11 +4,13 @@
   "private": true,
   "type": "module",
   "description": "Landing page institucional do Focus Clínica com créditos integrados à API REST do GitHub.",
-  "engines": { "node": ">=22" },
+  "engines": {
+    "node": ">=22"
+  },
   "scripts": {
-    "dev": "node scripts/servidor-local.mjs",
-    "build": "node scripts/preparar-publicacao.mjs",
-    "pretest": "node scripts/preparar-publicacao.mjs",
-    "test": "node --test testes/api.test.mjs testes/publicacao.test.mjs"
+    "dev": "node scripts/dev-server.mjs",
+    "build": "node scripts/build.mjs",
+    "pretest": "node scripts/build.mjs",
+    "test": "node --test tests/*.test.mjs"
   }
 }
