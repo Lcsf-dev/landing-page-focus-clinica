@@ -1,5 +1,7 @@
 # API REST do GitHub — créditos da equipe
 
+Auditoria de 29/10/2026: integração atual preservada e validada; a API própria foi removida em `13081b8`. Nesta etapa foram removidos somente os diretórios locais vazios remanescentes. O OpenAPI e o roteiro do Insomnia descrevem o GitHub e permanecem necessários. A suíte atual tem 26 testes; detalhes em [Finalização técnica](technical-review.md).
+
 O projeto consome a **API REST do GitHub**, um serviço existente com documentação pública.
 
 ## Finalidade e correspondência com o enunciado

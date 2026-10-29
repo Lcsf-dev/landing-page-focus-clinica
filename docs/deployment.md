@@ -1,6 +1,16 @@
 # Publicação e verificação final
 
-**Status:** publicado e verificado em 20/10/2026. Primeiro no GitHub Pages, depois no Netlify.
+**Publicação:** GitHub Pages e Netlify acompanham a `main`; o Pages exige validação aprovada. Consulte a última execução do [workflow da main](https://github.com/Lcsf-dev/landing-page-focus-clinica/actions/workflows/ci-pages.yml?query=branch%3Amain) para identificar a versão efetivamente publicada. A publicação inicial ocorreu em 20/10/2026, primeiro no GitHub Pages e depois no Netlify.
+
+Os registros a seguir descrevem a base `13edfc0` e a auditoria feita antes do envio. A ausência de push/deploy mencionada nesses registros corresponde à etapa de auditoria, não ao estado operacional após a publicação.
+
+## Versão publicada e branch local
+
+Os commits `1912cf9` e `13edfc0` foram enviados à `main`. O [workflow 40937911844](https://github.com/Lcsf-dev/landing-page-focus-clinica/actions/runs/40937911844) passou com 22 testes em Node 22.23.4 e publicou no Pages. O Netlify também passou a servir os arquivos atualizados; suas inserções próprias de hospedagem foram diferenciadas do HTML da aplicação.
+
+Nesta auditoria, os dois endereços responderam HTTP 200. O `tabindex` do link de salto e os quatro testes adicionais existem somente em `chore/technical-finalization`; não se declara que produção contenha essas alterações. Não houve novo push, merge ou deploy. Resultados em [Finalização técnica](technical-review.md).
+
+A configuração de PRs/branches sem deploy foi conferida no workflow do Pages. As opções externas de previews/branch deploys no painel do Netlify não foram inspecionadas nesta auditoria; não se afirma que estejam desabilitadas.
 
 ## Endereços da entrega
 
