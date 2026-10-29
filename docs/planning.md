@@ -1,19 +1,23 @@
 # Planejamento
 
-## Situação atual — 20/10/2026
+## Situação atual — 29/10/2026
+
+Quadro consolidado ao concluir a auditoria local, antes da autorização posterior de envio/publicação. As referências a alterações somente locais preservam esse momento; o estado operacional de publicação é acompanhado em [deployment.md](deployment.md).
 
 Prazo de entrega informado: **14/11/2026**. Canal de comunicação da equipe: **WhatsApp**. Organização das tarefas: **Issues do GitHub**, no fluxo A fazer → Em andamento → Em revisão → Concluído.
 
 | Etapa | Situação | Evidência |
 | --- | --- | --- |
-| Planejamento e divisão das frentes | Registrados; revisões adicionais da equipe em aberto | [Requisitos](requisitos.md), [Equipe](equipe.md) e [Tarefas](tarefas.md) |
+| Planejamento e divisão das frentes | Registrados; revisões adicionais da equipe em aberto | [Requisitos](requirements.md), [Equipe](team.md) e [Tarefas](tasks.md) |
 | Figma | Wireframes, três layouts e protótipo concluídos; revisão visual aprovada por Thamires | [Design](design.md) |
 | Implementação | Oito seções, responsividade, menu, abas e ampliação concluídos | HTML, CSS e JavaScript integrados à main |
-| Identidade visual | Logo original obtido do sistema de referência; Inter hospedada localmente | [Recursos visuais](../img/README.md) e css/fontes |
-| API | GitHub REST API integrada aos créditos, com tratamento de falhas | [Contrato](api.md) e sete testes do cliente |
-| Testes técnicos | Nove testes automatizados aprovados e verificações dos endereços publicados registradas | [Testes](testes.md) |
-| Publicação | GitHub Pages e Netlify publicados em 20/10/2026, com atualização automática pela main | [Publicação](publicacao.md) |
-| Validação adicional da equipe | Pendente de execução e registro pelos integrantes | Cenários distribuídos em testes.md |
+| Identidade visual | Logo original obtido do sistema de referência; Inter hospedada localmente | [Recursos visuais](../img/README.md) e css/fonts |
+| API | GitHub REST API integrada aos créditos, com tratamento de falhas; sem backend próprio ativo | [Contrato](api.md), 14 testes do cliente e cenários de apresentação/coordenação |
+| Testes técnicos | 26 testes locais aprovados, build concluído e cenários do navegador executados pelo Codex nesta sessão | [Finalização técnica](technical-review.md) e [Testes](testing.md) |
+| Publicação | Base `13edfc0` publicada em Pages e Netlify; ajuste de foco e novos testes somente na branch local | [Publicação](deployment.md) |
+| Conferência posterior da equipe | Ainda não executada; não bloqueou a validação técnica disponível | Responsabilidades preservadas em team.md |
+
+Branch desta etapa: `chore/technical-finalization`, sem push, merge ou publicação. As fontes foram relidas, incluindo Notion e PDF. O design atual difere do Figma em composição/textos; não há declaração de equivalência visual ou de nova aprovação humana.
 
 ## Endereços publicados
 
@@ -35,7 +39,8 @@ Todos participam da conferência da versão publicada (CT16). Os prazos individu
 
 ## Pendências reais
 
-- Revisões e testes adicionais dos colegas, incluindo comparação com Figma, teclado, zoom, movimento reduzido e estados visuais da API.
+- Conferência humana posterior e definição da referência visual final, pois implementação e Figma apresentam diferenças de composição/textos. A aprovação histórica do protótipo foi preservada.
+- Zoom real de 200% e emulação real de movimento reduzido ainda não comprovados; lógica de movimento reduzido, teclado e estados visuais de falha parcial/recuperação já foram verificados nesta auditoria conforme technical-review.md.
 - Registro e correção de problemas que surgirem nessas verificações, com reteste dos comportamentos afetados.
 - Consolidação final dos resultados e atualização das Issues antes da entrega.
 

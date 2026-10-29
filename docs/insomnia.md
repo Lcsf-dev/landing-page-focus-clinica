@@ -6,7 +6,7 @@ O serviço testado é a **API REST do GitHub**, não uma API criada pela equipe.
 
 1. No Insomnia, use a opção de importar arquivo e selecione `docs/api.openapi.json`.
 2. Abra a requisição GET de perfil público, com servidor `https://api.github.com`.
-3. Preencha `usuario` com `Lcsf-dev`, `thaamiresffranca`, `genzo-dev` ou `DumbRyder`.
+3. Preencha `username` com `Lcsf-dev`, `thaamiresffranca`, `genzo-dev` ou `DumbRyder`.
 4. Se necessário, adicione `Accept: application/vnd.github+json`. Deixe a autenticação como nenhuma.
 5. Envie a consulta e confira HTTP 200 e os campos `login`, `name`, `html_url`, `avatar_url`. `name: null` é permitido.
 6. Registre resultado, data e responsável. Anexe somente uma evidência útil, sem credenciais.
@@ -30,4 +30,4 @@ Não esgotar a cota do GitHub para provocar 403/429: esses estados são simulado
 
 ## Registro
 
-Gabriel Enzo (`genzo-dev`) revisa a integração e registra os testes adicionais em [testes.md](testes.md). A presença deste roteiro **não significa que o teste manual no Insomnia foi executado**.
+Gabriel Enzo (`genzo-dev`) revisa a integração e registra os testes adicionais em [testing.md](testing.md). A presença deste roteiro **não significa que o teste manual no Insomnia foi executado**.

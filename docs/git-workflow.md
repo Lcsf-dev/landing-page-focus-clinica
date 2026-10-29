@@ -2,7 +2,11 @@
 
 Repositório: <https://github.com/Lcsf-dev/landing-page-focus-clinica> (público desde 20/10/2026).
 
+Finalização de 29/10/2026 na branch local `chore/technical-finalization`, criada de `13edfc0`, sem push, merge ou deploy nesta etapa. A refatoração anterior foi enviada à `main` e publicada em uma etapa separada, autorizada pelo solicitante; isso não representa revisão de terceiros. O registro abaixo que descreve a etapa local sem publicação é histórico. A publicação existente e as alterações locais são diferenciadas em deployment.md.
+
 ## Fluxo adotado
+
+Atualização local em 29/10/2026: o workflow `ci-pages.yml` valida PRs destinados a `develop`/`main` e pushes nessas branches. Somente a `main`, fora de PRs e após validação aprovada, publica no Pages. Nomes de branches históricas abaixo foram preservados; novas tarefas devem usar nomes técnicos em inglês. Nenhum push, merge ou deploy foi realizado nesta refatoração.
 
 Por solicitação da equipe, foi criada `develop` para integrar as tarefas antes da versão de produção:
 
@@ -55,4 +59,4 @@ Não integrar alterações em nome de uma revisão de terceiros que ainda não o
 
 Em 20/10/2026, o solicitante autorizou integrar e publicar após a validação técnica, com testes locais adicionais do grupo posteriormente. A revisão visual do Figma foi aprovada por Thamires. Essa autorização não representa execução antecipada dos testes dos demais integrantes.
 
-GitHub Pages e Netlify publicados em 20/10/2026. Novos envios à `main` atualizam os dois endereços; o Pages exige a execução bem-sucedida dos testes no workflow. Links e evidências em [Publicação](publicacao.md).
+GitHub Pages e Netlify publicados em 20/10/2026. Novos envios à `main` atualizam os dois endereços; o Pages exige a execução bem-sucedida dos testes no workflow. Links e evidências em [Publicação](deployment.md).

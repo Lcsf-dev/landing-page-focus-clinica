@@ -3,10 +3,12 @@
 ## Fontes e interpretação
 
 1. **PDF:** Guia de Responsabilidades — Projeto Front-End, duas páginas, fornecido pelo solicitante.
-2. **Notion:** Documentação do Projeto Front-End — Landing Page Focus Clínica. Texto e três capturas fornecidos pelo solicitante; o acesso direto ao endereço não foi confirmado.
-3. **Decisões da equipe:** autorização para iniciar arquivos e GitHub em 19/10/2026; frentes e integrantes registrados em equipe.md e cenários distribuídos em testes.md.
+2. **Notion:** Documentação do Projeto Front-End — Landing Page Focus Clínica. Texto e capturas fornecidos anteriormente; seções 1–7 consultadas diretamente pelo navegador em 29/10/2026. O acesso web direto falhou, mas a página compartilhada estava acessível na sessão do navegador.
+3. **Decisões da equipe:** autorização para iniciar arquivos e GitHub em 19/10/2026; frentes e integrantes registrados em team.md e cenários distribuídos em testing.md.
 
 Os documentos descrevem o escopo. Eles não constituem evidência de aprovação do Figma, participação individual, execução de testes ou publicação. Essas evidências serão registradas quando existirem.
+
+As duas páginas do PDF foram relidas em 29/10/2026. A validação atual, os limites de design/acessibilidade e os placeholders encontrados no Notion estão em [Finalização técnica](technical-review.md). A integração do GitHub atende ao requisito transcrito de consumir uma API; nenhuma das fontes consultadas exige uma API clínica.
 
 ## Objetivo
 
