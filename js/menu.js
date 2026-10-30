@@ -1,7 +1,7 @@
 export function initializeMenu() {
   const button = document.querySelector(".menu-button");
   const navigation = document.querySelector("#navigation");
-  const mobileViewport = window.matchMedia("(max-width: 52rem)");
+  const mobileViewport = window.matchMedia("(max-width: 540px)");
   let isOpen = false;
 
   function setMenuOpen(shouldOpen) {

@@ -4,11 +4,13 @@
 
 Responsável pelo design: Lucas Fernandes (`Lcsf-dev`). A aprovação visual registrada é específica do protótipo de 20/10/2026 e distinta da validação da implementação.
 
-## Conferência de 29/10/2026
+## Conferência de 30/10/2026
 
-O arquivo contém wireframes, layouts/protótipo e estilos/revisão. O quadro desktop tem viewport 1440 × 1000 com recorte; há referências tablet/celular e estados de demonstração/ampliação. A [evidência da identidade](evidence/figma-original-logo.png) registra a versão anterior.
+As oito partes da página foram comparadas com os layouts de 1440, 768 e 390 px da página “02 — Layouts e protótipo”. A paleta, a tipografia e os botões foram conferidos na página “03 — Estilos e revisão”. O protótipo permite rolagem vertical além do recorte inicial do quadro desktop. A [evidência da identidade](evidence/figma-original-logo.png) registra a versão anterior.
 
-Logo, Inter, paleta e estrutura estão presentes na implementação, mas composição do hero, textos e aparência de seções diferem do Figma. A equivalência visual integral não está comprovada. A referência visual final deve ser conciliada na conferência de design; a aprovação histórica não é uma aprovação da versão atual do site. Cenários verificados e limitações estão em [Testes](testing.md).
+A implementação usa captura reta no hero, marca em uma linha, seção Sobre clara, benefícios em fundo petróleo e chamada para ação em menta. Textos, cartões com ícones, abas, botões e créditos seguem a composição dos layouts. No tablet, o menu ocupa uma segunda linha; no celular, o botão de acesso permanece visível e a navegação usa um menu expansível.
+
+Permanecem adaptações funcionais: cabeçalho fixo durante a rolagem, diálogo acessível de ampliação, indicadores de foco e estados da API. Nomes e avatares podem variar conforme os perfis públicos do GitHub; a mensagem de estado acrescenta altura ao rodapé. Os ícones são vetores locais e a quebra de linhas varia com a área útil do navegador. A comparação visual não constitui uma medição pixel a pixel nem altera a aprovação histórica do protótipo. Cenários verificados e limitações estão em [Testes](testing.md).
 
 ## Arquivo e apresentação
 
