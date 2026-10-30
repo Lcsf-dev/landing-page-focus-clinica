@@ -1,5 +1,18 @@
 # Testes e verificações
 
+## Ajustes visuais — 30/10/2026
+
+Verificações locais na branch `fix/figma-visual-alignment`, com Windows, Chrome, Node.js 24.16.0 e npm 11.13.0:
+
+- Comparação das oito partes com os layouts do Figma em 1440, 768 e 390 px; grade de funcionalidades em quatro, duas e uma coluna e créditos em quatro, duas e uma coluna.
+- Sem overflow horizontal em 360, 390, 768 e 1440 px. Em 360 px, a largura útil medida foi 345 px.
+- Menu móvel aberto por Enter, Tab até Sobre, Escape com retorno ao botão e navegação para a seção com fechamento do menu e transferência do foco.
+- Abas por clique, ArrowLeft, Home e End; seleção, painel visível e foco coerentes. As duas capturas abriram no diálogo; Escape e botão fecharam com retorno do foco. A tela de acesso também foi ampliada no celular.
+- Capturas, logos e quatro avatares carregados; quatro perfis atualizados pela API real. Console capturado sem erros ou avisos.
+- `npm run build` aprovado e três testes de `tests/deployment.test.mjs` aprovados, incluindo caminhos sob subdiretório e símbolos SVG. A suíte completa permanece obrigatória no CI.
+
+As rotinas de HTTP, falha parcial, nova tentativa e concorrência não foram alteradas; seus testes automatizados existentes foram preservados. Não houve nova simulação dessas falhas no navegador. A comparação foi visual, sem medição pixel a pixel, dispositivos físicos ou nova auditoria completa de acessibilidade.
+
 ## Referência validada — 29/10/2026
 
 Versão publicada: `8b8ba58`, integrada pelos PRs [#28](https://github.com/Lcsf-dev/landing-page-focus-clinica/pull/28) e [#29](https://github.com/Lcsf-dev/landing-page-focus-clinica/pull/29). O [workflow de produção](https://github.com/Lcsf-dev/landing-page-focus-clinica/actions/runs/40945562687) concluiu com 26 testes aprovados, zero falhas e Node.js 22.23.4. O build foi executado pelo `pretest`.
@@ -47,10 +60,10 @@ Na finalização de 29/10/2026, 46 links locais Markdown resolveram, 16 arquivos
 - CT07: zoom real de 200% não foi comprovado.
 - CT08: a lógica de movimento reduzido passou com respostas controladas e as regras CSS foram inspecionadas; a preferência real não foi emulada no navegador.
 - As verificações usaram um navegador, sem dispositivos físicos, leitor de tela ou auditoria completa de acessibilidade.
-- Existem diferenças de composição e texto entre site e Figma, descritas em [Design](design.md); equivalência visual integral não foi comprovada.
+- A composição foi atualizada em 30/10/2026; adaptações funcionais e limites da comparação estão em [Design](design.md).
 - Não houve avaliação quantitativa de desempenho ou execução manual no Insomnia.
 
-A equipe fará a conferência posterior dos PRs integrados. Registrar somente cenários efetivamente executados e aprovações comprovadas.
+Registrar somente cenários efetivamente executados e aprovações comprovadas.
 
 ## Histórico de verificações
 
