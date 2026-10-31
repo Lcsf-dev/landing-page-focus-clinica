@@ -46,13 +46,13 @@ export function createTeamView(root = document) {
     showError(hasPartialResults = false) {
       status.dataset.state = "error";
       message.textContent = hasPartialResults
-        ? "Alguns perfis não puderam ser atualizados. Os nomes e links da equipe continuam disponíveis. Tente novamente mais tarde."
-        : "Não foi possível atualizar os perfis. Os links da equipe continuam disponíveis.";
+        ? "Alguns perfis não foram atualizados. Os nomes e links continuam disponíveis."
+        : "Não foi possível atualizar os perfis. Os nomes e links continuam disponíveis.";
       retryButton.hidden = false;
     },
     showSuccess() {
       status.dataset.state = "success";
-      message.textContent = "Perfis atualizados pelo GitHub.";
+      message.textContent = "Perfis da equipe atualizados.";
     },
     finishLoading() {
       list.setAttribute("aria-busy", "false");

@@ -585,42 +585,6 @@ figcaption {
   text-underline-offset: 4px;
 }
 
-.footer__repository {
-  padding-block: 40px;
-}
-
-.footer__repository a {
-  display: inline-flex;
-  max-width: 100%;
-  flex-direction: column;
-  gap: 12px;
-  overflow-wrap: anywhere;
-}
-
-.footer__repository span {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.footer__repository .icon {
-  width: 18px;
-  height: 18px;
-  color: var(--color-green);
-}
-
-.footer__repository small {
-  color: var(--color-green);
-  font-size: 1rem;
-}
-
-.footer__bottom {
-  margin-top: 40px;
-  padding-top: 40px;
-  border-top: 1px solid #2c7169;
-  font-size: .875rem;
-}
-
 /* Image viewer and reveal animations */
 .image-dialog {
   width: min(1280px, calc(100% - 40px));
@@ -676,6 +640,10 @@ figcaption {
 }
 
 /* Team profiles and API status */
+.team {
+  padding-top: 40px;
+}
+
 .team__heading {
   display: flex;
   justify-content: space-between;
@@ -688,11 +656,6 @@ figcaption {
   font-size: 1.125rem;
   font-weight: 400;
   letter-spacing: normal;
-}
-
-.team__heading > span {
-  color: var(--color-green);
-  font-size: .75rem;
 }
 
 .team-grid {
@@ -729,12 +692,6 @@ figcaption {
   color: var(--color-green);
   font-size: .875rem;
   line-height: 1.5;
-}
-
-.member-profile-url {
-  grid-column: 1 / -1;
-  overflow-wrap: anywhere;
-  font-size: .75rem;
 }
 
 .member-avatar {
@@ -775,6 +732,18 @@ figcaption {
   margin-top: 24px;
   color: var(--color-green);
   font-size: .875rem;
+}
+
+.api-status:not([data-state]), .api-status[data-state="success"] {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  min-height: 0;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
 }
 
 .loading-indicator {
