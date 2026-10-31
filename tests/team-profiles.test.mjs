@@ -83,6 +83,7 @@ test("updates busy, retry and status controls through failure and recovery", () 
   const view = createTeamView({ querySelector: (selector) => elements[selector] });
   view.showLoading();
   assert.equal(elements["#team-status"].dataset.state, "loading");
+  assert.equal(elements["#team-status"].hidden, false);
   assert.equal(view.retryButton.hidden, true);
   assert.equal(view.retryButton.disabled, true);
   view.showError(true);
@@ -95,5 +96,8 @@ test("updates busy, retry and status controls through failure and recovery", () 
   view.showSuccess();
   view.finishLoading();
   assert.equal(elements["#team-status"].dataset.state, "success");
+  assert.equal(elements["#team-message"].textContent, "Perfis da equipe atualizados.");
+  assert.equal(elements["#team-status"].hidden, false);
+  assert.equal(view.retryButton.hidden, true);
   assert.deepEqual(view.list.setAttribute.mock.calls.at(-1).arguments, ["aria-busy", "false"]);
 });
