@@ -24,9 +24,11 @@ jobs:
       - name: Preparar Node.js
         uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7
         with:
-          node-version: '22'
+          node-version: "22"
           package-manager-cache: false
-      - name: Executar testes e gerar dist
+      - name: Gerar build de produção
+        run: npm run build
+      - name: Executar testes
         run: npm test
       - name: Enviar arquivos públicos
         if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
