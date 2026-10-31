@@ -1,4 +1,4 @@
-import { fetchGithubProfile } from "../github/github-client.js";
+import { fetchGithubProfile } from "../api/github.js";
 import { createTeamView } from "./team-view.js";
 
 /**
@@ -7,7 +7,10 @@ import { createTeamView } from "./team-view.js";
  * @param {typeof fetchGithubProfile} [fetchProfile]
  * @returns {() => Promise<void>}
  */
-export function createTeamProfileLoader(view, fetchProfile = fetchGithubProfile) {
+export function createTeamProfileLoader(
+  view,
+  fetchProfile = fetchGithubProfile,
+) {
   let isLoading = false;
 
   return async function loadTeamProfiles() {
@@ -16,10 +19,12 @@ export function createTeamProfileLoader(view, fetchProfile = fetchGithubProfile)
     try {
       view.showLoading();
       const pendingCards = view.getPendingCards();
-      const results = await Promise.allSettled(pendingCards.map(async (card) => {
-        const profile = await fetchProfile(card.dataset.username);
-        view.renderProfile(card, profile);
-      }));
+      const results = await Promise.allSettled(
+        pendingCards.map(async (card) => {
+          const profile = await fetchProfile(card.dataset.username);
+          view.renderProfile(card, profile);
+        }),
+      );
       const hasErrors = results.some((result) => result.status === "rejected");
       if (hasErrors) {
         view.showError(true);
@@ -45,10 +50,13 @@ export function initializeTeamProfiles() {
     void loadTeamProfiles();
     return;
   }
-  const observer = new IntersectionObserver((entries) => {
-    if (!entries.some((entry) => entry.isIntersecting)) return;
-    observer.disconnect();
-    void loadTeamProfiles();
-  }, { rootMargin: "200px" });
+  const observer = new IntersectionObserver(
+    (entries) => {
+      if (!entries.some((entry) => entry.isIntersecting)) return;
+      observer.disconnect();
+      void loadTeamProfiles();
+    },
+    { rootMargin: "200px" },
+  );
   observer.observe(view.list);
 }
