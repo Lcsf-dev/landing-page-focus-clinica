@@ -49,7 +49,13 @@ export default defineConfig({
 
     coverage: {
       include: ["js/**/*.{js,mjs}", "utils/**/*.{js,mjs}"],
-      exclude: ["js/main.js"],
+      exclude: [
+        "js/main.js",
+        "js/menu.js",
+        "js/demo-tabs.js",
+        "js/image-viewer.js",
+        "js/reveal-animations.js",
+      ],
     },
   },
 });

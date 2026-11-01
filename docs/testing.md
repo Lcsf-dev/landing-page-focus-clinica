@@ -1,5 +1,24 @@
 # Testes e verificações
 
+## Suíte atual (Vitest + Playwright)
+
+Os testes automatizados estão divididos em projetos do Vitest e em E2E com Playwright.
+
+| Comando | Escopo |
+| --- | --- |
+| `npm test` | Unitários + integração (Vitest) |
+| `npm run test:unit` | Unitários |
+| `npm run test:integration` | Integração |
+| `npm run test:build` | Build + verificação do pacote em `dist/` |
+| `npm run test:coverage` | Cobertura de `js/api`, `js/team` e `utils` |
+| `npm run test:e2e` | E2E em Chromium e Firefox |
+| `npm run test:e2e:chromium` | E2E apenas em Chromium |
+| `npm run test:e2e:firefox` | E2E apenas em Firefox |
+
+Os módulos de interface (`menu`, `demo-tabs`, `image-viewer`, `reveal-animations` e `main`) são cobertos por E2E e excluídos da cobertura do Vitest. Os specs ficam em `tests/e2e/*.e2e.spec.js` e usam `build + preview` para validar o artefato de produção. A execução no CI será configurada separadamente.
+
+A tabela da seção "Suíte automatizada" abaixo registra a suíte anterior em `node:test` e é histórica.
+
 ## Ajustes visuais — 30/10/2026
 
 Verificações locais na branch `fix/figma-visual-alignment`, com Windows, Chrome, Node.js 24.16.0 e npm 11.13.0:
