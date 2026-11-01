@@ -40,7 +40,7 @@ Abra <http://127.0.0.1:5500>. Encerre com `Ctrl+C`. A página deve ser aberta po
 ├── .github/       # Workflows and contribution templates
 ├── css/           # styles.css and fonts/
 ├── docs/          # Project documentation and evidence/
-├── img/           # Real screenshots, logo and SVG icons
+├── public/img/    # Real screenshots, logo and SVG icons
 ├── js/
 │   ├── github/    # HTTP client and profile validation
 │   ├── team/      # Profile loading and DOM presentation
@@ -80,6 +80,6 @@ As frentes indicam responsabilidades; registros de execução e aprovação são
 ## Documentação técnica
 
 - [Requisitos e escopo](docs/requirements.md), [planejamento](docs/planning.md) e [tarefas](docs/tasks.md).
-- [Design e diferenças para o Figma](docs/design.md); [origem dos recursos visuais](img/README.md).
+- [Design e diferenças para o Figma](docs/design.md); [origem dos recursos visuais](docs/images.md).
 - [Testes e limitações conhecidas](docs/testing.md).
 - [Fluxo Git](docs/git-workflow.md), [CI/CD e publicação](docs/deployment.md) e [histórico de alterações](docs/changelog.md).

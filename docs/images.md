@@ -1,5 +1,7 @@
 # Recursos visuais
 
+Os arquivos ficam em `public/img/` e são publicados em `/img/...` sem processamento de hash pelo Vite.
+
 | Arquivo | Origem e finalidade |
 | --- | --- |
 | `presentation-focus-clinica.jpg` | Captura real da apresentação pública em https://focus-clinica.netlify.app/; 2560 × 1271 px |

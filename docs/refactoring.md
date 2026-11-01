@@ -17,7 +17,7 @@ O plano inicial de refatoração, registrado em `1fea162`, antecede a implementa
 | Padronizar nomes e organizar CSS | Implementado; valores, cascata, breakpoints, foco e movimento reduzido preservados. |
 | Reduzir duplicação documental | README orienta execução e navegação; requisitos, testes, API e publicação têm documentos próprios. |
 | Migrar build e servidor para Vite | Não adotado. `scripts/build.mjs` e `scripts/dev-server.mjs` atendem à página estática atual. |
-| Mover imagens para `public/` ou remover `pages/` | Não adotado. `img/` e `pages/` integram a estrutura-base; `pages/` permanece reservado. |
+| Mover imagens para `public/` ou remover `pages/` | Adotado para imagens: `public/img/` evita que o Vite reescreva os `href` de ampliação. `pages/` permanece reservado. |
 | Remover OpenAPI e Insomnia | Não adotado. Ambos documentam e permitem consultar a integração externa do GitHub. |
 | Substituir os testes nativos por Vitest e adicionar Playwright | Não adotado. A suíte usa `node:test`; cenários de navegador e seus limites estão em [Testes](testing.md). |
 | Remover verificações de login, tipos e URLs da API | Não adotado. As verificações continuam necessárias para preservar o contrato e rejeitar respostas incompatíveis. |

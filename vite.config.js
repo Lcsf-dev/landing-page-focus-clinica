@@ -1,6 +1,13 @@
 import { defineConfig } from "vitest/config";
 import { resolve } from "node:path";
 
+const sharedTestOptions = {
+  environment: "node",
+  globals: false,
+  clearMocks: true,
+  restoreMocks: true,
+};
+
 export default defineConfig({
   root: import.meta.dirname,
 
@@ -16,17 +23,35 @@ export default defineConfig({
   },
 
   test: {
-    environment: "node",
-    include: [
-      "tests/unit/**/*.spec.{js,mjs}",
-      "tests/integration/**/*.spec.{js,mjs}",
+    passWithNoTests: true,
+
+    projects: [
+      {
+        test: {
+          ...sharedTestOptions,
+          name: "unit",
+          include: ["tests/unit/**/*.spec.{js,mjs}"],
+        },
+      },
+      {
+        test: {
+          ...sharedTestOptions,
+          name: "integration",
+          include: ["tests/integration/**/*.spec.{js,mjs}"],
+        },
+      },
+      {
+        test: {
+          ...sharedTestOptions,
+          name: "build",
+          include: ["tests/build/**/*.spec.{js,mjs}"],
+        },
+      },
     ],
-    globals: false,
-    clearMocks: true,
-    restoreMocks: true,
+
     coverage: {
       include: ["js/**/*.{js,mjs}", "utils/**/*.{js,mjs}"],
-      exclude: ["src/**/*.spec.{js,mjs}", "src/**/main.{js,mjs}"],
+      exclude: ["js/main.js"],
     },
   },
 });
