@@ -11,9 +11,15 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "test": "node --test tests/*.test.mjs"
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:unit": "vitest run tests/unit",
+    "test:integration": "vitest run tests/integration",
+    "test:coverage": "vitest run --coverage"
   },
   "devDependencies": {
-    "vite": "^8.3.5"
+    "@vitest/coverage-v8": "^5.0.5",
+    "vite": "^8.3.5",
+    "vitest": "^5.0.5"
   }
 }
