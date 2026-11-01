@@ -23,8 +23,6 @@ export default defineConfig({
   },
 
   test: {
-    passWithNoTests: true,
-
     projects: [
       {
         test: {
