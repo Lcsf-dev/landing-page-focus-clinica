@@ -1,6 +1,6 @@
 /**
  * @param {HTMLAnchorElement} card
- * @param {import("../github/github-profile.js").GithubProfile} profile
+ * @param {{ username: string, name: string|null, profileUrl: string, avatarUrl: string|null }} profile
  */
 export function renderTeamProfile(card, profile) {
   if (profile.name) card.querySelector(".member-name").textContent = profile.name;
